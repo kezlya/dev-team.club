@@ -23,7 +23,12 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Oswald&display=swap'
+      },
     ]
   },
   /*
@@ -33,13 +38,13 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
-  ],
+  css: ["~/assets/style/app.styl"],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/ga.js', mode: 'client' }
+    { src: '~plugins/ga.js', mode: 'client' },
+    '~plugins/font.js'
   ],
   /*
   ** Nuxt.js modules
@@ -51,16 +56,23 @@ export default {
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
   */
-  vuetify: {
-    theme: {
-      primary: colors.blue.darken2,
-      accent: colors.grey.darken3,
-      secondary: colors.amber.darken3,
-      info: colors.teal.lighten1,
-      warning: colors.amber.base,
-      error: colors.deepOrange.accent4,
-      success: colors.green.accent3
-    }
+ vuetify: {
+  defaultAssets: {
+    font: true,
+    icons: 'mdi'
+  },
+  icons: {
+    iconfont: 'mdi',
+  },
+  theme: {
+    primary: colors.blue.darken2,
+    accent: colors.grey.darken3,
+    secondary: colors.amber.darken3,
+    info: colors.teal.lighten1,
+    warning: colors.amber.base,
+    error: colors.deepOrange.accent4, 
+    success: colors.green.accent3
+  }
   },
   /*
   ** Build configuration

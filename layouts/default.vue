@@ -2,9 +2,8 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
       fixed
+      temporary
       app
     >
       <v-list>
@@ -25,62 +24,40 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
-      :clipped-left="clipped"
       fixed
       app
+      class="black"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-btn
         icon
-        @click.stop="miniVariant = !miniVariant"
+        @click.stop="drawer = !drawer"
+        class="d-sm-block"
       >
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
+        <v-icon class="white--text">mdi-menu</v-icon>
       </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
+      <div class="d-flex justify-center align-end">
+        <h1 class="white--text">Dev team</h1>
+        <h4 class="font-weight-regular blue--text darken-1 mx-1 d-sm-none">A One Page WordPress Theme!</h4>
+      </div>
+      <v-spacer/>
+      <div class="d-flex justify-end align-end">
+        <v-btn  target="_blank" class="white--text social-btn" outlined icon fab small>
+          <v-icon>mdi-youtube</v-icon>
+        </v-btn>
+        <v-btn  target="_blank" class="white--text social-btn" outlined icon fab small>
+            <v-icon>mdi-instagram</v-icon>
+        </v-btn>
+        <v-btn  target="_blank" class="white--text social-btn" outlined icon fab small>
+            <v-icon>mdi-twitter</v-icon>
+        </v-btn>
+      </div>  
     </v-toolbar>
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>
-              compare_arrows
-            </v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
-      :fixed="fixed"
       app
     >
       <span>&copy; 2019</span>
@@ -92,7 +69,6 @@
 export default {
   data() {
     return {
-      clipped: false,
       drawer: false,
       fixed: false,
       items: [
@@ -107,11 +83,13 @@ export default {
           to: '/inspire'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Dev team'
     }
   }
 }
 </script>
+<style lang="stylus" scoped>
+  .social-btn{
+    margin-right -5px
+    margin-left -5px
+  }
+</style>

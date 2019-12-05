@@ -1,6 +1,6 @@
 <template>
-	<div class="text-xs-center">
-		<team />
+	<div class="sections-wrapper">
+		<team></team>
 	</div>
 </template>
 
@@ -14,8 +14,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
-
-
+<style lang="stylus" scoped>
+.sections-wrapper
+	text-align center
 </style>

@@ -6,52 +6,63 @@
       temporary
       app
     >
-      <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
-          </v-list-tile-content>
-        </v-list-tile>
+      <v-list dense>
+        <v-list-item  to="/">
+          <v-list-item-action>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title >Home</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item >
+          <v-list-item-action>
+            <v-icon>mdi-marker-check</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title >About</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar
+    <v-app-bar
       fixed
       app
-      class="black"
+      hide-on-scroll
+      elevate-on-scroll
+      :class="classHeader"
     >
       <v-btn
         icon
         @click.stop="drawer = !drawer"
-        class="d-sm-block"
+        class="d-sm-none"
       >
         <v-icon class="white--text">mdi-menu</v-icon>
       </v-btn>
       <div class="d-flex justify-center align-end">
-        <h1 class="white--text">Dev team</h1>
-        <h4 class="font-weight-regular blue--text darken-1 mx-1 d-sm-none">A One Page WordPress Theme!</h4>
+        <h1 class="">Dev team</h1>
       </div>
       <v-spacer/>
-      <div class="d-flex justify-end align-end">
-        <v-btn  target="_blank" class="white--text social-btn" outlined icon fab small>
+      <div class="justify-end align-end d-none d-sm-flex mr-12">
+        <v-btn  target="_blank" class="white--text social-btn"  text  small>
+          home
+        </v-btn>
+        <v-btn  target="_blank" class="white--text social-btn" text  small>
+          about
+        </v-btn>
+      </div>
+      <div class="justify-end align-end d-none d-md-flex">
+        <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
           <v-icon>mdi-youtube</v-icon>
         </v-btn>
-        <v-btn  target="_blank" class="white--text social-btn" outlined icon fab small>
+        <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
             <v-icon>mdi-instagram</v-icon>
         </v-btn>
-        <v-btn  target="_blank" class="white--text social-btn" outlined icon fab small>
+        <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
             <v-icon>mdi-twitter</v-icon>
         </v-btn>
       </div>  
-    </v-toolbar>
+    </v-app-bar>
     <v-content>
       <v-container>
         <nuxt />
@@ -71,20 +82,29 @@ export default {
     return {
       drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'apps',
-          title: 'Welcome',
-          to: '/'
-        }
-      ],
+      classHeader: 'black'
     }
+  },
+  mounted() {
+    this.handlerChangeHeader()
+    document.addEventListener('scroll', this.handlerChangeHeader.bind(this) );
+  },
+  methods: {
+    handlerChangeHeader(){
+      console.log(this.$refs.headerTag);
+      this.scrolled = window.pageYOffset;
+      if (this.scrolled <  50) {
+        this.classHeader = 'up-page black--text';
+      } else {
+        this.classHeader = 'black white--text';
+      }
+    },
   }
 }
 </script>
 <style lang="stylus" scoped>
-  .social-btn{
-    margin-right -5px
-    margin-left -5px
-  }
+  .up-page 
+    background transparent !important
+    color black 
+  
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <v-container >
-        <section class="team">
+    <v-container>
+        <section class="team flex">
             <h2 class="team__title">Meet the team</h2>
             <p class="team__subtitle">Showcase the great people behind your company.</p>
             <div class="team__members">
@@ -9,10 +9,10 @@
                     <p class="team__member-name">Vitaly</p>
                     <p class="team__member-position">Team leader</p>
                     <div class="team__member-socials">
-                        <v-btn href="https://www.linkedin.com/in/vitaly-kezlya-450192b/" target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn href="https://www.linkedin.com/in/vitaly-kezlya-450192b/" target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-linkedin</v-icon>
                         </v-btn>
-                        <v-btn href="https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw" target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn href="https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw" target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-youtube</v-icon>
                         </v-btn>
                     </div>
@@ -22,13 +22,13 @@
                     <p class="team__member-name">Stas</p>
                     <p class="team__member-position">Web-developer</p>
                     <div class="team__member-socials">
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-youtube</v-icon>
                         </v-btn>
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-instagram</v-icon>
                         </v-btn>
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-twitter</v-icon>
                         </v-btn>
                     </div>
@@ -38,13 +38,13 @@
                     <p class="team__member-name">Kirill</p>
                     <p class="team__member-position">Web-developer</p>
                     <div class="team__member-socials">
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-youtube</v-icon>
                         </v-btn>
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-instagram</v-icon>
                         </v-btn>
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-twitter</v-icon>
                         </v-btn>
                     </div>
@@ -54,13 +54,13 @@
                     <p class="team__member-name">Irina</p>
                     <p class="team__member-position">Project manager</p>
                     <div class="team__member-socials">
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-youtube</v-icon>
                         </v-btn>
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-instagram</v-icon>
                         </v-btn>
-                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab small>
+                        <v-btn  target="_blank" class="team__social-btn" outlined icon fab x-small>
                             <v-icon>mdi-twitter</v-icon>
                         </v-btn>
                     </div>
@@ -71,45 +71,35 @@
 </template>
 
 <style lang="stylus" scoped>
-.team {
+.team
     width 100%
     padding 100px 0
 
-    &__members {
+    &__members
         display flex
         justify-content space-between
         flex-wrap wrap
         width 100%
         margin-top 20px
-    }
+    
+    &__avatar 
+        margin-bottom 20px
 
-    &__avatar {
-        margin-bottom 30px
-    }
+    &__subtitle 
+        font-size 18px
+        margin-top 10px
+        margin-bottom 50px
 
-    &__subtitle {
-        font-size 18px;
-        margin-top 10px;
-        margin-bottom 50px;
-    }
-
-    &__member-name {
+    &__member-name 
         font-size 18px
         margin-top 10px
         margin-bottom 0
-    }
 
-    &__member-position {
+    &__member-position 
         font-size 14px
         margin-bottom 10px
-    }
 
-    &__social-btn {
+    &__social-btn
         margin 0 3px
-        border 1px solid #4c5152
-        color #4c5152
-        width 32px
-        height 32px
-    }
-}
+        color #4C5152!important
 </style>

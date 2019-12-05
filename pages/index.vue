@@ -1,6 +1,6 @@
 <template>
-	<div class="text-xs-center">
-		<team />
+	<div class="text-center">
+		<team></team>
 	</div>
 </template>
 
@@ -13,3 +13,9 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+
+
+
+</style>

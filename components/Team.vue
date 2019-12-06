@@ -8,7 +8,7 @@
                 cols="12"
                 sm="12"
                 md="3"
-                v-for="(member, index) in this.members"
+                v-for="(member, index) in members"
                 v-bind:key="index">
                     <v-avatar size="178" class="team__avatar"><img :src="member.avatarUrl" :alt="member.name"></v-avatar>
                     <p class="team__member-name">{{ member.name }}</p>

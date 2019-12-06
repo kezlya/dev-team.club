@@ -1,6 +1,6 @@
 <template>
     <section class="img-bg">
-        <v-img src="/background.JPG">
+        <v-img height="600" src="/background.JPG">
             <h2 class="img-bg__title">Meet the team</h2>
         </v-img>
        

@@ -54,20 +54,16 @@
     </v-app-bar>
     <v-content>
       <header-background></header-background>
-      <v-container>
+      <v-container class="pa-0">
         <nuxt />
       </v-container>
     </v-content>
     <v-footer
       class="black white--text"
-      
       app
     >
       <span>&copy; {{new Date().getFullYear()}} dev-team.club (OOO dev-team)</span>
-       <v-spacer></v-spacer>
-       <!-- <v-btn class="mx-4" dark icon>
-        <v-icon size="24px"></v-icon>
-      </v-btn> -->
+      <v-spacer></v-spacer>
       <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>
         <v-icon size="20px">mdi-gmail</v-icon>
       </v-btn>

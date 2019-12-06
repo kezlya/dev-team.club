@@ -13,7 +13,7 @@
     margin-top -70px
     text-align center
     &__title 
-        margin-top 100px
+        margin-top 150px
         margin-bottom 50px
 
         

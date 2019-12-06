@@ -10,6 +10,8 @@
 <style lang="stylus" scoped>
 .img-bg
     width 100%
+    margin-top -70px
+    text-align center
     &__title 
         margin-top 100px
         margin-bottom 50px

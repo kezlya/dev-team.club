@@ -27,9 +27,9 @@
     </v-navigation-drawer>
     <v-app-bar
       fixed
+      elevation="0"
       app
       hide-on-scroll
-      elevate-on-scroll
       :class="classHeader"
     >
       <v-btn
@@ -43,7 +43,7 @@
         <h1 class="">Dev team</h1>
       </div>
       <v-spacer/>
-      <div class="justify-end align-end d-none d-sm-flex mr-12">
+      <div v-if="!isUpPage" class="justify-end align-end d-none d-sm-flex mr-12">
         <v-btn  target="_blank" class="white--text social-btn"  text  small>
           home
         </v-btn>
@@ -51,7 +51,7 @@
           about
         </v-btn>
       </div>
-      <div class="justify-end align-end d-none d-md-flex">
+      <div v-if="!isUpPage" class="justify-end align-end d-none d-md-flex">
         <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
           <v-icon>mdi-youtube</v-icon>
         </v-btn>
@@ -64,6 +64,7 @@
       </div>  
     </v-app-bar>
     <v-content>
+      <header-background></header-background>
       <v-container>
         <nuxt />
       </v-container>
@@ -77,26 +78,33 @@
 </template>
 
 <script>
+import HeaderBackground from '../components/HeaderBackground.vue'
+
 export default {
   data() {
     return {
       drawer: false,
       fixed: false,
-      classHeader: 'black'
+      classHeader: null,
+      isUpPage: null
     }
   },
+  components: {
+		HeaderBackground
+	},
   mounted() {
     this.handlerChangeHeader()
     document.addEventListener('scroll', this.handlerChangeHeader.bind(this) );
   },
   methods: {
     handlerChangeHeader(){
-      console.log(this.$refs.headerTag);
       this.scrolled = window.pageYOffset;
       if (this.scrolled <  50) {
         this.classHeader = 'up-page black--text';
+        this.isUpPage = true;
       } else {
         this.classHeader = 'black white--text';
+        this.isUpPage = false;
       }
     },
   }

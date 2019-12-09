@@ -90,7 +90,7 @@ export default {
   methods: {
     sendMessageSlack () {
         this.isloading = true;
-        const message = `name: ${this.name}, \n email: ${this.email}, \n message: ${this.message}`;
+        const message = `name: ${this.name}, \n email: ${this.email}, \n date: ${new Date().toGMTString()} \n message: ${this.message}`;
         axios.post('https://hooks.slack.com/services/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',`{"text":"${message}"}`)
             .then((response) => {
                 this.isloading = false;

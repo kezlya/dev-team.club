@@ -60,14 +60,12 @@
     </v-content>
     <v-footer
       class="black white--text"
-      
       app
     >
-      <span>&copy; {{new Date().getFullYear()}} dev-team.club (OOO dev-team)</span>
-       <v-spacer></v-spacer>
-       <!-- <v-btn class="mx-4" dark icon>
-        <v-icon size="24px"></v-icon>
-      </v-btn> -->
+      <span>&copy; {{new Date().getFullYear()}} dev-team.club 
+        <!-- (OOO dev-team) -->
+      </span>
+      <v-spacer></v-spacer>
       <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>
         <v-icon size="20px">mdi-gmail</v-icon>
       </v-btn>

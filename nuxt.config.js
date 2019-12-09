@@ -14,7 +14,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'description', content: 'Dev-team shaping tomorrow with you.' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Dev Team' },
+      { name: 'twitter:description', content: 'Dev-team shaping tomorrow with you.' },
+      { name: 'twitter:image', content: '/devteammeta.jpg' },
+      { itemprop: 'name', content: 'Developer platform.' },
+      { itemprop: 'description', content: 'Dev-team shaping tomorrow with you.' },
+      { itemprop: 'image', content: '/devteammeta.jpg' },
+      { property: 'og:url', content: 'https://dev-team.club' },
+      { property: 'og:type', content: 'Developer platform' },
+      { property: 'og:title', content: 'Dev Team' },
+      { property: 'og:description', content: 'Dev-team shaping tomorrow with you.' },
+      { property: 'og:image', content: '/devteammeta.jpg' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

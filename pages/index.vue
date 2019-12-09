@@ -1,8 +1,8 @@
 <template>
 	<div class="sections-wrapper">
 		<team></team>
-		<contact-section></contact-section>
 		<projects></projects>
+		<contact-section></contact-section>
 	</div>
 </template>
 

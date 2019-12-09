@@ -1,60 +1,95 @@
 <template>
-    <v-container>
-        <section class="team">
-            <h2 class="team__title">Meet the team</h2>
-            <p class="team__subtitle">Showcase the great people behind your company.</p>
-            <div class="team__members">
-                <div class="team__member">
-                    <v-avatar size="178" class="team__avatar"><img src="/vitaly.jpg" alt="Vitaly"></v-avatar>
-                    <p class="team__member-name">Vitaly</p>
-                    <p class="team__member-position">Team leader</p>
-                    <div class="team__member-socials">
-                        <v-btn href="https://www.linkedin.com/in/vitaly-kezlya-450192b/" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">mdi-linkedin</v-icon>
-                        </v-btn>
-                        <v-btn href="https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">mdi-youtube</v-icon>
-                        </v-btn>
-                    </div>
-                </div>
-                <div class="team__member">
-                    <v-avatar size="178" class="team__avatar"><img src="/stas.jpg" alt="Stas"></v-avatar>
-                    <p class="team__member-name">Stas</p>
-                    <p class="team__member-position">Web-developer</p>
-                    <div class="team__member-socials">
-                       
-                    </div>
-                </div>
-                <div class="team__member">
-                    <v-avatar size="178" class="team__avatar"><img src="/kirill.jpg" alt="Kirill"></v-avatar>
-                    <p class="team__member-name">Kirill</p>
-                    <p class="team__member-position">Web-developer</p>
-                    <div class="team__member-socials">
-                        <v-btn href="https://github.com/klimonov/" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">mdi-github-circle</v-icon>
-                        </v-btn>
-                        <v-btn href="https://www.instagram.com/kklimonov/" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">mdi-instagram</v-icon>
-                        </v-btn>
-                        <v-btn href="https://vk.com/22pov22" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">mdi-vk</v-icon>
+    <section class="team">
+        <h2 class="team__title">Meet the team</h2>
+        <p class="team__subtitle">Showcase the great people behind your company.</p>
+        <v-container>
+            <v-row>
+                <v-col
+                cols="12"
+                sm="12"
+                md="3"
+                v-for="(member, index) in members"
+                v-bind:key="index">
+                    <v-avatar size="178" class="team__avatar"><img :src="member.avatarUrl" :alt="member.name"></v-avatar>
+                    <p class="team__member-name">{{ member.name }}</p>
+                    <p class="team__member-position">{{ member.position }}</p>
+                    <div class="team__member-socials" v-if="member.socials">
+                        <v-btn
+                        v-for="(social, index) in member.socials"
+                        v-bind:key="index"
+                        :href="social.link" target="_blank" class="team__social-btn" outlined icon fab x-small>
+                            <v-icon class="social-icon">{{ social.icon }}</v-icon>
                         </v-btn>
                     </div>
-                </div>
-                <div class="team__member">
-                    <v-avatar size="178" class="team__avatar"><img src="/irina.jpg" alt="Irina"></v-avatar>
-                    <p class="team__member-name">Irina</p>
-                    <p class="team__member-position">Project manager</p>
-                    <div class="team__member-socials">
-                        <v-btn href="https://www.instagram.com/Koblovai/" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">mdi-instagram</v-icon>
-                        </v-btn>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </v-container>
+                </v-col>
+                
+            </v-row>
+        </v-container>
+    </section>
 </template>
+
+<script>
+export default {
+    data: () => ({
+    members: [
+        {
+            name: 'Vitaly',
+            position: 'Team leader',
+            avatarUrl: '/vitaly.jpg',
+            socials: [
+                {
+                    link: 'https://www.linkedin.com/in/vitaly-kezlya-450192b/',
+                    icon: 'mdi-linkedin'
+                },
+                {
+                    link: 'https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw',
+                    icon: 'mdi-youtube'
+                },
+            ]
+        },
+        {
+            name: 'Stas',
+            position: 'Web developer',
+            avatarUrl: '/stas.jpg',
+        },
+        {
+            name: 'Kirill',
+            position: 'Web developer',
+            avatarUrl: '/kirill.jpg',
+            socials: [
+                {
+                    link: 'https://github.com/klimonov/',
+                    icon: 'mdi-github-circle'
+                },
+                {
+                    link: 'https://www.instagram.com/kklimonov/',
+                    icon: 'mdi-instagram'
+                },
+                {
+                    link: 'https://vk.com/22pov22',
+                    icon: 'mdi-vk'
+                },
+            ]
+        },
+        {
+            name: 'Irina',
+            position: 'Project manager',
+            avatarUrl: '/irina.jpg',
+            socials: [
+                {
+                    link: 'https://www.instagram.com/Koblovai/',
+                    icon: 'mdi-instagram'
+                },
+                {
+                    link: 'https://vk.com/id518453899',
+                    icon: 'mdi-vk'
+                },
+            ]
+        },
+    ]
+  }),
+}
+</script>
 
 <style lang="stylus" scoped>
 .team

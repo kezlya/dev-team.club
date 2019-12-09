@@ -54,9 +54,7 @@
     </v-app-bar>
     <v-content>
       <header-background></header-background>
-      <v-container class="pa-0">
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
     <v-footer
       class="black white--text"

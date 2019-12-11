@@ -7,7 +7,7 @@
     </section>
 </template>
 <script>
-import { TxtType } from"../plugins/utilities.js"
+import { TxtType } from"../plugins/txt_type.js"
 
 export default {
     data() {

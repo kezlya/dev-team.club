@@ -23,7 +23,7 @@ class TxtType {
     this.el.innerHTML = '<span>'+this.txt+'</span>';
   
     // var that = this;
-    let delta = 200 - Math.random() * 100;
+    var delta = 200 - Math.random() * 100;
   
     if (this.isDeleting) delta /= 2; 
   
@@ -40,32 +40,4 @@ class TxtType {
     this.tick();
     }, delta);
   };
-		if (this.isDeleting) {
-			this.txt = fullTxt.substring(0, this.txt.length - 1);
-		} else {
-			this.txt = fullTxt.substring(0, this.txt.length + 1);
-		}
-
-		this.el.innerHTML = '<span>'+this.txt+'</span>';
-
-		// let that = this;
-		let delta = 200 - Math.random() * 100;
-
-		if (this.isDeleting) delta /= 2; 
-
-		if (!this.isDeleting && this.txt === fullTxt) {
-			delta = this.period;
-			this.isDeleting = true;
-		} else if (this.isDeleting && this.txt === '') {
-			this.isDeleting = false;
-			this.loopNum++;
-			delta = 500;
-		}
-
-		setTimeout(() => {
-			this.tick();
-		}, delta);
-  	};
 }
-
-

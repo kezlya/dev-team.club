@@ -35,7 +35,7 @@ export default {
         {
             name: 'Vitaly',
             position: 'Team leader',
-            avatarUrl: '/vitaly.jpg',
+            avatarUrl: '/team/vitaly.jpg',
             socials: [
                 {
                     link: 'https://www.linkedin.com/in/vitaly-kezlya-450192b/',
@@ -50,12 +50,12 @@ export default {
         {
             name: 'Stas',
             position: 'Web developer',
-            avatarUrl: '/stas.jpg',
+            avatarUrl: '/team/stas.jpg',
         },
         {
             name: 'Kirill',
             position: 'Web developer',
-            avatarUrl: '/kirill.jpg',
+            avatarUrl: '/team/kirill.jpg',
             socials: [
                 {
                     link: 'https://github.com/klimonov/',
@@ -74,7 +74,7 @@ export default {
         {
             name: 'Irina',
             position: 'Project manager',
-            avatarUrl: '/irina.jpg',
+            avatarUrl: '/team/irina.jpg',
             socials: [
                 {
                     link: 'https://www.instagram.com/Koblovai/',

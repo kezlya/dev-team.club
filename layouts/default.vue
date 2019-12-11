@@ -60,7 +60,8 @@
       class="black white--text"
       app
     >
-      <span>&copy; {{new Date().getFullYear()}} dev-team.club (OOO dev-team)</span>
+      <span>&copy; {{new Date().getFullYear()}} ООО Дев-тим
+      </span>
       <v-spacer></v-spacer>
       <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>
         <v-icon size="20px">mdi-gmail</v-icon>

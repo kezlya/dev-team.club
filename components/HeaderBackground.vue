@@ -1,6 +1,6 @@
 <template>
     <section class="img-bg">
-        <v-img src="/background2.JPG">
+        <v-img height="600" src="/background2.JPG">
             <h2 ref="headerTitle" class="img-bg__title white--text"></h2>
         </v-img>
        

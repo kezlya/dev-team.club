@@ -44,33 +44,37 @@
       </div>
       <v-spacer/>
       <div v-if="!isUpPage" class="justify-end align-end d-none d-sm-flex mr-12">
-        <v-btn  target="_blank" class="white--text social-btn"  text  small>
+        <v-btn class="white--text social-btn"  text  small>
           home
         </v-btn>
-        <v-btn  target="_blank" class="white--text social-btn" text  small>
+        <v-btn class="white--text social-btn" text  small>
           about
         </v-btn>
       </div>
-      <div v-if="!isUpPage" class="justify-end align-end d-none d-md-flex">
-        <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
-          <v-icon>mdi-youtube</v-icon>
-        </v-btn>
-        <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
-            <v-icon>mdi-instagram</v-icon>
-        </v-btn>
-        <v-btn  target="_blank" class="white--text social-btn"  icon fab small>
-            <v-icon>mdi-twitter</v-icon>
-        </v-btn>
-      </div>  
     </v-app-bar>
     <v-content>
       <header-background></header-background>
       <nuxt />
     </v-content>
     <v-footer
+      class="black white--text"
       app
     >
-      <span>&copy; 2019</span>
+      <span>&copy; {{new Date().getFullYear()}} ООО Дев-тим
+      </span>
+      <v-spacer></v-spacer>
+      <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>
+        <v-icon size="20px">mdi-gmail</v-icon>
+      </v-btn>
+      <v-btn  target="_blank" href="https://www.facebook.com/dewteam.club.7" class="" dark icon small>
+        <v-icon size="20px">mdi-facebook</v-icon>
+      </v-btn>
+      <v-btn  target="_blank" href="https://www.instagram.com/devteamclub/" class="" dark icon small>
+        <v-icon size="20px">mdi-instagram</v-icon>
+      </v-btn>
+      <v-btn  target="_blank" href="https://twitter.com/devteamclub" class="" dark icon small>
+        <v-icon size="20px">mdi-twitter</v-icon>
+      </v-btn>
     </v-footer>
   </v-app>
 </template>

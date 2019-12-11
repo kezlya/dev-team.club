@@ -11,7 +11,6 @@ import Team from '~/components/Team.vue'
 import ContactSection from '~/components/ContactSection.vue'
 import Projects from '~/components/Projects.vue'
 
-
 export default {
 	components: {
 		Team,
@@ -19,9 +18,11 @@ export default {
 		Projects,
 	}
 }
+
 </script>
 
 <style lang="stylus" scoped>
 .sections-wrapper
 	text-align center
+
 </style>

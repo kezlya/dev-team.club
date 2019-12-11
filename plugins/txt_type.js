@@ -23,7 +23,7 @@ class TxtType {
     this.el.innerHTML = '<span>'+this.txt+'</span>';
   
     // var that = this;
-    let delta = 200 - Math.random() * 100;
+    var delta = 200 - Math.random() * 100;
   
     if (this.isDeleting) delta /= 2; 
   
@@ -40,7 +40,4 @@ class TxtType {
     this.tick();
     }, delta);
   };
-
 }
-
-

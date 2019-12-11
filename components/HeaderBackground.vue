@@ -7,15 +7,15 @@
     </section>
 </template>
 <script>
-import { TxtType } from"../plugins/utilities.js"
+import { TxtType } from"../plugins/txt_type.js"
 
 export default {
     data() {
-    return {
-      titleForAnimation: ['Dev Team Club', 'Code', 'Learn', 'Enjoy'],
-    }
+        return {
+            titleForAnimation: ['Dev Team Club', 'Code', 'Learn', 'Enjoy'],
+        }
   },
-    mounted(){
+    mounted() {
        console.log(new TxtType(this.$refs.headerTitle, this.titleForAnimation));
     }
 }
@@ -25,9 +25,9 @@ export default {
     width 100%
     margin-top -70px
     text-align center
+
     &__title 
         margin-top 150px
         margin-bottom 50px
 
-        
 </style>

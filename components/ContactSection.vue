@@ -122,7 +122,7 @@ export default {
         if(!allValid) return;
         this.isloading = true;
         const message = `name: ${this.form.name}, \n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
-        axios.post('https://hooks.slack.com/services/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',`{"text":"${message}"}`)
+        axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
             .then((response) => {
                 this.message = 'Сообщение отправленно'
                 this.isloading = false;

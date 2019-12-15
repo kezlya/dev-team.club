@@ -66,7 +66,7 @@
       <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>
         <v-icon size="20px">mdi-gmail</v-icon>
       </v-btn>
-      <v-btn  target="_blank" href="https://www.facebook.com/dewteam.club.7" class="" dark icon small>
+      <v-btn  target="_blank" href="https://www.facebook.com/devteamclub" class="" dark icon small>
         <v-icon size="20px">mdi-facebook</v-icon>
       </v-btn>
       <v-btn  target="_blank" href="https://www.instagram.com/devteamclub/" class="" dark icon small>

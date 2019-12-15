@@ -1,6 +1,6 @@
 <template>
     <section class="projects">
-        <h2 class="projects__title">Our latest projects</h2>
+        <h2 class="projects__title">Наши последние работы</h2>
         <v-container>
             <v-row>
                 <v-col
@@ -31,20 +31,26 @@ export default {
         {
             name: 'AntHive.IO',
             link: 'https://anthive.io/',
-            previewUrl: '/anthive.jpg',
-            description: 'Coding challenge for beginners and seasoned developers. Tests your skills in various coding languages, challenge developers across the world. Realtime Ranking and leaderboard.',
+            previewUrl: '/projects/anthive.jpg',
+            description: 'Kодирования для начинающих и опытных разработчиков. Проверьте свои навыки в различных языках программирования, бросьте вызов разработчикам по всему миру. Рейтинг в реальном времени и таблица лидеров.',
         },
         {
             name: 'BreakKonnect.com',
             link: 'https://breakkonnect.com/',
-            previewUrl: '/breakkonnect.jpg',
-            description: 'World wide Dancers community with unique features to organize breakdancing battles. Advance payment features and Video Streaming of live events.',
+            previewUrl: '/projects/breakkonnect.jpg',
+            description: 'Всемирное сообщество танцоров с уникальными возможностями для организации брейкданс-битв. Возможности авансовых платежей и видео трансляций.',
         },
         {
-            name: 'CarsRespect.com',
-            link: 'http://carsrespect.com/',
-            previewUrl: '/carsrespect.jpg',
-            description: 'Website for cars dealership. Gives the owner flexible and easy way to manage promotions and vehicles for sale.',
+            name: 'Chrome.com',
+            link: 'https://chrome.com/',
+            previewUrl: '/projects/chrome.png',
+            description: 'Принимали участие в разработке официального веб-сайта для браузера Chrome',
+        },
+        {
+            name: 'Android.com',
+            link: 'https://android.com/',
+            previewUrl: '/projects/android.png',
+            description: 'Принимали участие в разработке официального веб-сайта для Android OS',
         },
     ]
   }),

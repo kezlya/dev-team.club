@@ -60,8 +60,7 @@
       class="black white--text"
       app
     >
-      <span>&copy; {{new Date().getFullYear()}} dev-team.club 
-        <!-- (OOO dev-team) -->
+      <span>&copy; {{new Date().getFullYear()}} ООО Дев-тим
       </span>
       <v-spacer></v-spacer>
       <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>
@@ -84,33 +83,33 @@
 import HeaderBackground from '../components/HeaderBackground.vue'
 
 export default {
-  data() {
-    return {
-      drawer: false,
-      fixed: false,
-      classHeader: null,
-      isUpPage: null
-    }
-  },
-  components: {
+	data() {
+		return {
+			drawer: false,
+			fixed: false,
+			classHeader: null,
+			isUpPage: null
+		}
+	},
+  	components: {
 		HeaderBackground
 	},
-  mounted() {
-    this.handlerChangeHeader()
-    document.addEventListener('scroll', this.handlerChangeHeader.bind(this) );
-  },
-  methods: {
-    handlerChangeHeader(){
-      this.scrolled = window.pageYOffset;
-      if (this.scrolled <  50) {
-        this.classHeader = 'up-page black--text';
-        this.isUpPage = true;
-      } else {
-        this.classHeader = 'black white--text';
-        this.isUpPage = false;
-      }
-    },
-  }
+	mounted() {
+		this.handlerChangeHeader();
+		document.addEventListener('scroll', this.handlerChangeHeader.bind(this) );
+	},
+	methods: {
+		handlerChangeHeader() {
+			this.scrolled = window.pageYOffset;
+			if (this.scrolled <  50) {
+				this.classHeader = 'up-page black--text';
+				this.isUpPage = true;
+			} else {
+				this.classHeader = 'black white--text';
+				this.isUpPage = false;
+			}
+		},
+	}
 }
 </script>
 <style lang="stylus" scoped>

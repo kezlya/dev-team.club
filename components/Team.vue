@@ -1,7 +1,6 @@
 <template>
     <section class="team">
-        <h2 class="team__title">Meet the team</h2>
-        <p class="team__subtitle">Showcase the great people behind your company.</p>
+        <h2 class="team__title">Наша команда</h2>
         <v-container>
             <v-row>
                 <v-col
@@ -33,8 +32,8 @@ export default {
     data: () => ({
     members: [
         {
-            name: 'Vitaly',
-            position: 'Team leader',
+            name: 'Виталий',
+            position: 'Лидер команды',
             avatarUrl: '/team/vitaly.jpg',
             socials: [
                 {
@@ -48,13 +47,13 @@ export default {
             ]
         },
         {
-            name: 'Stas',
-            position: 'Web developer',
+            name: 'Стас',
+            position: 'Веб-разработчик',
             avatarUrl: '/team/stas.jpg',
         },
         {
-            name: 'Kirill',
-            position: 'Web developer',
+            name: 'Кирилл',
+            position: 'Веб-разработчик',
             avatarUrl: '/team/kirill.jpg',
             socials: [
                 {
@@ -72,8 +71,8 @@ export default {
             ]
         },
         {
-            name: 'Irina',
-            position: 'Project manager',
+            name: 'Ирина',
+            position: 'Менеджер проектов',
             avatarUrl: '/team/irina.jpg',
             socials: [
                 {
@@ -106,10 +105,8 @@ export default {
     &__avatar 
         margin-bottom 20px
 
-    &__subtitle 
-        font-size 18px
-        margin-top 10px
-        margin-bottom 50px
+    &__title
+        margin-bottom 30px
 
     &__member-name 
         font-size 18px

@@ -12,7 +12,7 @@
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title >Home</v-list-item-title>
+            <v-list-item-title >Главная</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item >
@@ -20,7 +20,7 @@
             <v-icon>mdi-marker-check</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title >About</v-list-item-title>
+            <v-list-item-title >О нас</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -45,22 +45,22 @@
       <v-spacer/>
       <div v-if="!isUpPage" class="justify-end align-end d-none d-sm-flex mr-12">
         <v-btn class="white--text social-btn"  text  small>
-          home
+          Главная
         </v-btn>
         <v-btn class="white--text social-btn" text  small>
-          about
+          О нас
         </v-btn>
       </div>
     </v-app-bar>
     <v-content>
       <header-background></header-background>
-      <nuxt />
+      <nuxt></nuxt>
     </v-content>
     <v-footer
       class="black white--text"
       app
     >
-      <span>&copy; {{new Date().getFullYear()}} ООО Дев-тим
+      <span>&copy; {{ new Date().getFullYear() }} ООО Дев-тим
       </span>
       <v-spacer></v-spacer>
       <v-btn  href="mailto:devteamclub.info@gmail.com" class="" dark icon small>

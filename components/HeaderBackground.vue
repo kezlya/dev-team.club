@@ -6,6 +6,7 @@
        
     </section>
 </template>
+
 <script>
 import { TxtType } from"../plugins/txt_type.js"
 
@@ -20,6 +21,7 @@ export default {
     }
 }
 </script>
+
 <style lang="stylus" scoped>
 .img-bg
     width 100%

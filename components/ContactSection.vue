@@ -1,8 +1,8 @@
 <template>
     <section class="contact">
-        <v-img height="690" src="/contactBG2.jpeg" class="pt-6">
+        <v-img height="690" src="/contactBG2.jpeg" class="contact__bg-image">
             <v-container>
-                <h1 class="contact__title display-2 font-weight-bold">Связаться с нами</h1>
+                <h2 class="contact__title">Связаться с нами</h2>
                 <v-row justify="center">
                     <v-col cols="11" >
                         <v-row >
@@ -44,15 +44,15 @@
                             no-resize
                             rows="4"
                         ></v-textarea>
-                        <span class="red--text title" v-show="error">{{error}}</span>
-                        <span class="warning--text title" v-show="message">{{message}}</span>
+                        <span class="red--text title" v-show="error">{{ error }}</span>
+                        <span class="warning--text title" v-show="message">{{ message }}</span>
                     </v-col>
                     <v-col cols="11">
                         <v-row justify="end">
                             <v-col class="d-flex justify-end align-center white--text" cols="12" sm="8" >
                                 <div class="mt-n1">
                                     <p class="mr-2 my-0">
-                                        Как ваша математика? {{firstRandomNumber}} + {{secondRandomNumber}} = ?
+                                        Как ваша математика? {{ firstRandomNumber }} + {{ secondRandomNumber }} = ?
                                     </p>
                                 </div>
                                 <div class="contact__wrap">
@@ -106,49 +106,49 @@ export default {
             }    
         }
     },
-  methods: {
-    sendMessageSlack () {
-        this.error = this.message = null;
-        if(this.amountNumber !== this.masterAmountNumber) {
-            this.error = 'не верно решена задача';
-            return;
-        }
-        let allValid = true;
+    methods: {
+        sendMessageSlack () {
+            this.error = this.message = null;
+            if(this.amountNumber !== this.masterAmountNumber) {
+                this.error = 'не верно решена задача';
+                return;
+            }
+            let allValid = true;
 
-        Object.keys(this.form).forEach(f => {
-          this.$refs[f].validate(true)  // проверка на валидность полей
-          if(!this.$refs[f].valid) allValid = false
-        })
-        if(!allValid) return;
-        this.isloading = true;
-        const message = `name: ${this.form.name}, \n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
-        axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
-            .then((response) => {
-                this.message = 'Сообщение отправленно'
-                this.isloading = false;
-                this.setRandomNumber()
-                this.amountNumber = null;
-            }).catch((er) => {
-                this.setRandomNumber()
-                this.amountNumber = null;
-                this.error = er
-                this.isloading = false;
+            Object.keys(this.form).forEach(f => {
+                this.$refs[f].validate(true)  // проверка на валидность полей
+                if(!this.$refs[f].valid) allValid = false
             })
+            if(!allValid) return;
+            this.isloading = true;
+            const message = `name: ${this.form.name}, \n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
+            axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
+                .then((response) => {
+                    this.message = 'Сообщение отправленно'
+                    this.isloading = false;
+                    this.setRandomNumber()
+                    this.amountNumber = null;
+                }).catch((er) => {
+                    this.setRandomNumber()
+                    this.amountNumber = null;
+                    this.error = er
+                    this.isloading = false;
+                })
+        },
+        setRandomNumber(){
+            this.firstRandomNumber = Math.floor(Math.random() * 11);
+            this.secondRandomNumber = Math.floor(Math.random() * 11);
+            this.masterAmountNumber = this.firstRandomNumber + this.secondRandomNumber;
+        }
     },
-    setRandomNumber(){
-        this.firstRandomNumber = Math.floor(Math.random() * 11);
-        this.secondRandomNumber = Math.floor(Math.random() * 11);
-        this.masterAmountNumber = this.firstRandomNumber + this.secondRandomNumber;
-    }
-  },
-  created(){
+    created(){
         this.setRandomNumber()
-  },
-  computed: {
+    },
+    computed: {
         isDisabledBtnSubmit(){
             return !(this.amountNumber === this.masterAmountNumber && this.name && this.email && this.message)
         }
-  }
+    }
 }
 </script>
 
@@ -157,9 +157,15 @@ export default {
     width 100%
     margin-top -70px
     text-align center
+
+    &__bg-image
+        padding-top 88px
+
     &__title 
-        font-size 55px
         color white
+        margin-bottom 30px
+
     &__wrap
        width 50px
+
 </style>

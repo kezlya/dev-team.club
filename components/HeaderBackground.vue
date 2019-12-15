@@ -25,9 +25,12 @@ export default {
     width 100%
     margin-top -70px
     text-align center
+    position relative
 
     &__title 
-        margin-top 150px
-        margin-bottom 50px
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position absolute
 
 </style>

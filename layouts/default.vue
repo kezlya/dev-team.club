@@ -75,7 +75,7 @@
       <span>&copy; {{ new Date().getFullYear() }} ООО Дев-тим
       </span>
       <v-spacer></v-spacer>
-      <v-btn  href="mailto:devteamclub.info@gmail.com" id="about" icon small>
+      <v-btn  href="mailto:devteamclub.info@gmail.com" icon small>
         <v-icon size="20px">mdi-gmail</v-icon>
       </v-btn>
       <v-btn  target="_blank" href="https://www.facebook.com/dewteam.club.7" class="" icon small>

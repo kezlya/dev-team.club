@@ -1,8 +1,8 @@
 <template>
     <section class="contact" id="contact">
-        <v-img height="690" src="/contactBG2.jpeg" class="pt-6">
+        <v-img height="690" src="/contactBG2.jpeg" class="contact__bg-image">
             <v-container>
-                <h1 class="contact__title display-2 font-weight-bold">Связаться с нами</h1>
+                <h2 class="contact__title">Связаться с нами</h2>
                 <form-feedback labelMessage="contactus"></form-feedback>
             </v-container>
         </v-img>
@@ -16,6 +16,49 @@ export default {
         return {
         }
     },
+    methods: {
+        sendMessageSlack () {
+            this.error = this.message = null;
+            if(this.amountNumber !== this.masterAmountNumber) {
+                this.error = 'не верно решена задача';
+                return;
+            }
+            let allValid = true;
+
+            Object.keys(this.form).forEach(f => {
+                this.$refs[f].validate(true)  // проверка на валидность полей
+                if(!this.$refs[f].valid) allValid = false
+            })
+            if(!allValid) return;
+            this.isloading = true;
+            const message = `name: ${this.form.name}, \n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
+            axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
+                .then((response) => {
+                    this.message = 'Сообщение отправленно'
+                    this.isloading = false;
+                    this.setRandomNumber()
+                    this.amountNumber = null;
+                }).catch((er) => {
+                    this.setRandomNumber()
+                    this.amountNumber = null;
+                    this.error = er
+                    this.isloading = false;
+                })
+        },
+        setRandomNumber(){
+            this.firstRandomNumber = Math.floor(Math.random() * 11);
+            this.secondRandomNumber = Math.floor(Math.random() * 11);
+            this.masterAmountNumber = this.firstRandomNumber + this.secondRandomNumber;
+        }
+    },
+    created(){
+        this.setRandomNumber()
+    },
+    computed: {
+        isDisabledBtnSubmit(){
+            return !(this.amountNumber === this.masterAmountNumber && this.name && this.email && this.message)
+        }
+    },
     components: {
         FormFeedback
     }
@@ -27,7 +70,15 @@ export default {
     width 100%
     margin-top -70px
     text-align center
+
+    &__bg-image
+        padding-top 88px
+
     &__title 
-        font-size 55px
         color white
+        margin-bottom 30px
+
+    &__wrap
+       width 50px
+       
 </style>

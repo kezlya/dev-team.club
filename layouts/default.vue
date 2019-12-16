@@ -66,7 +66,7 @@
     </v-app-bar>
     <v-content>
       <header-background></header-background>
-      <nuxt />
+      <nuxt></nuxt>
     </v-content>
     <v-footer
       class="white"

@@ -6,13 +6,14 @@
        
     </section>
 </template>
+
 <script>
 import { TxtType } from"../plugins/txt_type.js"
 
 export default {
     data() {
         return {
-            titleForAnimation: ['Dev Team Club', 'Code', 'Learn', 'Enjoy'],
+            titleForAnimation: ['Команда разработчиков', 'Кодируй', 'Учись', 'Наслаждайся'],
         }
   },
     mounted() {
@@ -20,6 +21,7 @@ export default {
     }
 }
 </script>
+
 <style lang="stylus" scoped>
 .img-bg
     width 100%

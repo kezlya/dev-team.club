@@ -7,7 +7,7 @@
       {{ otherError }}
     </h1>
     <NuxtLink to="/">
-      Home page
+      Главная
     </NuxtLink>
   </v-app>
 </template>
@@ -30,8 +30,8 @@ export default {
   },
   data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFound: '404 Страница не найдена',
+      otherError: 'Произошла ошибка'
     }
   }
 }

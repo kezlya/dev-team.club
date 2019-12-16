@@ -1,5 +1,5 @@
 <template>
-    <section class="team">
+    <section class="team" id="team">
         <h2 class="team__title">Наша команда</h2>
         <v-container>
             <v-row>

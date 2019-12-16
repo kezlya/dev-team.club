@@ -1,5 +1,5 @@
 <template>
-    <section class="projects">
+    <section class="projects" id="projects">
         <h2 class="projects__title">Наши последние работы</h2>
         <v-container>
             <v-row>

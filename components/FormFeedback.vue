@@ -1,6 +1,6 @@
 <template>
     <v-row justify="center">
-        <v-col cols="11" >
+        <v-col cols="12" >
             <v-row >
                 <v-col sm="6" cols="12">
                     <v-text-field
@@ -28,7 +28,7 @@
                 </v-col>
             </v-row>
         </v-col>
-        <v-col cols="11">
+        <v-col cols="12">
             <v-textarea
                 v-model="form.message"
                 ref="message"
@@ -43,7 +43,7 @@
             <span class="red--text title" v-show="error">{{error}}</span>
             <span class="warning--text title" v-show="message">{{message}}</span>
         </v-col>
-        <v-col cols="11">
+        <v-col cols="12">
             <v-row justify="end">
                 <v-col class="d-flex justify-end align-center white--text" cols="12" sm="8" >
                     <div class="mt-n1">

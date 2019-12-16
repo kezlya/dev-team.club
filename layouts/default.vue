@@ -78,13 +78,13 @@
       <v-btn  href="mailto:devteamclub.info@gmail.com" icon small>
         <v-icon size="20px">mdi-gmail</v-icon>
       </v-btn>
-      <v-btn  target="_blank" href="https://www.facebook.com/dewteam.club.7" class="" icon small>
+      <v-btn  target="_blank" href="https://www.facebook.com/devteamclub" icon small>
         <v-icon size="20px">mdi-facebook</v-icon>
       </v-btn>
-      <v-btn  target="_blank" href="https://www.instagram.com/devteamclub/" class="" icon small>
+      <v-btn  target="_blank" href="https://www.instagram.com/devteamclub" icon small>
         <v-icon size="20px">mdi-instagram</v-icon>
       </v-btn>
-      <v-btn  target="_blank" href="https://twitter.com/devteamclub" class="" icon small>
+      <v-btn  target="_blank" href="https://twitter.com/devteamclub" icon small>
         <v-icon size="20px">mdi-twitter</v-icon>
       </v-btn>
     </v-footer>

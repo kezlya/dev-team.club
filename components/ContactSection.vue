@@ -1,5 +1,5 @@
 <template>
-    <section class="contact">
+    <section class="contact" id="contact">
         <v-img height="690" src="/contactBG2.jpeg" class="pt-6">
             <v-container>
                 <h1 class="contact__title display-2 font-weight-bold">Связаться с нами</h1>

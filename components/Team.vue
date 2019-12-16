@@ -1,5 +1,5 @@
 <template>
-    <section class="team">
+    <section class="team" id="team">
         <h2 class="team__title">Meet the team</h2>
         <p class="team__subtitle">Showcase the great people behind your company.</p>
         <v-container>

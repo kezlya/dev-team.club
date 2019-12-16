@@ -57,7 +57,8 @@ export default {
     computed: {
         isDisabledBtnSubmit(){
             return !(this.amountNumber === this.masterAmountNumber && this.name && this.email && this.message)
-        },
+        }
+    },
     components: {
         FormFeedback
     }

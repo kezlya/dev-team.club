@@ -1,13 +1,12 @@
 <template>
     <section class="hiring">
-        <h2 class="hiring__title">Вакансии</h2>
-        <p class="hiring__subtitle">В данный момент к нам в коианду требуются следущие специалисты:</p>
+        
         <v-dialog v-model="dialog" scrollable  max-width="1000px">
-            <v-card color="blue-grey lighten-3" height="100%">
-                <v-card-title class="display-1 font-weight-bold">
+            <v-card color="grey darken-4 pa-3" height="100%">
+                <v-card-title class="display-1 font-weight-bold white--text">
                     {{viewVacancyInDialog.title}}
                 </v-card-title>
-                <v-card-subtitle class="headline mt-2">
+                <v-card-subtitle class="headline mt-2  white--text">
                     {{viewVacancyInDialog.discription}}
                 </v-card-subtitle>
                 <v-container>
@@ -18,16 +17,25 @@
         </v-dialog>
         <v-container>
             <v-row>
-                <v-col
-                cols="12"
-                v-for="(vacancy, index) in vacancys"
-                :key="index + 5">
-                    <v-hover v-slot:default="{ hover }">
-                        <v-card @click="handlerClickVacancy(vacancy)" :elevation="hover ? 12 : 2"  class="hiring__card">
-                            <v-card-title class="headline">{{vacancy.title}}</v-card-title>
-                        </v-card>
-                    </v-hover>
+                <v-col cols="6">
+                    <h2 class="hiring__title">Вакансии</h2>
+                    <p class="hiring__subtitle">В данный момент к нам в коианду требуются следущие специалисты:</p>
                 </v-col>
+                <v-col cols="6">
+                    <v-row>
+                         <v-col
+                            cols="12"
+                            v-for="(vacancy, index) in vacancys"
+                            :key="index + 5">
+                            <v-hover v-slot:default="{ hover }">
+                                <v-card @click="handlerClickVacancy(vacancy)" :color="`grey darken-${hover ? 1 : 3}`" class="hiring__card">
+                                    <v-card-title class="headline pa-2 pl-3">{{vacancy.title}}</v-card-title>
+                                </v-card>
+                            </v-hover>
+                        </v-col>
+                    </v-row>
+                </v-col>
+               
             </v-row>
         </v-container>
     </section>
@@ -77,8 +85,19 @@ export default {
 .hiring
     width 100%
     padding 100px 0
+    background-color #000000
+    &__title
+        font-weight: bold;
+        font-size: 70px;
+        line-height: 101px;
+        color white
+        margin-bottom 30px
+        word-wrap break-word
     &__subtitle 
-        font-size 18px
+        font-weight normal
+        font-size 20px
+        line-height 28px
+        color #CCCCCC
         margin-top 10px
         margin-bottom 50px
     &__card

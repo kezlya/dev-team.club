@@ -71,6 +71,8 @@ export default {
     width 100%
     text-align center
     background-color #000000
+    padding-top 60px
+    border-top 1px solid rgba(255, 255, 255, 0.3);
 
     &__title 
         font-weight: bold;

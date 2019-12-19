@@ -1,23 +1,26 @@
 <template>
     <section class="img-bg">
-        <v-img height="600" src="/background2.JPG">
-            <h2 ref="headerTitle" class="img-bg__title white--text"></h2>
+        <v-img height="650" src="/header-bg.jpg">
+            <div class="img-bg__slogan slogan white--text">
+                <h1 class="slogan__big">Coding for<br>the stars</h1>
+                <h4 class="slogan__small">* everybody is a star</h4>
+
+            </div>
+            
+
+
         </v-img>
-       
     </section>
 </template>
 
 <script>
-import { TxtType } from"../plugins/txt_type.js"
 
 export default {
     data() {
         return {
-            titleForAnimation: ['Команда разработчиков', 'Кодируй', 'Учись', 'Наслаждайся'],
         }
   },
     mounted() {
-       console.log(new TxtType(this.$refs.headerTitle, this.titleForAnimation));
     }
 }
 </script>
@@ -25,14 +28,28 @@ export default {
 <style lang="stylus" scoped>
 .img-bg
     width 100%
-    margin-top -70px
-    text-align center
+    margin-top -80px
     position relative
 
-    &__title 
+    .slogan
         top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        left 0;
+        margin 0 40px;
+        transform: translate(0, -50%);
         position absolute
+        font-weight 700
+        text-transform uppercase
+
+        &__big
+            font-size 86px
+            line-height 100px
+            @media screen and (max-width: 600px)
+                font-size 54px
+                line-height 60px
+
+        &__small
+            font-size 36px
+            @media screen and (max-width: 600px)
+                font-size 33px
 
 </style>

@@ -54,13 +54,13 @@
 			<a href="/" class="d-flex justify-center align-end logo">dev / team</a>
 			<v-spacer/>
 			<div class="justify-end align-end d-none d-sm-flex">
-				<v-btn class="social-btn" @click="$vuetify.goTo('#team')" :class="classHeader" text small>
+				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#team')" :class="classHeader" text x-large>
 					Team
 				</v-btn>
-				<v-btn class="social-btn" @click="$vuetify.goTo('#projects')" :class="classHeader" text small>
+				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#projects')" :class="classHeader" text x-large>
 					Work
 				</v-btn>
-				<v-btn class="social-btn" @click="$vuetify.goTo('#contact')" :class="classHeader" text small>
+				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#contact')" :class="classHeader" text x-large>
 					Contact
 				</v-btn>
 			</div>

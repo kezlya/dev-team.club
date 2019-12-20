@@ -10,23 +10,23 @@ export default {
   },
   head: {
     //titleTemplate: '%s - ' + process.env.npm_package_name,
-    titleTemplate: 'Dev-team - команда разработчиков',
+    titleTemplate: 'Dev-team',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'description', content: 'Dev-team создает завтра вместе с тобой.' },
+      { name: 'description', content: 'Dev-team creates tomorrow with you.' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Dev Team' },
-      { name: 'twitter:description', content: 'Dev-team создает завтра вместе с тобой.' },
+      { name: 'twitter:description', content: 'Dev-team creates tomorrow with you.' },
       { name: 'twitter:image', content: '/devteammeta.jpg' },
       { itemprop: 'name', content: 'Сайт команды разработчиков' },
-      { itemprop: 'description', content: 'Dev-team создает завтра вместе с тобой.' },
+      { itemprop: 'description', content: 'Dev-team creates tomorrow with you.' },
       { itemprop: 'image', content: '/devteammeta.jpg' },
       { property: 'og:url', content: 'https://dev-team.club' },
       { property: 'og:type', content: 'Сайт команды разработчиков' },
       { property: 'og:title', content: 'Dev Team' },
-      { property: 'og:description', content: 'Dev-team создает завтра вместе с тобой.' },
+      { property: 'og:description', content: 'Dev-team creates tomorrow with you.' },
       { property: 'og:image', content: '/devteammeta.jpg' }
     ],
     link: [

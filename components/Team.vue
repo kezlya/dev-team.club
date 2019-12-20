@@ -9,7 +9,7 @@
                 md="3"
                 v-for="(member, index) in members"
                 v-bind:key="index">
-                    <v-avatar size="178" class="team__avatar"><img :src="member.avatarUrl" :alt="member.name"></v-avatar>
+                    <v-avatar size="178" class="team__avatar"><v-img :src="member.avatarUrl" :alt="member.name"></v-img></v-avatar>
                     <p class="team__member-name">{{ member.name }}</p>
                     <p class="team__member-position">{{ member.position }}</p>
                     <div class="team__member-socials" v-if="member.socials">
@@ -47,9 +47,19 @@ export default {
             ]
         },
         {
-            name: 'Стас',
+            name: 'Станислав',
             position: 'Веб-разработчик',
             avatarUrl: '/team/stas.jpg',
+             socials: [
+                {
+                    link: 'https://vk.com/id381660547/',
+                    icon: 'mdi-vk'
+                },
+                 {
+                    link: 'https://github.com/staszigzag/',
+                    icon: 'mdi-github-circle'
+                },
+            ]
         },
         {
             name: 'Кирилл',
@@ -67,6 +77,21 @@ export default {
                 {
                     link: 'https://vk.com/22pov22',
                     icon: 'mdi-vk'
+                },
+            ]
+        },
+        {
+            name: 'Александр',
+            position: 'Веб-разработчик',
+            avatarUrl: '/team/alex.jpeg',
+            socials: [
+                {
+                    link: 'https://github.com/Alex-D-Green/',
+                    icon: 'mdi-github-circle'
+                },
+                {
+                    link: 'https://twitter.com/DAS_26/',
+                    icon: 'mdi-twitter'
                 },
             ]
         },

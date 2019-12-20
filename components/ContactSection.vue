@@ -2,7 +2,7 @@
     <section class="contact" id="contact">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="8">
+                    <v-col cols="12" sm="8">
                         <h2 class="contact__title">Связаться с нами</h2>
                         <form-feedback labelMessage="contactus"></form-feedback>
                     </v-col>
@@ -72,15 +72,20 @@ export default {
     text-align center
     background-color #000000
     padding-top 60px
+    padding-bottom 200px
     border-top 1px solid rgba(255, 255, 255, 0.3);
 
     &__title 
         font-weight: bold;
-        font-size: 70px;
-        line-height: 101px;
+        font-size 70px
+        line-height 101px
         color white
         margin-bottom 30px
         word-wrap break-word
+        @media screen and (max-width: 790px)
+            font-size 50px
+            line-height: 60px;
+
 
     label 
         color red

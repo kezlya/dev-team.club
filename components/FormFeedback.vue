@@ -8,19 +8,25 @@
                         dark
                         ref="name"
                         :rules="[rules.required]"
-                        label="Ваше имя"
                         autocomplete="off"
-                    ></v-text-field>
+                    >
+                        <template v-slot:label>
+                            <span class="label">Ваше имя</span>
+                        </template>
+                    </v-text-field>
                 </v-col>
                 <v-col cols="12">
                     <v-text-field
                         v-model="form.email"
                         ref="email"
                         :rules="[rules.required, rules.email]"
-                        label="Ваш email"
                         dark
                         autocomplete="off"
-                    ></v-text-field>
+                    >
+                        <template v-slot:label>
+                            <span class="label">Ваш email</span>
+                        </template>
+                    </v-text-field>
                 </v-col>
             </v-row>
         </v-col>
@@ -31,10 +37,13 @@
                 dense
                 dark
                 :rules="[rules.required]"
-                label="Ваше сообщение"
                 no-resize
-                rows="3"
-            ></v-textarea>
+                rows="2"
+            >
+                <template v-slot:label>
+                    <span class="label">Ваше сообщение</span>
+                </template>
+            </v-textarea>
             <span class="red--text title" v-show="error">{{error}}</span>
             <span class="warning--text title" v-show="message">{{message}}</span>
         </v-col>
@@ -137,8 +146,22 @@ export default {
     }
 }
 </script>
-
+<style lang="stylus">
+    .v-label
+        overflow visible !important
+</style>
 <style lang="stylus" scoped>
+    .label
+        display block
+        margin-top -10px
+        font-style normal
+        font-weight 600
+        font-size 32px
+        color #FFFFFF
+        opacity 0.4
+        @media screen and (max-width: 790px)
+            font-size 25px
+    
     .wrap
        width 40px
 </style>

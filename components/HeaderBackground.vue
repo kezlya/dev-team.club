@@ -2,8 +2,8 @@
     <section class="img-bg">
         <v-img height="650" src="/header-bg.jpg">
             <div class="img-bg__slogan slogan white--text">
-                <h1 class="slogan__big">Coding for<br>the stars</h1>
-                <h4 class="slogan__small">* everybody is a star</h4>
+                <h1 class="slogan__big">{{ $t('slogan') }}</h1>
+                <h4 class="slogan__small">{{ $t('subSlogan') }}</h4>
 
             </div>
             
@@ -43,6 +43,7 @@ export default {
         &__big
             font-size 86px
             line-height 100px
+            white-space pre-line
             @media screen and (max-width: 600px)
                 font-size 54px
                 line-height 60px

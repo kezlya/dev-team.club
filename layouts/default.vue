@@ -53,18 +53,20 @@
 			<a href="/" class="d-flex justify-center align-end logo">dev / team</a>
 			<v-spacer/>
 			<div class="justify-end align-end d-none d-sm-flex">
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#team')" :class="classHeader" text x-large>
-					Team
+				<v-btn class="text-none" @click="$vuetify.goTo('#team')" :class="classHeader" text x-large>
+					{{ $t('team') }}
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#work')" :class="classHeader" text x-large>
-					Work
+				<v-btn class="text-none" @click="$vuetify.goTo('#work')" :class="classHeader" text x-large>
+					{{ $t('work') }}
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#job')" :class="classHeader" text x-large>
-					Job
+				<v-btn class="text-none" @click="$vuetify.goTo('#job')" :class="classHeader" text x-large>
+					{{ $t('job') }}
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#contact')" :class="classHeader" text x-large>
-					Contact
+				<v-btn class="text-none" @click="$vuetify.goTo('#contact')" :class="classHeader" text x-large>
+					{{ $t('contact') }}
 				</v-btn>
+				<v-btn class="text-none" :to="switchLocalePath('en')" :class="classHeader" text x-large>EN</v-btn>
+				<v-btn class="text-none" :to="switchLocalePath('ru')" :class="classHeader" text x-large>RU</v-btn>
 			</div>
 		</v-app-bar>
 		<v-content>

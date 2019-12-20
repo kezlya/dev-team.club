@@ -1,27 +1,51 @@
 <template>
     <section class="team" id="team">
-        <h2 class="team__title">Наша команда</h2>
         <v-container>
             <v-row>
                 <v-col
                 cols="12"
-                sm="12"
-                md="3"
-                v-for="(member, index) in members"
-                v-bind:key="index">
-                    <v-avatar size="178" class="team__avatar"><v-img :src="member.avatarUrl" :alt="member.name"></v-img></v-avatar>
-                    <p class="team__member-name">{{ member.name }}</p>
-                    <p class="team__member-position">{{ member.position }}</p>
-                    <div class="team__member-socials" v-if="member.socials">
-                        <v-btn
-                        v-for="(social, index) in member.socials"
-                        v-bind:key="index"
-                        :href="social.link" target="_blank" class="team__social-btn" outlined icon fab x-small>
-                            <v-icon class="social-icon">{{ social.icon }}</v-icon>
-                        </v-btn>
-                    </div>
+                sm="4"
+                md="4">
+                    <h2 class="team__title">The / team</h2>
                 </v-col>
-                
+                <v-col
+                cols="12"
+                sm="8"
+                md="8">
+                    <v-row>
+                        <v-col
+                        cols="12"
+                        sm="6"
+                        md="4"
+                        v-for="(member, index) in members"
+                        v-bind:key="index">
+                            <v-avatar size="178" class="team__avatar"><v-img :src="member.avatarUrl" :alt="member.name"></v-img></v-avatar>
+                            <p class="team__member-name">{{ member.name }}</p>
+                            <p class="team__member-position">{{ member.position }}</p>
+                            <div class="team__member-socials" v-if="member.socials">
+                                <v-btn
+                                v-for="(social, index) in member.socials"
+                                v-bind:key="index"
+                                :href="social.link" target="_blank" class="team__social-btn" color="#878B8F" icon>
+                                    <v-icon class="social-icon">{{ social.icon }}</v-icon>
+                                </v-btn>
+                            </div>
+                        </v-col>
+                        <v-col
+                        cols="12"
+                        sm="6"
+                        md="4">
+                            <v-avatar size="178" class="team__avatar"><v-img src="/team/blank.jpg" alt="hiring"></v-img></v-avatar>
+                            <p class="team__member-name">Future employee</p>
+                            <p class="team__member-position">Engineer</p>
+                            <div class="team__member-socials">
+                                <v-btn target="_blank" class="team__social-btn text-none mt-2"  @click="$vuetify.goTo('#job')" color="#CB2A76" outlined rounded>
+                                    We`re Hiring
+                                </v-btn>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-col>
             </v-row>
         </v-container>
     </section>
@@ -32,8 +56,8 @@ export default {
     data: () => ({
     members: [
         {
-            name: 'Виталий',
-            position: 'Лидер команды',
+            name: 'Vitaly',
+            position: 'Team leader',
             avatarUrl: '/team/vitaly.jpg',
             socials: [
                 {
@@ -47,8 +71,8 @@ export default {
             ]
         },
         {
-            name: 'Станислав',
-            position: 'Веб-разработчик',
+            name: 'Stanislav',
+            position: 'Web developer',
             avatarUrl: '/team/stas.jpg',
              socials: [
                 {
@@ -62,8 +86,8 @@ export default {
             ]
         },
         {
-            name: 'Кирилл',
-            position: 'Веб-разработчик',
+            name: 'Kirill',
+            position: 'Web developer',
             avatarUrl: '/team/kirill.jpg',
             socials: [
                 {
@@ -74,15 +98,11 @@ export default {
                     link: 'https://www.instagram.com/kklimonov/',
                     icon: 'mdi-instagram'
                 },
-                {
-                    link: 'https://vk.com/22pov22',
-                    icon: 'mdi-vk'
-                },
             ]
         },
         {
-            name: 'Александр',
-            position: 'Веб-разработчик',
+            name: 'Alexander',
+            position: 'Web developer',
             avatarUrl: '/team/alex.jpeg',
             socials: [
                 {
@@ -96,8 +116,8 @@ export default {
             ]
         },
         {
-            name: 'Ирина',
-            position: 'Менеджер проектов',
+            name: 'Irina',
+            position: 'Project manager',
             avatarUrl: '/team/irina.jpg',
             socials: [
                 {
@@ -118,7 +138,8 @@ export default {
 <style lang="stylus" scoped>
 .team
     width 100%
-    padding 100px 0
+    padding 70px 0
+    background-color #FAF1E7
 
     &__members
         display flex
@@ -128,27 +149,29 @@ export default {
         margin-top 20px
     
     &__avatar 
-        margin-bottom 20px
+        margin-bottom 10px
 
     &__title
-        margin-bottom 30px
+        font-size 86px
+        font-weight 700
+        margin-top 123px
+        @media screen and (max-width: 790px)
+            font-size 54px
+        @media screen and (max-width: 600px)
+             margin-top 0
 
     &__member-name 
-        font-size 18px
-        margin-top 10px
+        font-size 20px
         margin-bottom 0
+        font-weight 600
 
     &__member-position 
-        font-size 14px
-        margin-bottom 10px
+        font-size 16px
+        margin-bottom 0
+        color #666666
+        font-weight 500
 
     &__social-btn
         margin 0 3px
-        color #4C5152!important
-        &:hover
-            background-color #00aeef
-            color #00aeef!important
-            .social-icon
-                color white!important
         
 </style>

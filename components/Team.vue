@@ -39,7 +39,7 @@
                             <p class="team__member-name">Future employee</p>
                             <p class="team__member-position">Engineer</p>
                             <div class="team__member-socials">
-                                <v-btn target="_blank" class="team__social-btn text-none mt-2"  @click="$vuetify.goTo('#job')" color="#CB2A76" outlined rounded>
+                                <v-btn target="_blank" class="team__hiring-btn text-none mt-2"  @click="$vuetify.goTo('#job')" outlined rounded>
                                     We`re Hiring
                                 </v-btn>
                             </div>
@@ -174,4 +174,10 @@ export default {
     &__social-btn
         margin 0 3px
         
+    &__hiring-btn
+        font-size 16px
+        letter-spacing 0px
+        font-weight 600
+        color #CB2A76
+
 </style>

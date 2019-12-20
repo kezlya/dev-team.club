@@ -40,7 +40,6 @@
 			:class="classHeader"
 			class="px-6"
 			height="80"
-			
 		>
 			<v-btn
 				icon
@@ -123,25 +122,26 @@ export default {
 	},
 }
 </script>
-<style lang="stylus" scoped>
-	.color-white
-		color white!important
-		.logo
-			color white
-			border-color white
-	.up-page 
-		background transparent !important
-  
-	.logo
-		border 2px solid black
-		padding 10px 18px
-		font-weight 600
-		font-size 16px
-		color black
-		text-decoration none
 
-	.mobile-menu
-		&__title
-			font-size 25px!important
+<style lang="stylus" scoped>
+.color-white
+	color white!important
+	.logo
+		color white
+		border-color white
+.up-page 
+	background transparent !important
+
+.logo
+	border 2px solid black
+	padding 10px 18px
+	font-weight 600
+	font-size 16px
+	color black
+	text-decoration none
+
+.mobile-menu
+	&__title
+		font-size 25px!important
 
 </style>

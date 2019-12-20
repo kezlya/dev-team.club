@@ -40,7 +40,6 @@
 			:class="classHeader"
 			class="menu"
 			height="80"
-			
 		>
 			<v-btn
 				icon
@@ -125,22 +124,23 @@ export default {
 	},
 }
 </script>
+
 <style lang="stylus" scoped>
-	.color-white
-		color white!important
-		.logo
-			color white
-			border-color white
-	.up-page 
-		background transparent !important
-  
+.color-white
+	color white!important
 	.logo
-		border 2px solid black
-		padding 10px 18px
-		font-weight 600
-		font-size 16px
-		color black
-		text-decoration none
+		color white
+		border-color white
+.up-page 
+	background transparent !important
+
+.logo
+	border 2px solid black
+	padding 10px 18px
+	font-weight 600
+	font-size 16px
+	color black
+	text-decoration none
 
 	.local-switcher, .nav-link
 		margin 10px 5px
@@ -154,5 +154,4 @@ export default {
 	.mobile-menu
 		&__title
 			font-size 25px!important
-
 </style>

@@ -174,4 +174,10 @@ export default {
     &__social-btn
         margin 0 3px
         
+    &__hiring-btn
+        font-size 16px
+        letter-spacing 0px
+        font-weight 600
+        color #CB2A76
+
 </style>

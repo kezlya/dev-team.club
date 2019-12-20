@@ -1,6 +1,6 @@
 <template>
-    <section class="projects" id="projects">
-        <h2 class="projects__title">Наши последние работы</h2>
+    <section class="projects" id="work">
+        <h2 class="projects__title">Our Latest / Work</h2>
         <v-container>
             <v-row>
                 <v-col
@@ -8,15 +8,18 @@
                 sm="12"
                 md="6"
                 v-for="(project, index) in projects"
-                v-bind:key="index">
-                    <v-card 
-                    tile
-                    outlined
-                    class="projects__card">
-                        <v-img width="100%" :src="project.previewUrl" :alt="project.name"></v-img>
-                        <a :href="project.link" target="_blank" class="projects__name">{{ project.name }}</a>
-                        <p class="projects__description">{{ project.description }}</p>
-                    </v-card>
+                v-bind:key="index"
+				class="project">
+					<a :href="project.link" target="_blank" class="project__link-row">
+						<img width="100%" :src="project.previewUrl" :alt="project.name" class="project__photo">
+						<div class="project__meta">
+							<p class="project__name">{{ project.name }}</p>
+							<div class="project__action">
+								<p class="project__description">{{ project.description }}</p>
+								<p class="project__view-link text-none">View site<v-icon class="project__link-icon">mdi-arrow-right</v-icon></p>
+							</div>
+						</div>
+					</a>
                 </v-col>
                 
             </v-row>
@@ -29,28 +32,32 @@ export default {
     data: () => ({
     projects: [
         {
-            name: 'AntHive.IO',
+            name: 'AntHive',
             link: 'https://anthive.io/',
-            previewUrl: '/projects/anthive.jpg',
-            description: 'Kодирование для начинающих и опытных разработчиков. Проверьте свои навыки в различных языках программирования, бросьте вызов разработчикам по всему миру. Рейтинг в реальном времени и таблица лидеров.',
+			previewUrl: '/projects/anthive.jpg',
+			description: 'Coding for beginners and experienced developers. Test your skills in various programming languages, challenge developers around the world. Real-time rating and leaderboard.',
+            descriptionRu: 'Kодирование для начинающих и опытных разработчиков. Проверьте свои навыки в различных языках программирования, бросьте вызов разработчикам по всему миру. Рейтинг в реальном времени и таблица лидеров.',
         },
         {
-            name: 'BreakKonnect.com',
+            name: 'BreakKonnect',
             link: 'https://breakkonnect.com/',
-            previewUrl: '/projects/breakkonnect.jpg',
-            description: 'Всемирное сообщество танцоров с уникальными возможностями для организации брейкданс-битв. Возможности авансовых платежей и видео трансляций.',
+			previewUrl: '/projects/breakkonnect.jpg',
+			description: 'A worldwide community of dancers with unique opportunities for organizing breakdance battles. Advance payment and video streaming features.',
+            descriptionRu: 'Всемирное сообщество танцоров с уникальными возможностями для организации брейкданс-битв. Возможности авансовых платежей и видео трансляций.',
         },
         {
             name: 'Chrome.com',
             link: 'https://chrome.com/',
-            previewUrl: '/projects/chrome.png',
-            description: 'Принимали участие в разработке официального веб-сайта для браузера Chrome',
+            previewUrl: '/projects/chrome.jpg',
+			description: 'Participated in the development of the official website for Android OS',
+			descriptionRu: 'Принимали участие в разработке официального веб-сайта для браузера Chrome',
         },
         {
             name: 'Android.com',
             link: 'https://android.com/',
-            previewUrl: '/projects/android.png',
-            description: 'Принимали участие в разработке официального веб-сайта для Android OS',
+            previewUrl: '/projects/android.jpg',
+			description: 'Participated in the development of the official website for Android OS',
+			descriptionRu: 'Принимали участие в разработке официального веб-сайта для Android OS',
         },
     ]
   }),
@@ -59,28 +66,75 @@ export default {
 
 <style lang="stylus" scoped>
 .projects
-    width 100%
-    padding 100px 0
-    background-color #e8eaea
+	padding 70px 0
 
-    &__title
-        margin-bottom 30px
+	&__title
+		margin-bottom 30px
 
-    &__card
-        padding 25px
-        text-align left
+	.project
+		position: relative;
+		&:hover .project__photo
+			transform scale(1.1)
+			opacity 0.3
+		&:hover .project__action
+			opacity 1
+		&:hover .project__meta
+			top 20px
+			@media (max-width: 480px)
+				top 0
 
-    &__description
-        font-family "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+		&__link-row
+			color white
+			text-decoration none
+			background-color black
+			display block
+			overflow hidden
+			position relative
+		
+		&__photo
+			transition: all ease .5s
+			margin-bottom: -8px;
 
-    &__name
-        margin-top 20px
-        margin-bottom 10px
-        font-size 24px
-        display inline-block
-        color black
-        text-decoration none
-        &:hover
-            text-decoration underline
-            
+		&__meta
+			position absolute
+			top 80%
+			left 0
+			text-align left
+			padding 0 40px
+			transition: all ease .5s
+			max-width 65%
+			min-height 203px
+			@media (max-width: 480px)
+				max-width 100%
+				padding 0 20px
+				top 70%
+
+		&__name
+			margin-top 20px
+			margin-bottom 10px
+			font-size 40px
+			font-weight 700
+			line-height 40px
+
+		&__action
+			opacity 0
+			transition: all ease .5s
+
+		&__view-link
+			font-size 16px
+			letter-spacing 0px
+			font-weight 600
+			color #CB2A76
+			display inline
+			&:hover .project__link-icon
+				margin-left 12px
+
+		&__description
+			@media (max-width: 480px)
+				font-size 15px
+
+		&__link-icon
+			color #CB2A76
+			margin-left 5px
+
 </style>

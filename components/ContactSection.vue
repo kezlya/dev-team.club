@@ -77,13 +77,15 @@ export default {
 
     &__title 
         font-weight: bold;
-        font-size: 70px;
-        line-height: 101px;
+        font-size 70px
+        line-height 101px
         color white
         margin-bottom 30px
         word-wrap break-word
         @media screen and (max-width: 790px)
             font-size 50px
+            line-height: 60px;
+
 
     label 
         color red

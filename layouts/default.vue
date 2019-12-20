@@ -38,7 +38,7 @@
 			app
 			hide-on-scroll
 			:class="classHeader"
-			class="px-6"
+			class="menu"
 			height="80"
 			
 		>
@@ -65,9 +65,9 @@
 				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#contact')" :class="classHeader" text tile>
 					{{ $t('contact') }}
 				</v-btn>
-				<v-btn class="text-none local-switcher" :to="switchLocalePath('en')" :class="classHeader" tile outlined>{{ $t('en') }}</v-btn>
-				<v-btn class="text-none local-switcher" :to="switchLocalePath('ru')" :class="classHeader" tile outlined>{{ $t('ru') }}</v-btn>
 			</div>
+			<v-btn class="text-none local-switcher" :to="switchLocalePath('en')" :class="classHeader" tile outlined>{{ $t('en') }}</v-btn>
+			<v-btn class="text-none local-switcher" :to="switchLocalePath('ru')" :class="classHeader" tile outlined>{{ $t('ru') }}</v-btn>
 		</v-app-bar>
 		<v-content>
 			<header-background></header-background>
@@ -145,6 +145,11 @@ export default {
 	.local-switcher, .nav-link
 		margin 10px 5px
 		font-size 16px
+
+	.menu
+		padding 0 24px
+		@media (max-width: 400px)
+			padding 0
 
 	.mobile-menu
 		&__title

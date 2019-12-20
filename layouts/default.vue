@@ -38,7 +38,7 @@
 			app
 			hide-on-scroll
 			:class="classHeader"
-			class="px-6"
+			class="menu"
 			height="80"
 		>
 			<v-btn
@@ -52,19 +52,21 @@
 			<a href="/" class="d-flex justify-center align-end logo">dev / team</a>
 			<v-spacer/>
 			<div class="justify-end align-end d-none d-sm-flex">
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#team')" :class="classHeader" text x-large>
-					Team
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#team')" :class="classHeader" text tile>
+					{{ $t('team') }}
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#work')" :class="classHeader" text x-large>
-					Work
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#work')" :class="classHeader" text tile>
+					{{ $t('work') }}
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#job')" :class="classHeader" text x-large>
-					Job
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#job')" :class="classHeader" text tile>
+					{{ $t('job') }}
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#contact')" :class="classHeader" text x-large>
-					Contact
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#contact')" :class="classHeader" text tile>
+					{{ $t('contact') }}
 				</v-btn>
 			</div>
+			<v-btn class="text-none local-switcher" :to="switchLocalePath('en')" :class="classHeader" tile outlined>{{ $t('en') }}</v-btn>
+			<v-btn class="text-none local-switcher" :to="switchLocalePath('ru')" :class="classHeader" tile outlined>{{ $t('ru') }}</v-btn>
 		</v-app-bar>
 		<v-content>
 			<header-background></header-background>
@@ -140,8 +142,16 @@ export default {
 	color black
 	text-decoration none
 
-.mobile-menu
-	&__title
-		font-size 25px!important
+	.local-switcher, .nav-link
+		margin 10px 5px
+		font-size 16px
 
+	.menu
+		padding 0 24px
+		@media (max-width: 400px)
+			padding 0
+
+	.mobile-menu
+		&__title
+			font-size 25px!important
 </style>

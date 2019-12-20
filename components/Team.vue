@@ -6,7 +6,7 @@
                 cols="12"
                 sm="4"
                 md="4">
-                    <h2 class="team__title">The / team</h2>
+                    <h2 class="team__title">{{ $t('teamTitle') }}</h2>
                 </v-col>
                 <v-col
                 cols="12"
@@ -19,9 +19,9 @@
                         md="4"
                         v-for="(member, index) in members"
                         v-bind:key="index">
-                            <v-avatar size="178" class="team__avatar"><v-img :src="member.avatarUrl" :alt="member.name"></v-img></v-avatar>
-                            <p class="team__member-name">{{ member.name }}</p>
-                            <p class="team__member-position">{{ member.position }}</p>
+                            <v-avatar size="178" class="team__avatar"><v-img :src="member.avatarUrl" :alt="$t(member.name)"></v-img></v-avatar>
+                            <p class="team__member-name">{{ $t(member.name) }}</p>
+                            <p class="team__member-position">{{ $t(member.position) }}</p>
                             <div class="team__member-socials" v-if="member.socials">
                                 <v-btn
                                 v-for="(social, index) in member.socials"
@@ -36,11 +36,11 @@
                         sm="6"
                         md="4">
                             <v-avatar size="178" class="team__avatar"><v-img src="/team/blank.jpg" alt="hiring"></v-img></v-avatar>
-                            <p class="team__member-name">Future employee</p>
-                            <p class="team__member-position">Engineer</p>
+                            <p class="team__member-name">{{ $t('futureEmployee') }}</p>
+                            <p class="team__member-position">{{ $t('engineer') }}</p>
                             <div class="team__member-socials">
-                                <v-btn target="_blank" class="team__hiring-btn text-none mt-2"  @click="$vuetify.goTo('#job')" outlined rounded>
-                                    We`re Hiring
+                                <v-btn target="_blank" class="team__social-btn text-none mt-2"  @click="$vuetify.goTo('#job')" color="#CB2A76" outlined rounded>
+                                    {{ $t('weAreHiring') }}
                                 </v-btn>
                             </div>
                         </v-col>
@@ -56,8 +56,8 @@ export default {
     data: () => ({
     members: [
         {
-            name: 'Vitaly',
-            position: 'Team leader',
+            name: 'vitaly',
+            position: 'teamLeader',
             avatarUrl: '/team/vitaly.jpg',
             socials: [
                 {
@@ -71,8 +71,8 @@ export default {
             ]
         },
         {
-            name: 'Stanislav',
-            position: 'Web developer',
+            name: 'stanislav',
+            position: 'webDeveloper',
             avatarUrl: '/team/stas.jpg',
              socials: [
                 {
@@ -86,8 +86,8 @@ export default {
             ]
         },
         {
-            name: 'Kirill',
-            position: 'Web developer',
+            name: 'kirill',
+            position: 'webDeveloper',
             avatarUrl: '/team/kirill.jpg',
             socials: [
                 {
@@ -101,8 +101,8 @@ export default {
             ]
         },
         {
-            name: 'Alexander',
-            position: 'Web developer',
+            name: 'alexander',
+            position: 'webDeveloper',
             avatarUrl: '/team/alex.jpeg',
             socials: [
                 {
@@ -116,8 +116,8 @@ export default {
             ]
         },
         {
-            name: 'Irina',
-            position: 'Project manager',
+            name: 'irina',
+            position: 'projectManager',
             avatarUrl: '/team/irina.jpg',
             socials: [
                 {

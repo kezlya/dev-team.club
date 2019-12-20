@@ -34,7 +34,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Oswald&display=swap'
+          'https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap'
       },
     ]
   },

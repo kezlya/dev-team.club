@@ -5,30 +5,29 @@
 			fixed
 			temporary
 			app
+			dark
+			color="black"
+			class="mobile-menu"
 		>
 			<v-list dense>
-				<v-list-item  @click="$vuetify.goTo('#team')" >
-					<v-list-item-action>
-						<v-icon>mdi-account-group</v-icon>
-					</v-list-item-action>
+				<v-list-item @click="$vuetify.goTo('#team')" >
 					<v-list-item-content>
-						<v-list-item-title>Team</v-list-item-title>
+						<v-list-item-title class="mobile-menu__title">Team</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item  @click="$vuetify.goTo('#projects')" >
-					<v-list-item-action>
-						<v-icon>mdi-iframe-outline</v-icon>
-					</v-list-item-action>
+				<v-list-item  @click="$vuetify.goTo('#work')" >
 					<v-list-item-content>
-						<v-list-item-title >Work</v-list-item-title>
+						<v-list-item-title class="mobile-menu__title">Work</v-list-item-title>
+					</v-list-item-content>
+				</v-list-item>
+				<v-list-item  @click="$vuetify.goTo('#job')" >
+					<v-list-item-content>
+						<v-list-item-title class="mobile-menu__title">Job</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item  @click="$vuetify.goTo('#contact')" >
-					<v-list-item-action>
-						<v-icon>mdi-contact-mail-outline</v-icon>
-					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title >Contact</v-list-item-title>
+						<v-list-item-content>
+						<v-list-item-title class="mobile-menu__title">Contact</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 		</v-list>
@@ -57,8 +56,11 @@
 				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#team')" :class="classHeader" text x-large>
 					Team
 				</v-btn>
-				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#projects')" :class="classHeader" text x-large>
+				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#work')" :class="classHeader" text x-large>
 					Work
+				</v-btn>
+				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#job')" :class="classHeader" text x-large>
+					Job
 				</v-btn>
 				<v-btn class="social-btn text-none" @click="$vuetify.goTo('#contact')" :class="classHeader" text x-large>
 					Contact
@@ -137,5 +139,9 @@ export default {
 		font-size 16px
 		color black
 		text-decoration none
+
+	.mobile-menu
+		&__title
+			font-size 25px!important
 
 </style>

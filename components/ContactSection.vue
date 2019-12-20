@@ -1,11 +1,13 @@
 <template>
     <section class="contact" id="contact">
-        <v-img height="690" src="/contactBG2.jpeg" class="contact__bg-image">
             <v-container>
-                <h2 class="contact__title">Связаться с нами</h2>
-                <form-feedback labelMessage="contactus"></form-feedback>
+                <v-row justify="center">
+                    <v-col cols="8">
+                        <h2 class="contact__title">Связаться с нами</h2>
+                        <form-feedback labelMessage="contactus"></form-feedback>
+                    </v-col>
+                </v-row>
             </v-container>
-        </v-img>
     </section>
 </template>
 <script>
@@ -64,21 +66,23 @@ export default {
     }
 }
 </script>
-
 <style lang="stylus" scoped>
 .contact
     width 100%
-    margin-top -70px
     text-align center
-
-    &__bg-image
-        padding-top 88px
+    background-color #000000
+    padding-top 60px
+    border-top 1px solid rgba(255, 255, 255, 0.3);
 
     &__title 
+        font-weight: bold;
+        font-size: 70px;
+        line-height: 101px;
         color white
         margin-bottom 30px
+        word-wrap break-word
 
-    &__wrap
-       width 50px
-       
+    label 
+        color red
+
 </style>

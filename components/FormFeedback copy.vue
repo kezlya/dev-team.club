@@ -2,23 +2,27 @@
     <v-row justify="center">
         <v-col cols="12" >
             <v-row >
-                <v-col cols="12">
+                <v-col sm="6" cols="12">
                     <v-text-field
                         v-model="form.name"
-                        dark
                         ref="name"
                         :rules="[rules.required]"
                         label="Ваше имя"
+                        prepend-inner-icon="mdi-account"
+                        solo
+                        background-color="#fff"
                         autocomplete="off"
                     ></v-text-field>
                 </v-col>
-                <v-col cols="12">
+                <v-col sm="6" cols="12">
                     <v-text-field
                         v-model="form.email"
                         ref="email"
                         :rules="[rules.required, rules.email]"
                         label="Ваш email"
-                        dark
+                        prepend-inner-icon="mdi-email"
+                        solo
+                        background-color="#fff"
                         autocomplete="off"
                     ></v-text-field>
                 </v-col>
@@ -28,12 +32,13 @@
             <v-textarea
                 v-model="form.message"
                 ref="message"
+                solo
                 dense
-                dark
                 :rules="[rules.required]"
+                prepend-inner-icon="mdi-comment"
                 label="Ваше сообщение"
                 no-resize
-                rows="3"
+                rows="4"
             ></v-textarea>
             <span class="red--text title" v-show="error">{{error}}</span>
             <span class="warning--text title" v-show="message">{{message}}</span>
@@ -49,16 +54,18 @@
                     <div class="wrap">
                         <v-text-field
                             v-model.number="amountNumber"
-                            dark
+                            solo
                             dense
                             class="mb-n6"
+                            background-color="#fff"
                             autocomplete="off"
                         ></v-text-field>
                     </div>
                 </v-col>
                  <v-col cols="7" sm="4" >
-                    <v-btn  class="font-weight-bold text-none" @click="sendMessageSlack" outlined rounded :loading="isloading"  x-large color="#CB2A76" width="190">
-                        Oтправить
+                    <v-btn @click="sendMessageSlack" :loading="isloading" dark x-large color="warning" width="190">
+                        отправить
+                        <v-icon class="ml-auto">mdi-send</v-icon>
                     </v-btn>
                  </v-col>
             </v-row>
@@ -140,5 +147,5 @@ export default {
 
 <style lang="stylus" scoped>
     .wrap
-       width 40px
+       width 50px
 </style>

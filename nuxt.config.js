@@ -36,11 +36,6 @@ export default {
         href:
           'https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap'
       },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap'
-      },
     ]
   },
   /*

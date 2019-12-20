@@ -1,5 +1,5 @@
 <template>
-    <section class="hiring">
+    <section class="hiring" id="job">
         
         <v-dialog v-model="dialog" scrollable  max-width="1000px">
             <v-card color="grey darken-4 pa-3" height="100%">

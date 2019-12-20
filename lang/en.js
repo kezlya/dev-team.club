@@ -1,5 +1,7 @@
 export default {
 	// header
+	ru: 'RU',
+	en: 'EN',
 	team: 'Team',
 	work: 'Work',
 	job: 'Job',

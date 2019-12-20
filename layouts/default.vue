@@ -53,20 +53,20 @@
 			<a href="/" class="d-flex justify-center align-end logo">dev / team</a>
 			<v-spacer/>
 			<div class="justify-end align-end d-none d-sm-flex">
-				<v-btn class="text-none" @click="$vuetify.goTo('#team')" :class="classHeader" text x-large>
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#team')" :class="classHeader" text tile>
 					{{ $t('team') }}
 				</v-btn>
-				<v-btn class="text-none" @click="$vuetify.goTo('#work')" :class="classHeader" text x-large>
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#work')" :class="classHeader" text tile>
 					{{ $t('work') }}
 				</v-btn>
-				<v-btn class="text-none" @click="$vuetify.goTo('#job')" :class="classHeader" text x-large>
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#job')" :class="classHeader" text tile>
 					{{ $t('job') }}
 				</v-btn>
-				<v-btn class="text-none" @click="$vuetify.goTo('#contact')" :class="classHeader" text x-large>
+				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#contact')" :class="classHeader" text tile>
 					{{ $t('contact') }}
 				</v-btn>
-				<v-btn class="text-none" :to="switchLocalePath('en')" :class="classHeader" text x-large>EN</v-btn>
-				<v-btn class="text-none" :to="switchLocalePath('ru')" :class="classHeader" text x-large>RU</v-btn>
+				<v-btn class="text-none local-switcher" :to="switchLocalePath('en')" :class="classHeader" tile outlined>{{ $t('en') }}</v-btn>
+				<v-btn class="text-none local-switcher" :to="switchLocalePath('ru')" :class="classHeader" tile outlined>{{ $t('ru') }}</v-btn>
 			</div>
 		</v-app-bar>
 		<v-content>
@@ -141,6 +141,10 @@ export default {
 		font-size 16px
 		color black
 		text-decoration none
+
+	.local-switcher, .nav-link
+		margin 10px 5px
+		font-size 16px
 
 	.mobile-menu
 		&__title

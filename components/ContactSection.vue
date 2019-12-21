@@ -3,7 +3,7 @@
             <v-container>
                 <v-row justify="center">
                     <v-col cols="12" sm="8">
-                        <h2 class="contact__title">Contact us</h2>
+                        <h2 class="contact__title">{{ $t('workTitle') }}</h2>
                         <form-feedback labelMessage="contactus"></form-feedback>
                     </v-col>
                 </v-row>

@@ -62,7 +62,7 @@ export default {
             socials: [
                 {
                     link: 'https://www.linkedin.com/in/vitaly-kezlya-450192b/',
-                    icon: 'mdi-linkedin'
+                    icon: 'mdi-linkedin-box'
                 },
                 {
                     link: 'https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw',

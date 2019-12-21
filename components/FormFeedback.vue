@@ -45,7 +45,7 @@
                 </template>
             </v-textarea>
             <span class="red--text title" v-show="error">{{ $t(error) }}</span>
-            <span class="warning--text title" v-show="message">{{ message }}</span>
+            <span class="warning--text title" v-show="message">{{ $t(message) }}</span>
         </v-col>
         <v-col cols="12">
             <v-row justify="end">

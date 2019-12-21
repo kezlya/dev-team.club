@@ -73,10 +73,11 @@
 			<nuxt></nuxt>
 		</v-content>
 		<v-footer
-			class="white"
-			app
+			dark
+			class="black"
+			
 		>
-			<span>&copy; {{ new Date().getFullYear() }} ООО Дев-тим</span>
+			<span>&copy; {{ new Date().getFullYear() }} Dev-team</span>
 			<v-spacer></v-spacer>
 			<v-btn  href="mailto:devteamclub.info@gmail.com" icon small>
 				<v-icon size="20px">mdi-gmail</v-icon>

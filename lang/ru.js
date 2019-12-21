@@ -6,7 +6,7 @@ export default {
 	work: 'Работы',
 	job: 'Вакансии',
 	contact: 'Контакты',
-	slogan: 'Кодинг для\nзвёзд',
+	slogan: 'Кодинг для \n звёзд',
 	subSlogan: '* каждый является звездой',
 
 	//team

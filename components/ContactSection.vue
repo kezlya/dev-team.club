@@ -3,7 +3,7 @@
             <v-container>
                 <v-row justify="center">
                     <v-col cols="12" sm="8">
-                        <h2 class="contact__title">Связаться с нами</h2>
+                        <h2 class="contact__title">Contact us</h2>
                         <form-feedback labelMessage="contactus"></form-feedback>
                     </v-col>
                 </v-row>
@@ -22,7 +22,7 @@ export default {
         sendMessageSlack () {
             this.error = this.message = null;
             if(this.amountNumber !== this.masterAmountNumber) {
-                this.error = 'не верно решена задача';
+                this.error = 'wrong answer';
                 return;
             }
             let allValid = true;
@@ -36,7 +36,7 @@ export default {
             const message = `name: ${this.form.name}, \n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
             axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
                 .then((response) => {
-                    this.message = 'Сообщение отправленно'
+                    this.message = 'Message sent'
                     this.isloading = false;
                     this.setRandomNumber()
                     this.amountNumber = null;
@@ -76,9 +76,6 @@ export default {
     border-top 1px solid rgba(255, 255, 255, 0.3);
 
     &__title 
-        font-weight: bold;
-        font-size 70px
-        line-height 101px
         color white
         margin-bottom 30px
         word-wrap break-word

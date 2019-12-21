@@ -11,7 +11,7 @@
                         autocomplete="off"
                     >
                         <template v-slot:label>
-                            <span class="label">Ваше имя</span>
+                            <span class="label">Your name</span>
                         </template>
                     </v-text-field>
                 </v-col>
@@ -24,7 +24,7 @@
                         autocomplete="off"
                     >
                         <template v-slot:label>
-                            <span class="label">Ваш email</span>
+                            <span class="label">Email</span>
                         </template>
                     </v-text-field>
                 </v-col>
@@ -41,7 +41,7 @@
                 rows="2"
             >
                 <template v-slot:label>
-                    <span class="label">Ваше сообщение</span>
+                    <span class="label">Subject</span>
                 </template>
             </v-textarea>
             <span class="red--text title" v-show="error">{{error}}</span>
@@ -52,7 +52,7 @@
                 <v-col class="d-flex justify-end align-center white--text" cols="12" sm="8" >
                     <div class="mt-n1">
                         <p class="mr-2 my-0">
-                            Как ваша математика? {{firstRandomNumber}} + {{secondRandomNumber}} = ?
+                            How are you with math? {{firstRandomNumber}} + {{secondRandomNumber}} = ?
                         </p>
                     </div>
                     <div class="wrap">
@@ -67,7 +67,7 @@
                 </v-col>
                  <v-col cols="7" sm="4" >
                     <v-btn  class="font-weight-bold text-none" @click="sendMessageSlack" outlined rounded :loading="isloading"  x-large color="#CB2A76" width="190">
-                        Oтправить
+                        Contact
                     </v-btn>
                  </v-col>
             </v-row>
@@ -93,10 +93,10 @@ export default {
             error: null,
             message: null,
             rules: {
-                required: value => !!value || 'Поле обязательно для заполнения',
+                required: value => !!value || 'Required field',
                 email: value => {
                     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                    return pattern.test(value) || 'Недействителен e-mail.'
+                    return pattern.test(value) || 'Wrong e-mail.'
                 }
             }    
         }
@@ -106,7 +106,7 @@ export default {
         sendMessageSlack () {
             this.error = this.message = null;
             if(this.amountNumber !== this.masterAmountNumber) {
-                this.error = 'не верно решена задача';
+                this.error = 'wrong answer';
                 return;
             }
             let allValid = true;
@@ -120,7 +120,7 @@ export default {
             const message = `label: ${this.labelMessage}, \n name: ${this.form.name},\n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
             axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
                 .then((response) => {
-                    this.message = 'Сообщение отправленно'
+                    this.message = 'Message sent'
                     setTimeout(() => {
                         this.message = null;
                     }, 3000);

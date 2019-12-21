@@ -86,6 +86,20 @@ export default {
             ]
         },
         {
+            name: 'fff',
+            avatarUrl: '/team/stas.jpg',
+             socials: [
+                {
+                    link: 'https://vk.com/id381660547/',
+                    icon: 'mdi-vk'
+                },
+                 {
+                    link: 'https://github.com/staszigzag/',
+                    icon: 'mdi-github-circle'
+                },
+            
+        },
+        {
             name: 'kirill',
             position: 'webDeveloper',
             avatarUrl: '/team/kirill.jpg',

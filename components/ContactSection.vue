@@ -73,7 +73,8 @@ export default {
     background-color #000000
     padding-top 60px
     padding-bottom 200px
-    border-top 1px solid rgba(255, 255, 255, 0.3);
+    border-top 1px solid #333333
+    border-bottom 1px solid #333333
 
     &__title 
         color white

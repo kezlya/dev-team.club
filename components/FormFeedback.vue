@@ -44,8 +44,8 @@
                     <span class="label">{{ $t('subject') }}</span>
                 </template>
             </v-textarea>
-            <span class="red--text title" v-show="error">{{ $t(error) }}</span>
-            <span class="warning--text title" v-show="message">{{ $t(message) }}</span>
+            <span class="red--text title" v-show="error">{{ error }}</span>
+            <span class="warning--text title" v-show="message">{{ message }}</span>
         </v-col>
         <v-col cols="12">
             <v-row justify="end">
@@ -106,7 +106,7 @@ export default {
         sendMessageSlack () {
             this.error = this.message = null;
             if(this.amountNumber !== this.masterAmountNumber) {
-                this.error = 'wrongAnswer';
+                this.error = this.$t('wrongAnswer');
                 return;
             }
             let allValid = true;
@@ -120,7 +120,7 @@ export default {
             const message = `label: ${this.labelMessage}, \n name: ${this.form.name},\n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
             axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)
                 .then((response) => {
-                    this.message = 'messageSent'
+                    this.message = this.$t('messageSent')
                     setTimeout(() => {
                         this.message = null;
                     }, 3000);

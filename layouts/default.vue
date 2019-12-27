@@ -125,7 +125,17 @@ export default {
 	},
 }
 </script>
+<style lang="stylus">
+::-webkit-scrollbar
+	width 10px
 
+::-webkit-scrollbar-track
+	background-color #424242
+
+::-webkit-scrollbar-thumb
+	background-color #949494
+	border-radius 8px
+</style>
 <style lang="stylus" scoped>
 .color-white
 	color white!important
@@ -155,4 +165,5 @@ export default {
 	.mobile-menu
 		&__title
 			font-size 25px!important
+
 </style>

@@ -1,12 +1,12 @@
 <template>
     <section class="hiring" id="job">
         
-        <v-dialog v-model="dialog" scrollable  max-width="1000px">
+        <v-dialog v-model="dialog" scrollable class="diall" max-width="800px">
             <v-card color="grey darken-4 pa-3" height="100%">
                 <v-card-title class="display-1 font-weight-bold white--text">
                     {{viewVacancyInDialog.title}}
                 </v-card-title>
-                <v-card-subtitle class="headline mt-2  white--text">
+                <v-card-subtitle class="subtitle-1 mt-2 white--text">
                     {{viewVacancyInDialog.discription}}
                 </v-card-subtitle>
                 <v-container>
@@ -29,7 +29,7 @@
                             :key="index + 5">
                             <v-hover v-slot:default="{ hover }">
                                 <v-card @click="handlerClickVacancy(vacancy)" :color="`grey darken-${hover ? 1 : 3}`" class="hiring__card">
-                                    <v-card-title class="headline pa-2 pl-3 my-2">{{vacancy.title}}</v-card-title>
+                                    <v-card-title class="hiring__vacancy-btn headline pa-2 pl-3 my-2">{{vacancy.title}}</v-card-title>
                                 </v-card>
                             </v-hover>
                         </v-col>
@@ -102,4 +102,7 @@ export default {
         margin-bottom 50px
     &__card
         cursor pointer
+
+    &__vacancy-btn
+        color rgba(255, 255, 255, 0.43)
 </style>

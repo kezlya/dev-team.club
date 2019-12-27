@@ -1,6 +1,5 @@
 <template>
     <section class="hiring" id="job">
-        
         <v-dialog v-model="dialog" scrollable max-width="800px">
             <v-card color="grey darken-4 pa-3" height="100%">
                 <v-card-title class="display-1 font-weight-bold white--text">
@@ -84,7 +83,7 @@ export default {
 <style lang="stylus" scoped>
 .hiring
     width 100%
-    padding 100px 0
+    padding 70px 0
     background-color #000000
     &__title
   

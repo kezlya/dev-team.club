@@ -111,7 +111,29 @@ export default {
   buildModules: [
     '@nuxtjs/dotenv',
     ['@nuxtjs/google-analytics', {
-      id: 'UA-153553466-1'
+      id: 'UA-153553466-1',
+      commands: {
+        navigation(label) {
+          console.log(`Analytic sent: Navigation - ${label}`);
+          this.$ga.event('Navigation', 'click', label);
+        },
+        footerLinks(label) {
+          console.log(`Analytic sent: Footer link - ${label}`);
+          this.$ga.event('Footer link', 'click', label);
+        },
+        switchLang(label) {
+          console.log(`Analytic sent: Switch Language to ${label}`);
+          this.$ga.event('Switch Language', 'click', label);
+        },
+        hiring(label) {
+          console.log(`Analytic sent: Hiring, click to ${label} profession`);
+          this.$ga.event('Click to profession', 'click', label);
+        },
+        projects(label) {
+          console.log(`Analytic sent: Latest work, click to ${label}`);
+          this.$ga.event('Click to our work', 'click', label);
+        },
+     }
     }]
 ]
 

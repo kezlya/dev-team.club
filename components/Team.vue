@@ -39,7 +39,15 @@
                             <p class="team__member-name">{{ $t('futureEmployee') }}</p>
                             <p class="team__member-position">{{ $t('engineer') }}</p>
                             <div class="team__member-socials">
-                                <v-btn target="_blank" class="team__social-btn text-none mt-2"  @click="$vuetify.goTo('#job')" color="#CB2A76" outlined rounded>
+                                <v-btn
+                                    target="_blank"
+                                    class="team__social-btn text-none mt-2"
+                                    @click="$vuetify.goTo('#job')"
+                                    v-ga="$ga.commands.navigation.bind(this, 'Job from Team section')"
+                                    color="#CB2A76"
+                                    outlined
+                                    rounded
+                                >
                                     {{ $t('weAreHiring') }}
                                 </v-btn>
                             </div>

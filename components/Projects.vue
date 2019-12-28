@@ -10,7 +10,12 @@
                 v-for="(project, index) in projects"
                 v-bind:key="index"
 				class="project">
-					<a :href="project.link" target="_blank" class="project__link-row">
+					<a 
+						:href="project.link"
+						v-ga="$ga.commands.projects.bind($parent, project.name)"
+						target="_blank" 
+						class="project__link-row"
+					>
 						<img width="100%" :src="project.previewUrl" :alt="project.name" class="project__photo">
 						<div class="project__meta">
 							<p class="project__name">{{ project.name }}</p>

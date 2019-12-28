@@ -28,7 +28,12 @@
                             v-for="(vacancy, index) in vacancys"
                             :key="index + 5">
                             <v-hover v-slot:default="{ hover }">
-                                <v-card @click="handlerClickVacancy(vacancy)" :color="`grey darken-${hover ? 1 : 3}`" class="hiring__card">
+                                <v-card
+                                    @click="handlerClickVacancy(vacancy)"
+                                    v-ga="$ga.commands.hiring.bind($parent, vacancy.title)"
+                                    :color="`grey darken-${hover ? 1 : 3}`"
+                                    class="hiring__card"
+                                >
                                     <v-card-title class="headline pa-2 pl-3 my-2">{{ $t(vacancy.title) }}</v-card-title>
                                 </v-card>
                             </v-hover>

@@ -12,6 +12,7 @@
 			<v-list dense>
 				<v-list-item 
 					@click="$vuetify.goTo('#team')" 
+					v-ga="$ga.commands.navigation.bind(this, 'Team')" 
 				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('team') }}</v-list-item-title>
@@ -19,20 +20,23 @@
 				</v-list-item>
 				<v-list-item  
 					@click="$vuetify.goTo('#work')" 
+					v-ga="$ga.commands.navigation.bind(this, 'Work')" 
 				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('work') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item  
-					@click="$vuetify.goTo('#job')" 
+					@click="$vuetify.goTo('#job')"
+					v-ga="$ga.commands.navigation.bind(this, 'Job')" 
 				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('job') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item  
-					@click="$vuetify.goTo('#contact')" 
+					@click="$vuetify.goTo('#contact')"
+					v-ga="$ga.commands.navigation.bind(this, 'Contact')" 
 				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('contact') }}</v-list-item-title>
@@ -57,12 +61,18 @@
 			>
 				<v-icon>mdi-menu</v-icon>
 			</v-btn>
-			<a href="/" class="d-flex justify-center align-end logo">dev / team</a>
+			<a 
+				href="/"
+				v-ga="$ga.commands.navigation.bind(this, 'Logo')"
+				class="d-flex justify-center align-end logo"
+			>
+			dev / team</a>
 			<v-spacer/>
 			<div class="justify-end align-end d-none d-sm-flex">
 				<v-btn 
 					class="text-none nav-link" 
-					@click="$vuetify.goTo('#team'); analytic('navigation', 'team')" 
+					@click="$vuetify.goTo('#team')"
+					v-ga="$ga.commands.navigation.bind(this, 'Team')"  
 					:class="classHeader" 
 					text 
 					tile
@@ -72,6 +82,7 @@
 				<v-btn 
 					class="text-none nav-link" 
 					@click="$vuetify.goTo('#work')" 
+					v-ga="$ga.commands.navigation.bind(this, 'Work')" 
 					:class="classHeader" 
 					text 
 					tile
@@ -81,6 +92,7 @@
 				<v-btn 
 					class="text-none nav-link" 
 					@click="$vuetify.goTo('#job')" 
+					v-ga="$ga.commands.navigation.bind(this, 'Job')" 
 					:class="classHeader" 
 					text 
 					tile
@@ -90,6 +102,7 @@
 				<v-btn 
 					class="text-none nav-link" 
 					@click="$vuetify.goTo('#contact')" 
+					v-ga="$ga.commands.navigation.bind(this, 'Contact')" 
 					:class="classHeader" 
 					text 
 					tile
@@ -99,6 +112,7 @@
 			</div>
 			<v-btn 
 				class="text-none local-switcher" 
+				v-ga="$ga.commands.switchLang.bind(this, 'En')"
 				:to="switchLocalePath('en')" 
 				:class="classHeader" 
 				tile 
@@ -107,7 +121,8 @@
 				{{ $t('en') }}
 			</v-btn>
 			<v-btn 
-				class="text-none local-switcher" 
+				class="text-none local-switcher"
+				v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
 				:to="switchLocalePath('ru')" 
 				:class="classHeader" 
 				tile 
@@ -127,16 +142,39 @@
 		>
 			<span>&copy; {{ new Date().getFullYear() }} {{ $t('devTeam') }}</span>
 			<v-spacer></v-spacer>
-			<v-btn  href="mailto:devteamclub.info@gmail.com" icon small>
+			<v-btn
+				href="mailto:devteamclub.info@gmail.com"
+				v-ga="$ga.commands.footerLinks.bind(this, 'Mail')" 
+				icon
+				small
+			>
 				<v-icon size="20px">mdi-gmail</v-icon>
 			</v-btn>
-			<v-btn  target="_blank" href="https://www.facebook.com/devteamclub" icon small>
+			<v-btn
+				target="_blank"
+				href="https://www.facebook.com/devteamclub"
+				v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
+				icon
+				small
+			>
 				<v-icon size="20px">mdi-facebook</v-icon>
 			</v-btn>
-			<v-btn  target="_blank" href="https://www.instagram.com/devteamclub" icon small>
+			<v-btn
+				target="_blank"
+				href="https://www.instagram.com/devteamclub"
+				v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
+				icon
+				small
+			>
 				<v-icon size="20px">mdi-instagram</v-icon>
 			</v-btn>
-			<v-btn  target="_blank" href="https://twitter.com/devteamclub" icon small>
+			<v-btn
+				target="_blank"
+				href="https://twitter.com/devteamclub"
+				v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
+				icon
+				small
+			>
 				<v-icon size="20px">mdi-twitter</v-icon>
 			</v-btn>
 		</v-footer>
@@ -169,13 +207,6 @@ export default {
 			} else {
 				this.classHeader = '';
 			}
-		},
-		analytic(category, action) {
-			console.log('analytic send')
-			this.$ga.event({
-				eventCategory: category,
-				eventAction: action
-			})
 		},
 	},
 }

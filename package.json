@@ -13,8 +13,9 @@
   "dependencies": {
     "@nuxtjs/vuetify": "1.9.0",
     "axios": "^0.19.0",
-    "nuxt": "^2.10.0",
-    "nuxt-i18n": "^6.4.1"
+    "nuxt": "^2.11.0",
+    "nuxt-i18n": "^6.4.1",
+    "serialize-javascript": "^2.1.2"
   },
   "devDependencies": {
     "@mdi/font": "^4.6.95",

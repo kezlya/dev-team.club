@@ -14,24 +14,23 @@
 
 <script>
 export default {
-  layout: 'empty',
+  layout: "empty",
   props: {
     error: {
       type: Object,
       default: null
     }
   },
-  head() {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
-  },
   data() {
     return {
-      pageNotFound: '404 Страница не найдена',
-      otherError: 'Произошла ошибка'
+      pageNotFound: "404 Страница не найдена",
+      otherError: "Произошла ошибка"
+    }
+  },
+  head() {
+    const title = this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+    return {
+      title
     }
   }
 }

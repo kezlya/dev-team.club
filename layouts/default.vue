@@ -12,22 +12,22 @@
 			<v-list dense>
 				<v-list-item @click="$vuetify.goTo('#team')" >
 					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">Team</v-list-item-title>
+						<v-list-item-title class="mobile-menu__title">{{ $t('team') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item  @click="$vuetify.goTo('#work')" >
 					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">Work</v-list-item-title>
+						<v-list-item-title class="mobile-menu__title">{{ $t('work') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item  @click="$vuetify.goTo('#job')" >
 					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">Job</v-list-item-title>
+						<v-list-item-title class="mobile-menu__title">{{ $t('job') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 				<v-list-item  @click="$vuetify.goTo('#contact')" >
 						<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">Contact</v-list-item-title>
+						<v-list-item-title class="mobile-menu__title">{{ $t('contact') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
 		</v-list>
@@ -77,7 +77,7 @@
 			class="black"
 			
 		>
-			<span>&copy; {{ new Date().getFullYear() }} Dev-team</span>
+			<span>&copy; {{ new Date().getFullYear() }} {{ $t('devTeam') }}</span>
 			<v-spacer></v-spacer>
 			<v-btn  href="mailto:devteamclub.info@gmail.com" icon small>
 				<v-icon size="20px">mdi-gmail</v-icon>

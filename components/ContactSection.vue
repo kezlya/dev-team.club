@@ -3,7 +3,7 @@
             <v-container>
                 <v-row justify="center">
                     <v-col cols="12" sm="8">
-                        <h2 class="contact__title">Contact us</h2>
+                        <h2 class="contact__title">{{ $t('workTitle') }}</h2>
                         <form-feedback labelMessage="contactus"></form-feedback>
                     </v-col>
                 </v-row>
@@ -73,7 +73,8 @@ export default {
     background-color #000000
     padding-top 60px
     padding-bottom 200px
-    border-top 1px solid rgba(255, 255, 255, 0.3);
+    border-top 1px solid #333333
+    border-bottom 1px solid #333333
 
     &__title 
         color white

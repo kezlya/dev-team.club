@@ -20,11 +20,11 @@ export default {
       { name: 'twitter:title', content: 'Dev Team' },
       { name: 'twitter:description', content: 'Dev-team creates tomorrow with you.' },
       { name: 'twitter:image', content: '/devteammeta.jpg' },
-      { itemprop: 'name', content: 'Сайт команды разработчиков' },
+      { itemprop: 'name', content: 'Dev team site' },
       { itemprop: 'description', content: 'Dev-team creates tomorrow with you.' },
       { itemprop: 'image', content: '/devteammeta.jpg' },
       { property: 'og:url', content: 'https://dev-team.club' },
-      { property: 'og:type', content: 'Сайт команды разработчиков' },
+      { property: 'og:type', content: 'Dev team site' },
       { property: 'og:title', content: 'Dev Team' },
       { property: 'og:description', content: 'Dev-team creates tomorrow with you.' },
       { property: 'og:image', content: '/devteammeta.jpg' }

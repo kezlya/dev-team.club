@@ -108,6 +108,11 @@ export default {
     extend(config, ctx) {
     }
   },
-  buildModules: ['@nuxtjs/dotenv']
+  buildModules: [
+    '@nuxtjs/dotenv',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-153553466-1'
+    }]
+]
 
 }

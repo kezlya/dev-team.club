@@ -116,6 +116,10 @@ export default {
               if(!this.$refs[f].valid) allValid = false
             })
             if(!allValid) return;
+            this.$ga.event({
+				eventCategory: 'Feedback form',
+				eventAction: 'Successful sending'
+			})
             this.isloading = true;
             const message = `label: ${this.labelMessage}, \n name: ${this.form.name},\n email: ${this.form.email}, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`;
             axios.post(`https://hooks.slack.com/services/${process.env.NUXT_ENV_SLACK_WEBHOOK}`,`{"text":"${message}"}`)

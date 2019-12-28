@@ -10,23 +10,31 @@
 			class="mobile-menu"
 		>
 			<v-list dense>
-				<v-list-item @click="$vuetify.goTo('#team')" >
+				<v-list-item 
+					@click="$vuetify.goTo('#team')" 
+				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('team') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item  @click="$vuetify.goTo('#work')" >
+				<v-list-item  
+					@click="$vuetify.goTo('#work')" 
+				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('work') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item  @click="$vuetify.goTo('#job')" >
+				<v-list-item  
+					@click="$vuetify.goTo('#job')" 
+				>
 					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('job') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item  @click="$vuetify.goTo('#contact')" >
-						<v-list-item-content>
+				<v-list-item  
+					@click="$vuetify.goTo('#contact')" 
+				>
+					<v-list-item-content>
 						<v-list-item-title class="mobile-menu__title">{{ $t('contact') }}</v-list-item-title>
 					</v-list-item-content>
 				</v-list-item>
@@ -52,21 +60,61 @@
 			<a href="/" class="d-flex justify-center align-end logo">dev / team</a>
 			<v-spacer/>
 			<div class="justify-end align-end d-none d-sm-flex">
-				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#team')" :class="classHeader" text tile>
+				<v-btn 
+					class="text-none nav-link" 
+					@click="$vuetify.goTo('#team'); analytic('navigation', 'team')" 
+					:class="classHeader" 
+					text 
+					tile
+				>
 					{{ $t('team') }}
 				</v-btn>
-				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#work')" :class="classHeader" text tile>
+				<v-btn 
+					class="text-none nav-link" 
+					@click="$vuetify.goTo('#work')" 
+					:class="classHeader" 
+					text 
+					tile
+				>
 					{{ $t('work') }}
 				</v-btn>
-				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#job')" :class="classHeader" text tile>
+				<v-btn 
+					class="text-none nav-link" 
+					@click="$vuetify.goTo('#job')" 
+					:class="classHeader" 
+					text 
+					tile
+				>
 					{{ $t('job') }}
 				</v-btn>
-				<v-btn class="text-none nav-link" @click="$vuetify.goTo('#contact')" :class="classHeader" text tile>
+				<v-btn 
+					class="text-none nav-link" 
+					@click="$vuetify.goTo('#contact')" 
+					:class="classHeader" 
+					text 
+					tile
+				>
 					{{ $t('contact') }}
 				</v-btn>
 			</div>
-			<v-btn class="text-none local-switcher" :to="switchLocalePath('en')" :class="classHeader" tile outlined>{{ $t('en') }}</v-btn>
-			<v-btn class="text-none local-switcher" :to="switchLocalePath('ru')" :class="classHeader" tile outlined>{{ $t('ru') }}</v-btn>
+			<v-btn 
+				class="text-none local-switcher" 
+				:to="switchLocalePath('en')" 
+				:class="classHeader" 
+				tile 
+				outlined
+			>
+				{{ $t('en') }}
+			</v-btn>
+			<v-btn 
+				class="text-none local-switcher" 
+				:to="switchLocalePath('ru')" 
+				:class="classHeader" 
+				tile 
+				outlined
+			>
+				{{ $t('ru') }}
+			</v-btn>
 		</v-app-bar>
 		<v-content>
 			<header-background></header-background>
@@ -121,6 +169,13 @@ export default {
 			} else {
 				this.classHeader = '';
 			}
+		},
+		analytic(category, action) {
+			console.log('analytic send')
+			this.$ga.event({
+				eventCategory: category,
+				eventAction: action
+			})
 		},
 	},
 }

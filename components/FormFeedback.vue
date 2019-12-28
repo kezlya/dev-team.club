@@ -1,5 +1,5 @@
 <template>
-    <v-row justify="center">
+    <v-row class="justify-center px-3">
         <v-col cols="12" >
             <v-row >
                 <v-col cols="12">
@@ -44,12 +44,12 @@
                     <span class="label">{{ $t('subject') }}</span>
                 </template>
             </v-textarea>
-            <span class="red--text title" v-show="error">{{ error }}</span>
+            <span class="red--text text-uppercase subtitle-2 text-center d-block" v-show="error">{{ error }}</span>
             <span class="warning--text title" v-show="message">{{ message }}</span>
         </v-col>
         <v-col cols="12">
             <v-row justify="end">
-                <v-col class="d-flex justify-end align-center white--text" cols="12" sm="8" >
+                <v-col class="d-flex justify-start align-center white--text" cols="12" sm="8" >
                     <div class="mt-n1">
                         <p class="mr-2 my-0">
                             {{ $t('howYourMath') }} {{ firstRandomNumber }} + {{ secondRandomNumber }} = ?
@@ -60,12 +60,12 @@
                             v-model.number="amountNumber"
                             dark
                             dense
-                            class="mb-n6"
+                            class="mb-n6 mt-n1"
                             autocomplete="off"
                         ></v-text-field>
                     </div>
                 </v-col>
-                 <v-col cols="7" sm="4" >
+                 <v-col cols="7" sm="4" class="justify-end d-flex">
                     <v-btn  class="font-weight-bold text-none" @click="sendMessageSlack" outlined rounded :loading="isloading"  x-large color="#CB2A76" width="190">
                         {{ $t('contact') }}
                     </v-btn>
@@ -156,11 +156,17 @@ export default {
         margin-top -10px
         font-style normal
         font-weight 600
-        font-size 32px
+        font-size 36px
         color #FFFFFF
         opacity 0.4
         @media screen and (max-width: 790px)
             font-size 25px
+
+    .v-label--active .label
+        opacity 1
+        font-size 22px!important
+        font inherit
+        font-family 'Work Sans', sans-serif
     
     .wrap
        width 40px

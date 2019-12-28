@@ -129,9 +129,11 @@ export default {
 <style lang="stylus" scoped>
 .color-white
 	color white!important
+	
 	.logo
 		color white
 		border-color white
+
 .up-page 
 	background transparent !important
 
@@ -155,4 +157,5 @@ export default {
 	.mobile-menu
 		&__title
 			font-size 25px!important
+
 </style>

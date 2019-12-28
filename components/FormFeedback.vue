@@ -89,7 +89,12 @@
 import axios from "axios"
 
 export default {
-  props: ["labelMessage"],
+  props: {
+    labelMessage: {
+      type: String,
+      default: ""
+    }
+  },
   data() {
     return {
       form: {

@@ -2,7 +2,7 @@
     <section class="contact" id="contact">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="12" sm="8">
+                    <v-col cols="12" sm="5">
                         <h2 class="contact__title">{{ $t('workTitle') }}</h2>
                         <form-feedback labelMessage="contactus"></form-feedback>
                     </v-col>
@@ -71,10 +71,8 @@ export default {
     width 100%
     text-align center
     background-color #000000
-    padding-top 60px
-    padding-bottom 200px
-    border-top 1px solid #333333
-    border-bottom 1px solid #333333
+    padding: 70px 0
+    border-top 1px solid rgba(255, 255, 255, 0.3);
 
     &__title 
         color white

@@ -10,7 +10,9 @@
         </v-card-subtitle>
         <v-container>
           <form-feedback
-            :label-message="`vacancy ${viewVacancyInDialog.title} - id${viewVacancyInDialog.id}`"
+            :label-message="
+              `vacancy ${viewVacancyInDialog.title} - id${viewVacancyInDialog.id}`
+            "
             @sendMessage="dialog = false"
           />
         </v-container>
@@ -19,23 +21,27 @@
     <v-container>
       <v-row>
         <v-col class="text-left mr-auto" cols="12" md="6" lg="5">
-          <h2 class="hiring__title mb-0">
-            {{ $t("hiringTitle") }}
-          </h2>
+          <h2 class="hiring__title mb-0">{{ $t("hiringTitle") }}</h2>
           <p class="hiring__subtitle">
             {{ $t("hiringSubtitle") }}
           </p>
         </v-col>
         <v-col class="" cols="12" md="5" lg="6">
           <v-row>
-            <v-col v-for="(vacancy, index) in vacancys" :key="index + 5" cols="12">
+            <v-col
+              v-for="(vacancy, index) in vacancys"
+              :key="index + 5"
+              cols="12"
+            >
               <v-hover v-slot:default="{ hover }">
                 <v-card
                   :color="`grey darken-${hover ? 1 : 3}`"
                   class="hiring__card"
                   @click="handlerClickVacancy(vacancy)"
                 >
-                  <v-card-title class="hiring__vacancy-btn headline pa-2 pl-3 my-2">
+                  <v-card-title
+                    class="hiring__vacancy-btn headline pa-2 pl-3 my-2"
+                  >
                     {{ $t(vacancy.title) }}
                   </v-card-title>
                 </v-card>
@@ -92,7 +98,6 @@ export default {
     padding 70px 0
     background-color #000000
     &__title
-
         color white
         margin-bottom 30px
         word-wrap break-word
@@ -107,7 +112,6 @@ export default {
         margin-bottom 50px
     &__card
         cursor pointer
-
     &__vacancy-btn
         color rgba(255, 255, 255, 0.43)
 </style>

@@ -1,226 +1,240 @@
 <template>
-	<v-app>
-		<v-navigation-drawer
-			v-model="drawer"
-			fixed
-			temporary
-			app
-			dark
-			color="black"
-			class="mobile-menu"
-		>
-			<v-list dense>
-				<v-list-item 
-					@click="$vuetify.goTo('#team')" 
-					v-ga="$ga.commands.navigation.bind(this, 'Team')" 
-				>
-					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">{{ $t('team') }}</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-				<v-list-item  
-					@click="$vuetify.goTo('#work')" 
-					v-ga="$ga.commands.navigation.bind(this, 'Work')" 
-				>
-					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">{{ $t('work') }}</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-				<v-list-item  
-					@click="$vuetify.goTo('#job')"
-					v-ga="$ga.commands.navigation.bind(this, 'Job')" 
-				>
-					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">{{ $t('job') }}</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-				<v-list-item  
-					@click="$vuetify.goTo('#contact')"
-					v-ga="$ga.commands.navigation.bind(this, 'Contact')" 
-				>
-					<v-list-item-content>
-						<v-list-item-title class="mobile-menu__title">{{ $t('contact') }}</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
-		</v-list>
-		</v-navigation-drawer>
-		<v-app-bar
-			fixed
-			elevation="0"
-			app
-			hide-on-scroll
-			:class="classHeader"
-			class="menu"
-			height="80"
-		>
-			<v-btn
-				icon
-				@click.stop="drawer = !drawer"
-				class="d-sm-none"
-				:class="classHeader"
-			>
-				<v-icon>mdi-menu</v-icon>
-			</v-btn>
-			<a 
-				href="/"
-				v-ga="$ga.commands.navigation.bind(this, 'Logo')"
-				class="d-flex justify-center align-end logo"
-			>
-			dev / team</a>
-			<v-spacer/>
-			<div class="justify-end align-end d-none d-sm-flex">
-				<v-btn 
-					class="text-none nav-link" 
-					@click="$vuetify.goTo('#team')"
-					v-ga="$ga.commands.navigation.bind(this, 'Team')"  
-					:class="classHeader" 
-					text 
-					tile
-				>
-					{{ $t('team') }}
-				</v-btn>
-				<v-btn 
-					class="text-none nav-link" 
-					@click="$vuetify.goTo('#work')" 
-					v-ga="$ga.commands.navigation.bind(this, 'Work')" 
-					:class="classHeader" 
-					text 
-					tile
-				>
-					{{ $t('work') }}
-				</v-btn>
-				<v-btn 
-					class="text-none nav-link" 
-					@click="$vuetify.goTo('#job')" 
-					v-ga="$ga.commands.navigation.bind(this, 'Job')" 
-					:class="classHeader" 
-					text 
-					tile
-				>
-					{{ $t('job') }}
-				</v-btn>
-				<v-btn 
-					class="text-none nav-link" 
-					@click="$vuetify.goTo('#contact')" 
-					v-ga="$ga.commands.navigation.bind(this, 'Contact')" 
-					:class="classHeader" 
-					text 
-					tile
-				>
-					{{ $t('contact') }}
-				</v-btn>
-			</div>
-			<v-btn 
-				class="text-none local-switcher" 
-				v-ga="$ga.commands.switchLang.bind(this, 'En')"
-				:to="switchLocalePath('en')" 
-				:class="classHeader" 
-				tile 
-				outlined
-			>
-				{{ $t('en') }}
-			</v-btn>
-			<v-btn 
-				class="text-none local-switcher"
-				v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
-				:to="switchLocalePath('ru')" 
-				:class="classHeader" 
-				tile 
-				outlined
-			>
-				{{ $t('ru') }}
-			</v-btn>
-		</v-app-bar>
-		<v-content>
-			<header-background></header-background>
-			<nuxt></nuxt>
-		</v-content>
-		<v-footer
-			dark
-			class="black"
-			
-		>
-			<span>&copy; {{ new Date().getFullYear() }} {{ $t('devTeam') }}</span>
-			<v-spacer></v-spacer>
-			<v-btn
-				href="mailto:devteamclub.info@gmail.com"
-				v-ga="$ga.commands.footerLinks.bind(this, 'Mail')" 
-				icon
-				small
-			>
-				<v-icon size="20px">mdi-gmail</v-icon>
-			</v-btn>
-			<v-btn
-				target="_blank"
-				href="https://www.facebook.com/devteamclub"
-				v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
-				icon
-				small
-			>
-				<v-icon size="20px">mdi-facebook</v-icon>
-			</v-btn>
-			<v-btn
-				target="_blank"
-				href="https://www.instagram.com/devteamclub"
-				v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
-				icon
-				small
-			>
-				<v-icon size="20px">mdi-instagram</v-icon>
-			</v-btn>
-			<v-btn
-				target="_blank"
-				href="https://twitter.com/devteamclub"
-				v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
-				icon
-				small
-			>
-				<v-icon size="20px">mdi-twitter</v-icon>
-			</v-btn>
-		</v-footer>
-	</v-app>
+  <v-app>
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      temporary
+      app
+      dark
+      color="black"
+      class="mobile-menu"
+    >
+      <v-list dense>
+        <v-list-item
+          @click="$vuetify.goTo('#team')"
+          v-ga="$ga.commands.navigation.bind(this, 'Team')" 
+        >
+          <v-list-item-content>
+            <v-list-item-title class="mobile-menu__title">
+              {{ $t("team") }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          @click="$vuetify.goTo('#work')"
+          v-ga="$ga.commands.navigation.bind(this, 'Work')" 
+        >
+          <v-list-item-content>
+            <v-list-item-title class="mobile-menu__title">
+              {{ $t("work") }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+            @click="$vuetify.goTo('#job')"
+            v-ga="$ga.commands.navigation.bind(this, 'Job')" 
+          >
+          <v-list-item-content>
+            <v-list-item-title class="mobile-menu__title">
+              {{ $t("job") }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          @click="$vuetify.goTo('#contacts')"
+          v-ga="$ga.commands.navigation.bind(this, 'Contact')" 
+        >
+          <v-list-item-content>
+            <v-list-item-title class="mobile-menu__title">
+              {{ $t("contacts") }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar
+      fixed
+      elevation="0"
+      app
+      hide-on-scroll
+      :class="classHeader"
+      class="menu"
+      height="80"
+    >
+      <v-btn
+        icon
+        class="d-sm-none"
+        :class="classHeader"
+        @click.stop="drawer = !drawer"
+      >
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
+      <a
+        href="/"
+        class="d-flex
+        justify-center
+        align-end
+        logo"
+        v-ga="$ga.commands.navigation.bind(this, 'Logo')"
+      >dev / team</a>
+      <v-spacer />
+      <div class="justify-end align-end d-none d-sm-flex">
+        <v-btn
+          class="text-none nav-link"
+          :class="classHeader"
+          text
+          tile
+          @click="$vuetify.goTo('#team')"
+          v-ga="$ga.commands.navigation.bind(this, 'Team')"
+        >
+          {{ $t("team") }}
+        </v-btn>
+        <v-btn
+          class="text-none nav-link"
+          :class="classHeader"
+          text
+          tile
+          @click="$vuetify.goTo('#work')"
+          v-ga="$ga.commands.navigation.bind(this, 'Work')"
+        >
+          {{ $t("work") }}
+        </v-btn>
+        <v-btn
+          class="text-none nav-link"
+          :class="classHeader"
+          text
+          tile
+          @click="$vuetify.goTo('#job')"
+          v-ga="$ga.commands.navigation.bind(this, 'Job')"
+        >
+          {{ $t("job") }}
+        </v-btn>
+        <v-btn
+          class="text-none nav-link"
+          :class="classHeader"
+          text
+          tile
+          @click="$vuetify.goTo('#contacts')"
+          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
+        >
+          {{ $t("contact") }}
+        </v-btn>
+      </div>
+      <v-btn
+        class="text-none local-switcher"
+        :to="switchLocalePath('en')"
+        v-ga="$ga.commands.switchLang.bind(this, 'En')"
+        :class="classHeader"
+        tile
+        outlined
+      >
+        {{ $t("en") }}
+      </v-btn>
+      <v-btn
+        class="text-none local-switcher"
+        :to="switchLocalePath('ru')"
+        v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
+        :class="classHeader"
+        tile
+        outlined
+      >
+        {{ $t("ru") }}
+      </v-btn>
+    </v-app-bar>
+    <v-content>
+      <header-background />
+      <nuxt />
+    </v-content>
+    <v-footer dark class="black">
+      <span>&copy; {{ new Date().getFullYear() }} {{ $t("devTeam") }}</span>
+      <v-spacer />
+      <v-btn
+        href="mailto:devteamclub.info@gmail.com"
+        v-ga="$ga.commands.footerLinks.bind(this, 'Mail')"
+        icon
+        small
+      >
+        <v-icon size="20px">
+          mdi-gmail
+        </v-icon>
+      </v-btn>
+      <v-btn
+        target="_blank"
+        href="https://www.facebook.com/devteamclub"
+        v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
+        icon
+        small
+      >
+        <v-icon size="20px">
+          mdi-facebook
+        </v-icon>
+      </v-btn>
+      <v-btn
+        target="_blank"
+        href="https://www.instagram.com/devteamclub"
+        v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
+        icon
+        small
+      >
+        <v-icon size="20px">
+          mdi-instagram
+        </v-icon>
+      </v-btn>
+      <v-btn
+        target="_blank"
+        href="https://twitter.com/devteamclub"
+        v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
+        icon
+        small
+      >
+        <v-icon size="20px">
+          mdi-twitter
+        </v-icon>
+      </v-btn>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HeaderBackground from '../components/HeaderBackground.vue'
+import HeaderBackground from "../components/HeaderBackground.vue"
 
 export default {
-	data() {
-		return {
-			drawer: false,
-			fixed: false,
-			classHeader: null,
-		}
-	},
-  	components: {
-		HeaderBackground
-	},
-	mounted() {
-		this.handlerChangeHeader();
-		document.addEventListener('scroll', this.handlerChangeHeader.bind(this) );
-	},
-	methods: {
-		handlerChangeHeader() {
-			this.scrolled = window.pageYOffset;
-			if (this.scrolled <  50) {
-				this.classHeader = 'up-page color-white';
-			} else {
-				this.classHeader = '';
-			}
-		},
-	},
+  components: {
+    HeaderBackground
+  },
+  data() {
+    return {
+      drawer: false,
+      fixed: false,
+      classHeader: null
+    }
+  },
+  mounted() {
+    this.handlerChangeHeader()
+    document.addEventListener("scroll", this.handlerChangeHeader.bind(this))
+  },
+  methods: {
+    handlerChangeHeader() {
+      this.scrolled = window.pageYOffset
+      if (this.scrolled < 50) {
+        this.classHeader = "up-page color-white"
+      } else {
+        this.classHeader = ""
+      }
+    }
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
 .color-white
 	color white!important
-	
+
 	.logo
 		color white
 		border-color white
 
-.up-page 
+.up-page
 	background transparent !important
 
 .logo
@@ -243,5 +257,4 @@ export default {
 	.mobile-menu
 		&__title
 			font-size 25px!important
-
 </style>

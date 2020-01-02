@@ -1,23 +1,22 @@
 <template>
-    <section class="img-bg">
-        <v-img height="650" src="/header-bg.jpg">
-            <div class="img-bg__slogan slogan white--text">
-                <h1 class="slogan__big">{{ $t('slogan') }}</h1>
-                <h4 class="slogan__small">{{ $t('subSlogan') }}</h4>
-            </div>
-        </v-img>
-    </section>
+  <section class="img-bg">
+    <v-img height="650" src="/header-bg.jpg">
+      <div class="img-bg__slogan slogan white--text">
+        <h1 class="slogan__big">{{ $t("slogan") }}</h1>
+        <h4 class="slogan__small">
+          {{ $t("subSlogan") }}
+        </h4>
+      </div>
+    </v-img>
+  </section>
 </template>
 
 <script>
-
 export default {
-    data() {
-        return {
-        }
+  data() {
+    return {}
   },
-    mounted() {
-    }
+  mounted() {}
 }
 </script>
 
@@ -47,5 +46,4 @@ export default {
             font-size 36px
             @media screen and (max-width: 600px)
                 font-size 33px
-
 </style>

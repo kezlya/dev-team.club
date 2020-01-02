@@ -1,67 +1,76 @@
 <template>
-    <section class="projects" id="work">
-        <h2 class="projects__title">{{ $t('workTitle') }}</h2>
-        <v-container>
-            <v-row>
-                <v-col
-                cols="12"
-                sm="12"
-                md="6"
-                v-for="(project, index) in projects"
-                v-bind:key="index"
-				class="project">
-					<a 
-						:href="project.link"
-						v-ga="$ga.commands.projects.bind($parent, project.name)"
-						target="_blank" 
-						class="project__link-row"
-					>
-						<img width="100%" :src="project.previewUrl" :alt="project.name" class="project__photo">
-						<div class="project__meta">
-							<p class="project__name">{{ project.name }}</p>
-							<div class="project__action">
-								<p class="project__description">{{ $t(project.description) }}</p>
-								<p class="project__view-link text-none">{{ $t('viewSite') }}<v-icon class="project__link-icon">mdi-arrow-right</v-icon></p>
-							</div>
-						</div>
-					</a>
-                </v-col>
-                
-            </v-row>
-        </v-container>
-    </section>
+  <section id="work" class="projects">
+    <h2 class="projects__title">{{ $t("workTitle") }}</h2>
+    <v-container>
+      <v-row>
+        <v-col
+          v-for="(project, index) in projects"
+          :key="index"
+          cols="12"
+          sm="12"
+          md="6"
+          class="project"
+        >
+          <a
+            :href="project.link"
+            v-ga="$ga.commands.projects.bind($parent, project.name)"
+            target="_blank"
+            class="project__link-row">
+            <img
+              width="100%"
+              :src="project.previewUrl"
+              :alt="project.name"
+              class="project__photo"
+            />
+            <div class="project__meta">
+              <p class="project__name">{{ project.name }}</p>
+              <div class="project__action">
+                <p class="project__description">
+                  {{ $t(project.description) }}
+                </p>
+                <p class="project__view-link text-none">
+                  {{ $t("viewSite")
+                  }}<v-icon class="project__link-icon">mdi-arrow-right</v-icon>
+                </p>
+              </div>
+            </div>
+          </a>
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
 </template>
 
 <script>
 export default {
-    data: () => ({
+  data: () => ({
     projects: [
-        {
-            name: 'AntHive',
-            link: 'https://anthive.io/',
-			previewUrl: '/projects/anthive.jpg',
-			description: 'descAnthive',
-        },
-        {
-            name: 'BreakKonnect',
-            link: 'https://breakkonnect.com/',
-			previewUrl: '/projects/breakkonnect.jpg',
-			description: 'descBreakkonnect',
-        },
-        {
-            name: 'Chrome.com',
-            link: 'https://chrome.com/',
-            previewUrl: '/projects/chrome.jpg',
-			description: 'descChrome',
-        },
-        {
-            name: 'Android.com',
-            link: 'https://android.com/',
-            previewUrl: '/projects/android.jpg',
-			description: 'descAndroid',
-        },
+      {
+        name: "AntHive",
+        link: "https://anthive.io/",
+        previewUrl: "/projects/anthive.jpg",
+        description: "descAnthive"
+      },
+      {
+        name: "BreakKonnect",
+        link: "https://breakkonnect.com/",
+        previewUrl: "/projects/breakkonnect.jpg",
+        description: "descBreakkonnect"
+      },
+      {
+        name: "Chrome.com",
+        link: "https://chrome.com/",
+        previewUrl: "/projects/chrome.jpg",
+        description: "descChrome"
+      },
+      {
+        name: "Android.com",
+        link: "https://android.com/",
+        previewUrl: "/projects/android.jpg",
+        description: "descAndroid"
+      }
     ]
-  }),
+  })
 }
 </script>
 
@@ -91,7 +100,7 @@ export default {
 			display block
 			overflow hidden
 			position relative
-		
+
 		&__photo
 			transition: all ease .5s
 			margin-bottom: -8px;
@@ -137,5 +146,4 @@ export default {
 		&__link-icon
 			color #CB2A76
 			margin-left 5px
-
 </style>

@@ -29,8 +29,10 @@ export default {
     "Coding for beginners and experienced developers. Test your skills in various programming languages, challenge developers around the world. Real-time rating and leaderboard.",
   descBreakkonnect:
     "A worldwide community of dancers with unique opportunities for organizing breakdance battles. Advance payment and video streaming features.",
-  descChrome: "Participated in the development of the official website for Android OS",
-  descAndroid: "Participated in the development of the official website for Android OS",
+  descChrome:
+    "Participated in the development of the official website for Android OS",
+  descAndroid:
+    "Participated in the development of the official website for Android OS",
   viewSite: "View site",
 
   //hiring

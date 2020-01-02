@@ -3,13 +3,17 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="4" md="4">
-          <h2 class="team__title">
-            {{ $t("teamTitle") }}
-          </h2>
+          <h2 class="team__title">{{ $t("teamTitle") }}</h2>
         </v-col>
         <v-col cols="12" sm="8" md="8">
           <v-row>
-            <v-col v-for="(member, index) in members" :key="index" cols="12" sm="6" md="4">
+            <v-col
+              v-for="(member, index) in members"
+              :key="index"
+              cols="12"
+              sm="6"
+              md="4"
+            >
               <v-avatar size="178" class="team__avatar">
                 <v-img :src="member.avatarUrl" :alt="$t(member.name)" />
               </v-avatar>

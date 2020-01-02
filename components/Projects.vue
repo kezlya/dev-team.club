@@ -1,8 +1,6 @@
 <template>
   <section id="work" class="projects">
-    <h2 class="projects__title">
-      {{ $t("workTitle") }}
-    </h2>
+    <h2 class="projects__title">{{ $t("workTitle") }}</h2>
     <v-container>
       <v-row>
         <v-col
@@ -23,9 +21,12 @@
             <div class="project__meta">
               <p class="project__name">{{ project.name }}</p>
               <div class="project__action">
-                <p class="project__description">{{ $t(project.description) }}</p>
+                <p class="project__description">
+                  {{ $t(project.description) }}
+                </p>
                 <p class="project__view-link text-none">
-                  {{ $t("viewSite") }}<v-icon class="project__link-icon">mdi-arrow-right</v-icon>
+                  {{ $t("viewSite")
+                  }}<v-icon class="project__link-icon">mdi-arrow-right</v-icon>
                 </p>
               </div>
             </div>

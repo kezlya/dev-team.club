@@ -44,17 +44,25 @@
           <span class="label">{{ $t("subject") }}</span>
         </template>
       </v-textarea>
-      <span v-show="error" class="red--text text-uppercase subtitle-2 text-center d-block">{{
-        error
-      }}</span>
+      <span
+        v-show="error"
+        class="red--text text-uppercase subtitle-2 text-center d-block"
+      >
+        {{ error }}
+      </span>
       <span v-show="message" class="warning--text title">{{ message }}</span>
     </v-col>
     <v-col cols="12">
       <v-row justify="end">
-        <v-col class="d-flex justify-start align-center white--text" cols="12" sm="8">
+        <v-col
+          class="d-flex justify-start align-center white--text"
+          cols="12"
+          sm="8"
+        >
           <div class="mt-n1">
             <p class="mr-2 my-0">
-              {{ $t("howYourMath") }} {{ firstRandomNumber }} + {{ secondRandomNumber }} = ?
+              {{ $t("howYourMath") }} {{ firstRandomNumber }} +
+              {{ secondRandomNumber }} = ?
             </p>
           </div>
           <div class="wrap">
@@ -136,7 +144,9 @@ export default {
       })
       if (!allValid) return
       this.isloading = true
-      const message = `label: ${this.labelMessage}, \n name: ${this.form.name},\n email: ${
+      const message = `label: ${this.labelMessage}, \n name: ${
+        this.form.name
+      },\n email: ${
         this.form.email
       }, \n date: ${new Date().toGMTString()} \n message: ${this.form.message}`
       axios

@@ -40,8 +40,21 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar fixed elevation="0" app hide-on-scroll :class="classHeader" class="menu" height="80">
-      <v-btn icon class="d-sm-none" :class="classHeader" @click.stop="drawer = !drawer">
+    <v-app-bar
+      fixed
+      elevation="0"
+      app
+      hide-on-scroll
+      :class="classHeader"
+      class="menu"
+      height="80"
+    >
+      <v-btn
+        icon
+        class="d-sm-none"
+        :class="classHeader"
+        @click.stop="drawer = !drawer"
+      >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <a href="/" class="d-flex justify-center align-end logo">dev / team</a>
@@ -79,7 +92,7 @@
           :class="classHeader"
           text
           tile
-          @click="$vuetify.goTo('#contact')"
+          @click="$vuetify.goTo('#contacts')"
         >
           {{ $t("contact") }}
         </v-btn>
@@ -115,12 +128,22 @@
           mdi-gmail
         </v-icon>
       </v-btn>
-      <v-btn target="_blank" href="https://www.facebook.com/devteamclub" icon small>
+      <v-btn
+        target="_blank"
+        href="https://www.facebook.com/devteamclub"
+        icon
+        small
+      >
         <v-icon size="20px">
           mdi-facebook
         </v-icon>
       </v-btn>
-      <v-btn target="_blank" href="https://www.instagram.com/devteamclub" icon small>
+      <v-btn
+        target="_blank"
+        href="https://www.instagram.com/devteamclub"
+        icon
+        small
+      >
         <v-icon size="20px">
           mdi-instagram
         </v-icon>

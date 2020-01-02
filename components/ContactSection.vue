@@ -2,10 +2,8 @@
   <section id="contacts" class="contacts">
     <v-container>
       <v-row justify="center">
-        <v-col cols="12" sm="5">
-          <h2 class="contacts__title">
-            {{ $t("workTitle") }}
-          </h2>
+        <v-col cols="12" sm="6">
+          <h2 class="contacts__title">{{ $t("contactTitle") }}</h2>
           <form-feedback label-message="contactus" />
         </v-col>
       </v-row>

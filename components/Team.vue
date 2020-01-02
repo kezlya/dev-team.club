@@ -3,6 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="4" md="4">
+          // eslint-disable-next-line to ignore the next line.
           <h2 class="team__title">{{ $t("teamTitle") }}</h2>
         </v-col>
         <v-col cols="12" sm="8" md="8">
@@ -51,13 +52,15 @@
               </p>
               <div class="team__member-socials">
                 <v-btn
+                  v-ga="
+                    $ga.commands.navigation.bind(this, 'Job from Team section')
+                  "
                   target="_blank"
                   class="team__social-btn text-none mt-2"
                   color="#CB2A76"
                   outlined
                   rounded
                   @click="$vuetify.goTo('#job')"
-                  v-ga="$ga.commands.navigation.bind(this, 'Job from Team section')"
                 >
                   {{ $t("weAreHiring") }}
                 </v-btn>

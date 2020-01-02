@@ -47,8 +47,8 @@ export default {
   mobileDev: "Mobile Developer",
   mobileDevDesc:
     "React Native Development for iOS and Android platforms. Flatter is a big plus. Organization, the ability to correctly allocate your time, work remotely in a team. ",
- 
-    //contact us
+
+  //contact us
   contactTitle: "Contact us",
   yourName: "Your name",
   email: "Email",

@@ -18,22 +18,32 @@ export default {
       { name: "description", content: "Dev-team creates tomorrow with you." },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Dev Team" },
-      { name: "twitter:description", content: "Dev-team creates tomorrow with you." },
+      {
+        name: "twitter:description",
+        content: "Dev-team creates tomorrow with you."
+      },
       { name: "twitter:image", content: "/devteammeta.jpg" },
       { itemprop: "name", content: "Dev team site" },
-      { itemprop: "description", content: "Dev-team creates tomorrow with you." },
+      {
+        itemprop: "description",
+        content: "Dev-team creates tomorrow with you."
+      },
       { itemprop: "image", content: "/devteammeta.jpg" },
       { property: "og:url", content: "https://dev-team.club" },
       { property: "og:type", content: "Dev team site" },
       { property: "og:title", content: "Dev Team" },
-      { property: "og:description", content: "Dev-team creates tomorrow with you." },
+      {
+        property: "og:description",
+        content: "Dev-team creates tomorrow with you."
+      },
       { property: "og:image", content: "/devteammeta.jpg" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap"
+        href:
+          "https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap"
       }
     ]
   },
@@ -49,8 +59,8 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    // { src: '~plugins/ga.js', mode: 'client' }, 
-    // { src: '~plugins/i18n.js'},    
+    // { src: '~plugins/ga.js', mode: 'client' },
+    // { src: '~plugins/i18n.js'},
   ],
   /*
    ** Nuxt.js modules
@@ -119,32 +129,34 @@ export default {
     }
   },
   buildModules: [
-    '@nuxtjs/dotenv',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-153553466-1',
-      commands: {
-        navigation(label) {
-          console.log(`Analytic sent: Navigation - ${label}`);
-          this.$ga.event('Navigation', 'click', label);
-        },
-        footerLinks(label) {
-          console.log(`Analytic sent: Footer link - ${label}`);
-          this.$ga.event('Footer link', 'click', label);
-        },
-        switchLang(label) {
-          console.log(`Analytic sent: Switch Language to ${label}`);
-          this.$ga.event('Switch Language', 'click', label);
-        },
-        hiring(label) {
-          console.log(`Analytic sent: Hiring, click to ${label} profession`);
-          this.$ga.event('Click to profession', 'click', label);
-        },
-        projects(label) {
-          console.log(`Analytic sent: Latest work, click to ${label}`);
-          this.$ga.event('Click to our work', 'click', label);
-        },
-     }
-    }]
-]
-  buildModules: ["@nuxtjs/dotenv"]
+    "@nuxtjs/dotenv",
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-153553466-1",
+        commands: {
+          navigation(label) {
+            console.log(`Analytic sent: Navigation - ${label}`)
+            this.$ga.event("Navigation", "click", label)
+          },
+          footerLinks(label) {
+            console.log(`Analytic sent: Footer link - ${label}`)
+            this.$ga.event("Footer link", "click", label)
+          },
+          switchLang(label) {
+            console.log(`Analytic sent: Switch Language to ${label}`)
+            this.$ga.event("Switch Language", "click", label)
+          },
+          hiring(label) {
+            console.log(`Analytic sent: Hiring, click to ${label} profession`)
+            this.$ga.event("Click to profession", "click", label)
+          },
+          projects(label) {
+            console.log(`Analytic sent: Latest work, click to ${label}`)
+            this.$ga.event("Click to our work", "click", label)
+          }
+        }
+      }
+    ]
+  ]
 }

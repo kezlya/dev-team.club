@@ -11,8 +11,8 @@
     >
       <v-list dense>
         <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Team')"
           @click="$vuetify.goTo('#team')"
-          v-ga="$ga.commands.navigation.bind(this, 'Team')" 
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
@@ -21,8 +21,8 @@
           </v-list-item-content>
         </v-list-item>
         <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Work')"
           @click="$vuetify.goTo('#work')"
-          v-ga="$ga.commands.navigation.bind(this, 'Work')" 
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
@@ -31,9 +31,9 @@
           </v-list-item-content>
         </v-list-item>
         <v-list-item
-            @click="$vuetify.goTo('#job')"
-            v-ga="$ga.commands.navigation.bind(this, 'Job')" 
-          >
+          v-ga="$ga.commands.navigation.bind(this, 'Job')"
+          @click="$vuetify.goTo('#job')"
+        >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
               {{ $t("job") }}
@@ -41,8 +41,8 @@
           </v-list-item-content>
         </v-list-item>
         <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
           @click="$vuetify.goTo('#contacts')"
-          v-ga="$ga.commands.navigation.bind(this, 'Contact')" 
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
@@ -70,60 +70,62 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <a
+        v-ga="$ga.commands.navigation.bind(this, 'Logo')"
         href="/"
         class="d-flex
         justify-center
         align-end
         logo"
-        v-ga="$ga.commands.navigation.bind(this, 'Logo')"
-      >dev / team</a>
+      >
+        dev / team
+      </a>
       <v-spacer />
       <div class="justify-end align-end d-none d-sm-flex">
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Team')"
           class="text-none nav-link"
           :class="classHeader"
           text
           tile
           @click="$vuetify.goTo('#team')"
-          v-ga="$ga.commands.navigation.bind(this, 'Team')"
         >
           {{ $t("team") }}
         </v-btn>
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Work')"
           class="text-none nav-link"
           :class="classHeader"
           text
           tile
           @click="$vuetify.goTo('#work')"
-          v-ga="$ga.commands.navigation.bind(this, 'Work')"
         >
           {{ $t("work") }}
         </v-btn>
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Job')"
           class="text-none nav-link"
           :class="classHeader"
           text
           tile
           @click="$vuetify.goTo('#job')"
-          v-ga="$ga.commands.navigation.bind(this, 'Job')"
         >
           {{ $t("job") }}
         </v-btn>
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
           class="text-none nav-link"
           :class="classHeader"
           text
           tile
           @click="$vuetify.goTo('#contacts')"
-          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
         >
           {{ $t("contact") }}
         </v-btn>
       </div>
       <v-btn
+        v-ga="$ga.commands.switchLang.bind(this, 'En')"
         class="text-none local-switcher"
         :to="switchLocalePath('en')"
-        v-ga="$ga.commands.switchLang.bind(this, 'En')"
         :class="classHeader"
         tile
         outlined
@@ -131,9 +133,9 @@
         {{ $t("en") }}
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
         class="text-none local-switcher"
         :to="switchLocalePath('ru')"
-        v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
         :class="classHeader"
         tile
         outlined
@@ -149,8 +151,8 @@
       <span>&copy; {{ new Date().getFullYear() }} {{ $t("devTeam") }}</span>
       <v-spacer />
       <v-btn
-        href="mailto:devteamclub.info@gmail.com"
         v-ga="$ga.commands.footerLinks.bind(this, 'Mail')"
+        href="mailto:devteamclub.info@gmail.com"
         icon
         small
       >
@@ -159,9 +161,9 @@
         </v-icon>
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
         target="_blank"
         href="https://www.facebook.com/devteamclub"
-        v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
         icon
         small
       >
@@ -170,9 +172,9 @@
         </v-icon>
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
         target="_blank"
         href="https://www.instagram.com/devteamclub"
-        v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
         icon
         small
       >
@@ -181,9 +183,9 @@
         </v-icon>
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
         target="_blank"
         href="https://twitter.com/devteamclub"
-        v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
         icon
         small
       >

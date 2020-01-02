@@ -21,6 +21,7 @@
     <v-container>
       <v-row>
         <v-col class="text-left mr-auto" cols="12" md="6" lg="5">
+          // eslint-disable-next-line to ignore the next line.
           <h2 class="hiring__title mb-0">{{ $t("hiringTitle") }}</h2>
           <p class="hiring__subtitle">
             {{ $t("hiringSubtitle") }}

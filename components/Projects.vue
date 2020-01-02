@@ -1,5 +1,6 @@
 <template>
   <section id="work" class="projects">
+    // eslint-disable-next-line to ignore the next line.
     <h2 class="projects__title">{{ $t("workTitle") }}</h2>
     <v-container>
       <v-row>
@@ -12,10 +13,12 @@
           class="project"
         >
           <a
-            :href="project.link"
             v-ga="$ga.commands.projects.bind($parent, project.name)"
+            :href="project.link"
             target="_blank"
-            class="project__link-row">
+            class="project__link-row"
+          >
+            // eslint-disable-next-line to ignore the next line.
             <img
               width="100%"
               :src="project.previewUrl"

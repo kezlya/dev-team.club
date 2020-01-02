@@ -164,10 +164,10 @@ export default {
           this.amountNumber = null
           this.$emit("sendMessage")
           this.$ga.event({
-            eventCategory: 'Feedback form',
-            eventAction: 'click',
-            eventLabel: 'Successful sending',
-          });
+            eventCategory: "Feedback form",
+            eventAction: "click",
+            eventLabel: "Successful sending"
+          })
           console.log(`Analytic sent: Successful form submission`)
         })
         .catch(er => {

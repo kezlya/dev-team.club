@@ -3,7 +3,7 @@
     <v-container>
       <v-row justify="center">
         <v-col cols="12" sm="6">
-          // eslint-disable-next-line to ignore the next line.
+          <!-- eslint-disable-next-line -->
           <h2 class="contacts__title">{{ $t("contactTitle") }}</h2>
           <form-feedback label-message="contactus" />
         </v-col>

@@ -21,7 +21,7 @@
     <v-container>
       <v-row>
         <v-col class="text-left mr-auto" cols="12" md="6" lg="5">
-          // eslint-disable-next-line to ignore the next line.
+          <!-- eslint-disable-next-line -->
           <h2 class="hiring__title mb-0">{{ $t("hiringTitle") }}</h2>
           <p class="hiring__subtitle">
             {{ $t("hiringSubtitle") }}
@@ -36,10 +36,10 @@
             >
               <v-hover v-slot:default="{ hover }">
                 <v-card
+                  v-ga="$ga.commands.hiring.bind($parent, vacancy.title)"
                   :color="`grey darken-${hover ? 1 : 3}`"
                   class="hiring__card"
                   @click="handlerClickVacancy(vacancy)"
-                  v-ga="$ga.commands.hiring.bind($parent, vacancy.title)"
                 >
                   <v-card-title
                     class="hiring__vacancy-btn headline pa-2 pl-3 my-2"

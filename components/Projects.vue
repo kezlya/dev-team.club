@@ -1,6 +1,6 @@
 <template>
   <section id="work" class="projects">
-    // eslint-disable-next-line to ignore the next line.
+    <!-- eslint-disable-next-line -->
     <h2 class="projects__title">{{ $t("workTitle") }}</h2>
     <v-container>
       <v-row>
@@ -18,7 +18,7 @@
             target="_blank"
             class="project__link-row"
           >
-            // eslint-disable-next-line to ignore the next line.
+            <!-- eslint-disable-next-line -->
             <img
               width="100%"
               :src="project.previewUrl"

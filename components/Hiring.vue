@@ -6,7 +6,7 @@
           {{ $t(viewVacancyInDialog.title) }}
         </v-card-title>
         <v-card-subtitle class="subtitle-1 mt-2 white--text">
-          {{ $t(viewVacancyInDialog.discription) }}
+          {{ $t(viewVacancyInDialog.description) }}
         </v-card-subtitle>
         <v-container>
           <form-feedback
@@ -69,17 +69,17 @@ export default {
       {
         id: 1,
         title: "backEndDev",
-        discription: "backEndDevDesc"
+        description: "backEndDevDesc"
       },
       {
         id: 2,
         title: "frontEndDev",
-        discription: "backEndDevDesc"
+        description: "frontEndDevDesc"
       },
       {
         id: 3,
         title: "mobileDev",
-        discription: "mobileDevDesc"
+        description: "mobileDevDesc"
       }
     ]
   }),

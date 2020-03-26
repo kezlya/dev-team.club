@@ -10,28 +10,40 @@
       class="mobile-menu"
     >
       <v-list dense>
-        <v-list-item @click="$vuetify.goTo('#team')">
+        <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Team')"
+          @click="$vuetify.goTo('#team')"
+        >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
               {{ $t("team") }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="$vuetify.goTo('#work')">
+        <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Work')"
+          @click="$vuetify.goTo('#work')"
+        >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
               {{ $t("work") }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="$vuetify.goTo('#job')">
+        <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Job')"
+          @click="$vuetify.goTo('#job')"
+        >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
               {{ $t("job") }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="$vuetify.goTo('#contacts')">
+        <v-list-item
+          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
+          @click="$vuetify.goTo('#contacts')"
+        >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
               {{ $t("contacts") }}
@@ -57,10 +69,20 @@
       >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
-      <a href="/" class="d-flex justify-center align-end logo">dev / team</a>
+      <a
+        v-ga="$ga.commands.navigation.bind(this, 'Logo')"
+        href="/"
+        class="d-flex
+        justify-center
+        align-end
+        logo"
+      >
+        dev / team
+      </a>
       <v-spacer />
       <div class="justify-end align-end d-none d-sm-flex">
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Team')"
           class="text-none nav-link"
           :class="classHeader"
           text
@@ -70,6 +92,7 @@
           {{ $t("team") }}
         </v-btn>
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Work')"
           class="text-none nav-link"
           :class="classHeader"
           text
@@ -79,6 +102,7 @@
           {{ $t("work") }}
         </v-btn>
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Job')"
           class="text-none nav-link"
           :class="classHeader"
           text
@@ -88,6 +112,7 @@
           {{ $t("job") }}
         </v-btn>
         <v-btn
+          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
           class="text-none nav-link"
           :class="classHeader"
           text
@@ -98,6 +123,7 @@
         </v-btn>
       </div>
       <v-btn
+        v-ga="$ga.commands.switchLang.bind(this, 'En')"
         class="text-none local-switcher"
         :to="switchLocalePath('en')"
         :class="classHeader"
@@ -107,6 +133,7 @@
         {{ $t("en") }}
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
         class="text-none local-switcher"
         :to="switchLocalePath('ru')"
         :class="classHeader"
@@ -123,12 +150,18 @@
     <v-footer dark class="black">
       <span>&copy; {{ new Date().getFullYear() }} {{ $t("devTeam") }}</span>
       <v-spacer />
-      <v-btn href="mailto:devteamclub.info@gmail.com" icon small>
+      <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Mail')"
+        href="mailto:devteamclub.info@gmail.com"
+        icon
+        small
+      >
         <v-icon size="20px">
           mdi-gmail
         </v-icon>
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
         target="_blank"
         href="https://www.facebook.com/devteamclub"
         icon
@@ -139,6 +172,7 @@
         </v-icon>
       </v-btn>
       <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
         target="_blank"
         href="https://www.instagram.com/devteamclub"
         icon
@@ -148,7 +182,13 @@
           mdi-instagram
         </v-icon>
       </v-btn>
-      <v-btn target="_blank" href="https://twitter.com/devteamclub" icon small>
+      <v-btn
+        v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
+        target="_blank"
+        href="https://twitter.com/devteamclub"
+        icon
+        small
+      >
         <v-icon size="20px">
           mdi-twitter
         </v-icon>

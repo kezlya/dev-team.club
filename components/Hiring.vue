@@ -21,6 +21,7 @@
     <v-container>
       <v-row>
         <v-col class="text-left mr-auto" cols="12" md="6" lg="5">
+          <!-- eslint-disable-next-line -->
           <h2 class="hiring__title mb-0">{{ $t("hiringTitle") }}</h2>
           <p class="hiring__subtitle">
             {{ $t("hiringSubtitle") }}
@@ -35,6 +36,7 @@
             >
               <v-hover v-slot:default="{ hover }">
                 <v-card
+                  v-ga="$ga.commands.hiring.bind($parent, vacancy.title)"
                   :color="`grey darken-${hover ? 1 : 3}`"
                   class="hiring__card"
                   @click="handlerClickVacancy(vacancy)"

@@ -27,12 +27,12 @@
             {{ $t("hiringSubtitle") }}
           </p>
         </v-col>
-        <v-col class="" cols="12" md="5" lg="6">
-          <v-row>
+        <v-col cols="12" md="5" lg="6">
+          <v-row class="hiring__vacancys">
             <v-col
               v-for="(vacancy, index) in vacancys"
               :key="index + 5"
-              cols="12"
+              cols="4"
             >
               <v-hover v-slot:default="{ hover }">
                 <v-card
@@ -46,6 +46,9 @@
                   >
                     {{ $t(vacancy.title) }}
                   </v-card-title>
+                  <v-icon class="hiring__vacancy-icon">
+                    {{ vacancy.icon }}
+                  </v-icon>
                 </v-card>
               </v-hover>
             </v-col>
@@ -66,22 +69,24 @@ export default {
   data: () => ({
     dialog: false,
     viewVacancyInDialog: {},
-    // vacancy : ['C#/.NET разработчик', 'Angular разработчик', 'React-mobile разработчик']
     vacancys: [
       {
         id: 1,
         title: "backEndDev",
-        description: "backEndDevDesc"
+        description: "backEndDevDesc",
+        icon: "mdi-server"
       },
       {
         id: 2,
         title: "frontEndDev",
-        description: "frontEndDevDesc"
+        description: "frontEndDevDesc",
+        icon: "mdi-monitor-dashboard"
       },
       {
         id: 3,
         title: "mobileDev",
-        description: "mobileDevDesc"
+        description: "mobileDevDesc",
+        icon: "mdi-cellphone-text"
       }
     ]
   }),
@@ -112,8 +117,20 @@ export default {
         color #CCCCCC
         margin-top 10px
         margin-bottom 50px
+    &__vacancys
+        height 100%
+        max-height 200px
     &__card
+        height 100%
         cursor pointer
+    &__vacancy-icon
+        font-size: 75px!important
+        margin-top 10px
+        color: rgba(255,255,255,0.43)
     &__vacancy-btn
+        text-align center
+        display block
+        font-size 27px!important
+        padding-top 20px!important
         color rgba(255, 255, 255, 0.43)
 </style>

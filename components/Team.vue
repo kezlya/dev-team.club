@@ -2,7 +2,7 @@
   <section id="team" class="team">
     <v-container>
       <v-row>
-        <v-col cols="12" sm="4" md="4">
+        <v-col cols="12" sm="4" md="4" class="relative">
           <!-- eslint-disable-next-line -->
           <h2 class="team__title">{{ $t("teamTitle") }}</h2>
         </v-col>
@@ -34,9 +34,7 @@
                   color="#878B8F"
                   icon
                 >
-                  <v-icon class="social-icon">
-                    {{ social.icon }}
-                  </v-icon>
+                  <v-icon class="social-icon">{{ social.icon }}</v-icon>
                 </v-btn>
               </div>
             </v-col>
@@ -84,26 +82,15 @@ export default {
         socials: [
           {
             link: "https://www.linkedin.com/in/vitaly-kezlya-450192b/",
-            icon: "mdi-linkedin-box"
+            icon: "mdi-linkedin"
           },
           {
             link: "https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw",
             icon: "mdi-youtube"
-          }
-        ]
-      },
-      {
-        name: "stanislav",
-        position: "webDeveloper",
-        avatarUrl: "/team/stas.jpg",
-        socials: [
-          {
-            link: "https://vk.com/id381660547/",
-            icon: "mdi-vk"
           },
           {
-            link: "https://github.com/staszigzag/",
-            icon: "mdi-github-circle"
+            link: "https://www.twitch.tv/kezlya",
+            icon: "mdi-twitch"
           }
         ]
       },
@@ -114,11 +101,30 @@ export default {
         socials: [
           {
             link: "https://github.com/klimonov/",
-            icon: "mdi-github-circle"
+            icon: "mdi-github"
           },
           {
             link: "https://www.instagram.com/kklimonov/",
             icon: "mdi-instagram"
+          },
+          {
+            link: "https://klimonov.github.io/",
+            icon: "mdi-web"
+          }
+        ]
+      },
+      {
+        name: "egor",
+        position: "webDeveloper",
+        avatarUrl: "/team/egor.jpg",
+        socials: [
+          {
+            link: "https://vk.com/id381660547/",
+            icon: "mdi-vk"
+          },
+          {
+            link: "https://github.com/staszigzag/",
+            icon: "mdi-github"
           }
         ]
       },
@@ -129,7 +135,7 @@ export default {
         socials: [
           {
             link: "https://github.com/Alex-D-Green/",
-            icon: "mdi-github-circle"
+            icon: "mdi-github"
           },
           {
             link: "https://twitter.com/DAS_26/",
@@ -176,11 +182,15 @@ export default {
     &__title
         font-size 86px
         font-weight 700
-        margin-top 123px
+        position absolute
+        top 50%
+        transform translate(0, -50%)
         @media screen and (max-width: 790px)
-            font-size 54px
+          position relative
+          font-size 54px
         @media screen and (max-width: 600px)
-             margin-top 0
+          position relative
+          margin-top 0
 
     &__member-name
         font-size 20px

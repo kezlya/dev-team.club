@@ -12,7 +12,7 @@ export default {
   //team
   teamTitle: "Наша / команда",
   vitaly: "Виталий",
-  stanislav: "Станислав",
+  egor: "Егор",
   kirill: "Кирилл",
   alexander: "Александр",
   irina: "Ирина",

@@ -12,7 +12,7 @@ export default {
   //team
   teamTitle: "The / team",
   vitaly: "Vitaly",
-  stanislav: "Stanislav",
+  egor: "Egor",
   kirill: "Kirill",
   alexander: "Alexander",
   irina: "Irina",

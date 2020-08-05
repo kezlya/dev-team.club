@@ -2,7 +2,7 @@
   <section id="team" class="team">
     <v-container>
       <v-row>
-        <v-col cols="12" sm="4" md="4" class="relative">
+        <v-col cols="12" sm="4" md="4" class="team__title-row">
           <!-- eslint-disable-next-line -->
           <h2 class="team__title">{{ $t("teamTitle") }}</h2>
         </v-col>
@@ -119,12 +119,16 @@ export default {
         avatarUrl: "/team/egor.jpg",
         socials: [
           {
-            link: "https://vk.com/id381660547/",
+            link: "https://github.com/egoriusRus/",
+            icon: "mdi-github"
+          },
+          {
+            link: "https://vk.com/kagorius",
             icon: "mdi-vk"
           },
           {
-            link: "https://github.com/staszigzag/",
-            icon: "mdi-github"
+            link: "https://www.youtube.com/channel/UC5UES3woETjQDqt6pnXCSRQ",
+            icon: "mdi-youtube"
           }
         ]
       },
@@ -178,6 +182,9 @@ export default {
 
     &__avatar
         margin-bottom 10px
+
+    &__title-row
+        position relative
 
     &__title
         font-size 86px

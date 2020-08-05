@@ -28,11 +28,12 @@
           </p>
         </v-col>
         <v-col cols="12" md="5" lg="6">
-          <v-row class="hiring__vacancys">
+          <v-row>
             <v-col
               v-for="(vacancy, index) in vacancys"
               :key="index + 5"
-              cols="4"
+              cols="12"
+              sm="4"
             >
               <v-hover v-slot:default="{ hover }">
                 <v-card
@@ -117,12 +118,10 @@ export default {
         color #CCCCCC
         margin-top 10px
         margin-bottom 50px
-    &__vacancys
-        height 100%
-        max-height 200px
     &__card
         height 100%
         cursor pointer
+        padding 10px 0 20px
     &__vacancy-icon
         font-size: 75px!important
         margin-top 10px
@@ -131,6 +130,5 @@ export default {
         text-align center
         display block
         font-size 27px!important
-        padding-top 20px!important
         color rgba(255, 255, 255, 0.43)
 </style>

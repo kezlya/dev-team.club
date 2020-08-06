@@ -13,7 +13,7 @@
               :key="index"
               cols="12"
               sm="6"
-              md="4"
+              md="3"
             >
               <v-avatar size="178" class="team__avatar">
                 <v-img :src="member.avatarUrl" :alt="$t(member.name)" />
@@ -38,7 +38,7 @@
                 </v-btn>
               </div>
             </v-col>
-            <v-col cols="12" sm="6" md="4">
+            <v-col cols="12" sm="6" md="3">
               <v-avatar size="178" class="team__avatar">
                 <v-img src="/team/blank.jpg" alt="hiring" />
               </v-avatar>
@@ -144,6 +144,36 @@ export default {
           {
             link: "https://twitter.com/DAS_26/",
             icon: "mdi-twitter"
+          }
+        ]
+      },
+      {
+        name: "andrey",
+        position: "webDeveloper",
+        avatarUrl: "/team/andrey.jpg",
+        socials: [
+          {
+            link: "https://github.com/1tu",
+            icon: "mdi-github"
+          },
+          {
+            link: "https://vk.com/f_awesome_guy",
+            icon: "mdi-vk"
+          }
+        ]
+      },
+      {
+        name: "denis",
+        position: "webDeveloper",
+        avatarUrl: "/team/denis.jpg",
+        socials: [
+          {
+            link: "https://github.com/the1stpc",
+            icon: "mdi-github"
+          },
+          {
+            link: "https://vk.com/id560665386",
+            icon: "mdi-vk"
           }
         ]
       },

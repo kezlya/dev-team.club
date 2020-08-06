@@ -15,6 +15,8 @@ export default {
   egor: "Egor",
   kirill: "Kirill",
   alexander: "Alexander",
+  andrey: "Andrey",
+  denis: "Denis",
   irina: "Irina",
   futureEmployee: "Future employee",
   webDeveloper: "Web developer",

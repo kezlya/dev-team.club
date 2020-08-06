@@ -3,7 +3,9 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="4" md="4" class="team__title-row">
-          <h2 class="team__title">{{ $t("teamTitle") }}</h2>
+          <h2 class="team__title">
+            {{ $t("teamTitle") }}
+          </h2>
         </v-col>
         <v-col cols="12" sm="8" md="8">
           <v-row>
@@ -33,7 +35,9 @@
                   color="#878B8F"
                   icon
                 >
-                  <v-icon class="social-icon">{{ social.icon }}</v-icon>
+                  <v-icon class="social-icon">
+                    {{ social.icon }}
+                  </v-icon>
                 </v-btn>
               </div>
             </v-col>

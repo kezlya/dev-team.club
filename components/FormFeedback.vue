@@ -155,7 +155,6 @@ export default {
           `{"text":"${message}"}`
         )
         .then(() => {
-          console.log("aa")
           this.message = this.$t("messageSent")
           setTimeout(() => {
             this.message = null

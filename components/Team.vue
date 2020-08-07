@@ -181,17 +181,13 @@ export default {
         ]
       },
       {
-        name: "irina",
-        position: "projectManager",
-        avatarUrl: "/team/irina.jpg",
+        name: "nastya",
+        position: "webDesigner",
+        avatarUrl: "/team/nastya.jpg",
         socials: [
           {
-            link: "https://www.instagram.com/Koblovai/",
+            link: "https://www.instagram.com/Milavskaya_fm/",
             icon: "mdi-instagram"
-          },
-          {
-            link: "https://vk.com/id518453899",
-            icon: "mdi-vk"
           }
         ]
       }

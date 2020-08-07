@@ -139,7 +139,7 @@ export default {
       let allValid = true
 
       Object.keys(this.form).forEach(f => {
-        this.$refs[f].validate(true) // проверка на валидность полей
+        this.$refs[f].validate(true) // validation
         if (!this.$refs[f].valid) allValid = false
       })
       if (!allValid) return
@@ -168,7 +168,6 @@ export default {
             eventAction: "click",
             eventLabel: "Successful sending"
           })
-          console.log(`Analytic sent: Successful form submission`)
         })
         .catch(er => {
           this.setRandomNumber()

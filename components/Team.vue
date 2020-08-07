@@ -2,9 +2,10 @@
   <section id="team" class="team">
     <v-container>
       <v-row>
-        <v-col cols="12" sm="4" md="4">
-          <!-- eslint-disable-next-line -->
-          <h2 class="team__title">{{ $t("teamTitle") }}</h2>
+        <v-col cols="12" sm="4" md="4" class="team__title-row">
+          <h2 class="team__title">
+            {{ $t("teamTitle") }}
+          </h2>
         </v-col>
         <v-col cols="12" sm="8" md="8">
           <v-row>
@@ -13,7 +14,7 @@
               :key="index"
               cols="12"
               sm="6"
-              md="4"
+              md="3"
             >
               <v-avatar size="178" class="team__avatar">
                 <v-img :src="member.avatarUrl" :alt="$t(member.name)" />
@@ -40,7 +41,7 @@
                 </v-btn>
               </div>
             </v-col>
-            <v-col cols="12" sm="6" md="4">
+            <v-col cols="12" sm="6" md="3">
               <v-avatar size="178" class="team__avatar">
                 <v-img src="/team/blank.jpg" alt="hiring" />
               </v-avatar>
@@ -84,26 +85,15 @@ export default {
         socials: [
           {
             link: "https://www.linkedin.com/in/vitaly-kezlya-450192b/",
-            icon: "mdi-linkedin-box"
+            icon: "mdi-linkedin"
           },
           {
             link: "https://www.youtube.com/channel/UCtI9EdFlDo-4m98-m5SCbcw",
             icon: "mdi-youtube"
-          }
-        ]
-      },
-      {
-        name: "stanislav",
-        position: "webDeveloper",
-        avatarUrl: "/team/stas.jpg",
-        socials: [
-          {
-            link: "https://vk.com/id381660547/",
-            icon: "mdi-vk"
           },
           {
-            link: "https://github.com/staszigzag/",
-            icon: "mdi-github-circle"
+            link: "https://www.twitch.tv/kezlya",
+            icon: "mdi-twitch"
           }
         ]
       },
@@ -114,11 +104,34 @@ export default {
         socials: [
           {
             link: "https://github.com/klimonov/",
-            icon: "mdi-github-circle"
+            icon: "mdi-github"
           },
           {
             link: "https://www.instagram.com/kklimonov/",
             icon: "mdi-instagram"
+          },
+          {
+            link: "https://klimonov.github.io/",
+            icon: "mdi-web"
+          }
+        ]
+      },
+      {
+        name: "egor",
+        position: "webDeveloper",
+        avatarUrl: "/team/egor.jpg",
+        socials: [
+          {
+            link: "https://github.com/egoriusRus/",
+            icon: "mdi-github"
+          },
+          {
+            link: "https://vk.com/kagorius",
+            icon: "mdi-vk"
+          },
+          {
+            link: "https://www.youtube.com/channel/UC5UES3woETjQDqt6pnXCSRQ",
+            icon: "mdi-youtube"
           }
         ]
       },
@@ -129,7 +142,7 @@ export default {
         socials: [
           {
             link: "https://github.com/Alex-D-Green/",
-            icon: "mdi-github-circle"
+            icon: "mdi-github"
           },
           {
             link: "https://twitter.com/DAS_26/",
@@ -138,17 +151,43 @@ export default {
         ]
       },
       {
-        name: "irina",
-        position: "projectManager",
-        avatarUrl: "/team/irina.jpg",
+        name: "andrey",
+        position: "webDeveloper",
+        avatarUrl: "/team/andrey.jpg",
         socials: [
           {
-            link: "https://www.instagram.com/Koblovai/",
-            icon: "mdi-instagram"
+            link: "https://github.com/1tu",
+            icon: "mdi-github"
           },
           {
-            link: "https://vk.com/id518453899",
+            link: "https://vk.com/f_awesome_guy",
             icon: "mdi-vk"
+          }
+        ]
+      },
+      {
+        name: "denis",
+        position: "webDeveloper",
+        avatarUrl: "/team/denis.jpg",
+        socials: [
+          {
+            link: "https://github.com/the1stpc",
+            icon: "mdi-github"
+          },
+          {
+            link: "https://vk.com/id560665386",
+            icon: "mdi-vk"
+          }
+        ]
+      },
+      {
+        name: "nastya",
+        position: "webDesigner",
+        avatarUrl: "/team/nastya.jpg",
+        socials: [
+          {
+            link: "https://www.instagram.com/Milavskaya_fm/",
+            icon: "mdi-instagram"
           }
         ]
       }
@@ -173,14 +212,21 @@ export default {
     &__avatar
         margin-bottom 10px
 
+    &__title-row
+        position relative
+
     &__title
         font-size 86px
         font-weight 700
-        margin-top 123px
+        position absolute
+        top 50%
+        transform translate(0, -50%)
         @media screen and (max-width: 790px)
-            font-size 54px
+          position relative
+          font-size 54px
         @media screen and (max-width: 600px)
-             margin-top 0
+          position relative
+          margin-top 0
 
     &__member-name
         font-size 20px

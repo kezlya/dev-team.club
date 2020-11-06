@@ -93,7 +93,6 @@ export default {
    */
   vuetify: {
     defaultAssets: {
-      font: true,
       icons: "mdi"
     },
     icons: {

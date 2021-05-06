@@ -2,8 +2,8 @@
   <section id="team" class="team">
     <v-container>
       <v-row>
-        <v-col cols="12" sm="4" md="4" class="team__title-row">
-          <h2 class="team__title">
+        <v-col cols="12" sm="4" md="4" class="title-row">
+          <h2 class="section-title">
             The / team
           </h2>
         </v-col>
@@ -16,22 +16,22 @@
               sm="6"
               md="3"
             >
-              <v-avatar size="178" class="team__avatar">
+              <v-avatar size="175" class="avatar">
                 <v-img :src="member.avatarUrl" :alt="member.name" />
               </v-avatar>
-              <p class="team__member-name">
+              <p class="member-name">
                 {{ member.name }}
               </p>
-              <p class="team__member-position">
+              <p class="member-position">
                 {{ member.position }}
               </p>
-              <div v-if="member.socials" class="team__member-socials">
+              <div v-if="member.socials" class="member-socials">
                 <v-btn
                   v-for="(social, i) in member.socials"
                   :key="i"
                   :href="social.link"
                   target="_blank"
-                  class="team__social-btn"
+                  class="social-btn"
                   color="#878B8F"
                   icon
                 >
@@ -42,22 +42,22 @@
               </div>
             </v-col>
             <v-col cols="12" sm="6" md="3">
-              <v-avatar size="178" class="team__avatar">
+              <v-avatar size="178" class="avatar">
                 <v-img src="/team/blank.jpg" alt="hiring" />
               </v-avatar>
-              <p class="team__member-name">
+              <p class="member-name">
                 Future employee
               </p>
-              <p class="team__member-position">
+              <p class="member-position">
                 Engineer
               </p>
-              <div class="team__member-socials">
+              <div class="member-socials">
                 <v-btn
                   v-ga="
                     $ga.commands.navigation.bind(this, 'Job from Team section')
                   "
                   target="_blank"
-                  class="team__social-btn text-none mt-2"
+                  class="social-btn text-none mt-2"
                   color="#CB2A76"
                   outlined
                   rounded
@@ -202,20 +202,20 @@ export default {
     padding 70px 0
     background-color #FAF1E7
 
-    &__members
+    .members
         display flex
         justify-content space-between
         flex-wrap wrap
         width 100%
         margin-top 20px
 
-    &__avatar
+    .avatar
         margin-bottom 10px
 
-    &__title-row
+    .title-row
         position relative
 
-    &__title
+    .section-title
         font-size 86px
         font-weight 700
         position absolute
@@ -228,21 +228,21 @@ export default {
           position relative
           margin-top 0
 
-    &__member-name
+    .member-name
         font-size 20px
         margin-bottom 0
         font-weight 600
 
-    &__member-position
+    .member-position
         font-size 16px
         margin-bottom 0
         color #666666
         font-weight 500
 
-    &__social-btn
+    .social-btn
         margin 0 3px
 
-    &__hiring-btn
+    .hiring-btn
         font-size 16px
         letter-spacing 0px
         font-weight 600

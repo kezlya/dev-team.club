@@ -15,7 +15,7 @@
           @click="$vuetify.goTo('#team')"
         >
           <v-list-item-content>
-            <v-list-item-title class="mobile-menu__title">
+            <v-list-item-title class="menu-item-name">
               Team
             </v-list-item-title>
           </v-list-item-content>
@@ -25,7 +25,7 @@
           @click="$vuetify.goTo('#work')"
         >
           <v-list-item-content>
-            <v-list-item-title class="mobile-menu__title">
+            <v-list-item-title class="menu-item-name">
               Work
             </v-list-item-title>
           </v-list-item-content>
@@ -35,7 +35,7 @@
           @click="$vuetify.goTo('#job')"
         >
           <v-list-item-content>
-            <v-list-item-title class="mobile-menu__title">
+            <v-list-item-title class="menu-item-name">
               Job
             </v-list-item-title>
           </v-list-item-content>
@@ -46,7 +46,7 @@
           href="https://www.instagram.com/devteamclub"
         >
           <v-list-item-content>
-            <v-list-item-title class="mobile-menu__title">
+            <v-list-item-title class="menu-item-name">
               Instagram
             </v-list-item-title>
           </v-list-item-content>
@@ -196,7 +196,6 @@ export default {
 		@media (max-width: 400px)
 			padding 0
 
-	.mobile-menu
-		&__title
-			font-size 25px!important
+	.menu-item-name
+		font-size 25px!important
 </style>

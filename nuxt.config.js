@@ -8,6 +8,14 @@ export default {
   generate: {
     dir: "docs"
   },
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: "*",
+        component: resolve(__dirname, "pages/index.vue")
+      })
+    }
+  },
   head: {
     //titleTemplate: '%s - ' + process.env.npm_package_name,
     titleTemplate: "Dev-team",
@@ -23,15 +31,15 @@ export default {
         content: "Dev-team creates tomorrow with you."
       },
       { name: "twitter:image", content: "/devteammeta.jpg" },
-      { itemprop: "name", content: "Dev team site" },
+      { itemprop: "name", content: "Dev-team site" },
       {
         itemprop: "description",
         content: "Dev-team creates tomorrow with you."
       },
       { itemprop: "image", content: "/devteammeta.jpg" },
       { property: "og:url", content: "https://dev-team.club" },
-      { property: "og:type", content: "Dev team site" },
-      { property: "og:title", content: "Dev Team" },
+      { property: "og:type", content: "Dev-team site" },
+      { property: "og:title", content: "Dev-Team" },
       {
         property: "og:description",
         content: "Dev-team creates tomorrow with you."
@@ -98,6 +106,9 @@ export default {
           exclude: /(node_modules)/
         })
       }
+    },
+    babel: {
+      plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
     }
   },
   buildModules: [
@@ -108,23 +119,18 @@ export default {
         id: "UA-153553466-1",
         commands: {
           navigation(label) {
-            console.log(`Analytic sent: Navigation - ${label}`)
             this.$ga.event("Navigation", "click", label)
           },
           footerLinks(label) {
-            console.log(`Analytic sent: Footer link - ${label}`)
             this.$ga.event("Footer link", "click", label)
           },
           switchLang(label) {
-            console.log(`Analytic sent: Switch Language to ${label}`)
             this.$ga.event("Switch Language", "click", label)
           },
           hiring(label) {
-            console.log(`Analytic sent: Hiring, click to ${label} profession`)
             this.$ga.event("Click to profession", "click", label)
           },
           projects(label) {
-            console.log(`Analytic sent: Latest work, click to ${label}`)
             this.$ga.event("Click to our work", "click", label)
           }
         }

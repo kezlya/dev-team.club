@@ -1,7 +1,7 @@
 <template>
   <section id="work" class="projects">
     <!-- eslint-disable-next-line -->
-    <h2 class="projects__title">Our Latest / Work</h2>
+    <h2 class="section-title">Our Latest / Work</h2>
     <v-container>
       <v-row>
         <v-col
@@ -10,30 +10,31 @@
           cols="12"
           sm="12"
           md="6"
+          lg="4"
           class="project"
         >
           <a
             v-ga="$ga.commands.projects.bind($parent, project.name)"
             :href="project.link"
             target="_blank"
-            class="project__link-row"
+            class="link-row"
           >
             <!-- eslint-disable-next-line -->
             <img
               width="100%"
               :src="project.previewUrl"
               :alt="project.name"
-              class="project__photo"
+              class="photo"
             />
-            <div class="project__meta">
-              <p class="project__name">{{ project.name }}</p>
-              <div class="project__action">
-                <p class="project__description">
+            <div class="meta">
+              <p class="name">{{ project.name }}</p>
+              <div class="action">
+                <p class="description">
                   {{ project.description }}
                 </p>
-                <p class="project__view-link text-none">
+                <p class="view-link text-none">
                   View site
-                  <v-icon class="project__link-icon">mdi-arrow-right</v-icon>
+                  <v-icon class="link-icon">mdi-arrow-right</v-icon>
                 </p>
               </div>
             </div>
@@ -63,11 +64,11 @@ export default {
           "A worldwide community of dancers with unique opportunities for organizing breakdance battles. Advance payment and video streaming features."
       },
       {
-        name: "Chrome.com",
-        link: "https://chrome.com/",
-        previewUrl: "/projects/chrome.jpg",
+        name: "Aatlas",
+        link: "https://www.aatlas.com/",
+        previewUrl: "/projects/aatlas.jpg",
         description:
-          "Participated in the development of the official website for Chrome browser"
+          "Participated in the development of the Aatlas social media"
       },
       {
         name: "Android.com",
@@ -75,6 +76,20 @@ export default {
         previewUrl: "/projects/android.jpg",
         description:
           "Participated in the development of the official website for Android OS"
+      },
+      {
+        name: "OnDemand",
+        link: "https://ondemandfitness.app/",
+        previewUrl: "/projects/ondemandfitness.jpg",
+        description:
+          "Participated in the development of the official website for OnDemand Fitness"
+      },
+      {
+        name: "Chrome.com",
+        link: "https://chrome.com/",
+        previewUrl: "/projects/chrome.jpg",
+        description:
+          "Participated in the development of the official website for Chrome browser"
       }
     ]
   })
@@ -85,22 +100,24 @@ export default {
 .projects
 	padding 70px 0
 
-	&__title
+	.section-title
 		margin-bottom 30px
 
 	.project
 		position: relative;
-		&:hover .project__photo
+		&:hover .photo
 			transform scale(1.1)
 			opacity 0.3
-		&:hover .project__action
+		&:hover .action
 			opacity 1
-		&:hover .project__meta
+		&:hover .meta
 			top 20px
 			@media (max-width: 480px)
 				top 0
+			@media (min-width: 1264px) and (max-width: 1900px)
+				top 0
 
-		&__link-row
+		.link-row
 			color white
 			text-decoration none
 			background-color black
@@ -108,11 +125,11 @@ export default {
 			overflow hidden
 			position relative
 
-		&__photo
+		.photo
 			transition: all ease .5s
 			margin-bottom: -8px;
 
-		&__meta
+		.meta
 			position absolute
 			top 80%
 			left 0
@@ -121,23 +138,28 @@ export default {
 			transition: all ease .5s
 			max-width 65%
 			min-height 203px
+			@media (min-width: 1264px) and (max-width: 1900px)
+				top 75%
+				max-width 100%
 			@media (max-width: 480px)
 				max-width 100%
 				padding 0 20px
 				top 70%
 
-		&__name
+		.name
 			margin-top 20px
 			margin-bottom 10px
 			font-size 40px
 			font-weight 700
 			line-height 40px
+			@media (min-width: 1264px) and (max-width: 1900px)
+				font-size: 30px
 
-		&__action
+		.action
 			opacity 0
 			transition: all ease .5s
 
-		&__view-link
+		.view-link
 			font-size 16px
 			letter-spacing 0px
 			font-weight 600
@@ -146,11 +168,11 @@ export default {
 			&:hover .project__link-icon
 				margin-left 12px
 
-		&__description
+		.description
 			@media (max-width: 480px)
 				font-size 15px
 
-		&__link-icon
+		.link-icon
 			color #CB2A76
 			margin-left 5px
 </style>

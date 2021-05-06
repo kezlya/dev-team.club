@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12" sm="4" md="4" class="team__title-row">
           <h2 class="team__title">
-            {{ $t("teamTitle") }}
+            The / team
           </h2>
         </v-col>
         <v-col cols="12" sm="8" md="8">
@@ -17,13 +17,13 @@
               md="3"
             >
               <v-avatar size="178" class="team__avatar">
-                <v-img :src="member.avatarUrl" :alt="$t(member.name)" />
+                <v-img :src="member.avatarUrl" :alt="member.name" />
               </v-avatar>
               <p class="team__member-name">
-                {{ $t(member.name) }}
+                {{ member.name }}
               </p>
               <p class="team__member-position">
-                {{ $t(member.position) }}
+                {{ member.position }}
               </p>
               <div v-if="member.socials" class="team__member-socials">
                 <v-btn
@@ -46,10 +46,10 @@
                 <v-img src="/team/blank.jpg" alt="hiring" />
               </v-avatar>
               <p class="team__member-name">
-                {{ $t("futureEmployee") }}
+                Future employee
               </p>
               <p class="team__member-position">
-                {{ $t("engineer") }}
+                Engineer
               </p>
               <div class="team__member-socials">
                 <v-btn
@@ -63,7 +63,7 @@
                   rounded
                   @click="$vuetify.goTo('#job')"
                 >
-                  {{ $t("weAreHiring") }}
+                  We`re Hiring
                 </v-btn>
               </div>
             </v-col>
@@ -79,8 +79,8 @@ export default {
   data: () => ({
     members: [
       {
-        name: "vitaly",
-        position: "teamLeader",
+        name: "Vitaly",
+        position: "Team leader",
         avatarUrl: "/team/vitaly.jpg",
         socials: [
           {
@@ -98,10 +98,14 @@ export default {
         ]
       },
       {
-        name: "kirill",
-        position: "webDeveloper",
+        name: "Kirill",
+        position: "Web developer",
         avatarUrl: "/team/kirill.jpg",
         socials: [
+          {
+            link: "https://www.linkedin.com/in/klimonov/",
+            icon: "mdi-linkedin"
+          },
           {
             link: "https://github.com/klimonov/",
             icon: "mdi-github"
@@ -109,16 +113,12 @@ export default {
           {
             link: "https://www.instagram.com/kklimonov/",
             icon: "mdi-instagram"
-          },
-          {
-            link: "https://klimonov.github.io/",
-            icon: "mdi-web"
           }
         ]
       },
       {
-        name: "egor",
-        position: "webDeveloper",
+        name: "Egor",
+        position: "Web developer",
         avatarUrl: "/team/egor.jpg",
         socials: [
           {
@@ -136,8 +136,8 @@ export default {
         ]
       },
       {
-        name: "alexander",
-        position: "webDeveloper",
+        name: "Alexander",
+        position: "Web developer",
         avatarUrl: "/team/alex.jpeg",
         socials: [
           {
@@ -151,8 +151,8 @@ export default {
         ]
       },
       {
-        name: "andrey",
-        position: "webDeveloper",
+        name: "Andrey",
+        position: "Web developer",
         avatarUrl: "/team/andrey.jpg",
         socials: [
           {
@@ -166,8 +166,8 @@ export default {
         ]
       },
       {
-        name: "denis",
-        position: "webDeveloper",
+        name: "Denis",
+        position: "Web developer",
         avatarUrl: "/team/denis.jpg",
         socials: [
           {
@@ -181,8 +181,8 @@ export default {
         ]
       },
       {
-        name: "nastya",
-        position: "webDesigner",
+        name: "Nastya",
+        position: "Web designer",
         avatarUrl: "/team/nastya.jpg",
         socials: [
           {

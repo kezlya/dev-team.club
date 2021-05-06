@@ -1,7 +1,7 @@
 <template>
   <section id="work" class="projects">
     <!-- eslint-disable-next-line -->
-    <h2 class="projects__title">{{ $t("workTitle") }}</h2>
+    <h2 class="projects__title">Our Latest / Work</h2>
     <v-container>
       <v-row>
         <v-col
@@ -29,11 +29,11 @@
               <p class="project__name">{{ project.name }}</p>
               <div class="project__action">
                 <p class="project__description">
-                  {{ $t(project.description) }}
+                  {{ project.description }}
                 </p>
                 <p class="project__view-link text-none">
-                  {{ $t("viewSite")
-                  }}<v-icon class="project__link-icon">mdi-arrow-right</v-icon>
+                  View site
+                  <v-icon class="project__link-icon">mdi-arrow-right</v-icon>
                 </p>
               </div>
             </div>
@@ -52,25 +52,29 @@ export default {
         name: "AntHive",
         link: "https://anthive.io/",
         previewUrl: "/projects/anthive.jpg",
-        description: "descAnthive"
+        description:
+          "Coding challenge for beginners and experienced developers. Test your skills in various programming languages, challenge developers around the world. Real-time rating and leaderboard."
       },
       {
         name: "BreakKonnect",
         link: "https://breakkonnect.com/",
         previewUrl: "/projects/breakkonnect.jpg",
-        description: "descBreakkonnect"
+        description:
+          "A worldwide community of dancers with unique opportunities for organizing breakdance battles. Advance payment and video streaming features."
       },
       {
         name: "Chrome.com",
         link: "https://chrome.com/",
         previewUrl: "/projects/chrome.jpg",
-        description: "descChrome"
+        description:
+          "Participated in the development of the official website for Chrome browser"
       },
       {
         name: "Android.com",
         link: "https://android.com/",
         previewUrl: "/projects/android.jpg",
-        description: "descAndroid"
+        description:
+          "Participated in the development of the official website for Android OS"
       }
     ]
   })

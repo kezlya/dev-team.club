@@ -11,7 +11,7 @@
             autocomplete="off"
           >
             <template v-slot:label>
-              <span class="label">{{ $t("yourName") }}</span>
+              <span class="label">Your name</span>
             </template>
           </v-text-field>
         </v-col>
@@ -24,7 +24,7 @@
             autocomplete="off"
           >
             <template v-slot:label>
-              <span class="label">{{ $t("email") }}</span>
+              <span class="label">Email</span>
             </template>
           </v-text-field>
         </v-col>
@@ -41,7 +41,7 @@
         rows="2"
       >
         <template v-slot:label>
-          <span class="label">{{ $t("subject") }}</span>
+          <span class="label">Subject</span>
         </template>
       </v-textarea>
       <span
@@ -61,7 +61,7 @@
         >
           <div class="mt-n1">
             <p class="mr-2 my-0">
-              {{ $t("howYourMath") }} {{ firstRandomNumber }} +
+              How are you with math? {{ firstRandomNumber }} +
               {{ secondRandomNumber }} = ?
             </p>
           </div>
@@ -86,7 +86,7 @@
             width="190"
             @click="sendMessageSlack"
           >
-            {{ $t("contact") }}
+            Contact
           </v-btn>
         </v-col>
       </v-row>
@@ -118,10 +118,10 @@ export default {
       error: null,
       message: null,
       rules: {
-        required: value => !!value || this.$t("requiredField"),
+        required: value => !!value || "Required field",
         email: value => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || this.$t("wrongEmail")
+          return pattern.test(value) || "Wrong e-mail"
         }
       }
     }
@@ -133,7 +133,7 @@ export default {
     sendMessageSlack() {
       this.error = this.message = null
       if (this.amountNumber !== this.masterAmountNumber) {
-        this.error = this.$t("wrongAnswer")
+        this.error = "Wrong e-mail"
         return
       }
       let allValid = true
@@ -155,7 +155,7 @@ export default {
           `{"text":"${message}"}`
         )
         .then(() => {
-          this.message = this.$t("messageSent")
+          this.message = "Message sent"
           setTimeout(() => {
             this.message = null
           }, 3000)

@@ -56,36 +56,9 @@ export default {
    */
   css: ["~/assets/style/app.styl"],
   /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [
-    // { src: '~plugins/ga.js', mode: 'client' },
-    // { src: '~plugins/i18n.js'},
-  ],
-  /*
    ** Nuxt.js modules
    */
-  modules: [
-    "@nuxtjs/vuetify",
-    [
-      "nuxt-i18n",
-      {
-        locales: [
-          {
-            code: "en",
-            file: "en.js"
-          },
-          {
-            code: "ru",
-            file: "ru.js"
-          }
-        ],
-        defaultLocale: "en",
-        lazy: true,
-        langDir: "lang/"
-      }
-    ]
-  ],
+  modules: ["@nuxtjs/vuetify"],
 
   /*
    ** vuetify module configuration

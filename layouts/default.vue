@@ -16,7 +16,7 @@
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
-              {{ $t("team") }}
+              Team
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -26,7 +26,7 @@
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
-              {{ $t("work") }}
+              Work
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -36,17 +36,18 @@
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
-              {{ $t("job") }}
+              Job
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item
-          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
-          @click="$vuetify.goTo('#contacts')"
+          v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
+          target="_blank"
+          href="https://www.instagram.com/devteamclub"
         >
           <v-list-item-content>
             <v-list-item-title class="mobile-menu__title">
-              {{ $t("contacts") }}
+              Instagram
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -89,7 +90,7 @@
           tile
           @click="$vuetify.goTo('#team')"
         >
-          {{ $t("team") }}
+          Team
         </v-btn>
         <v-btn
           v-ga="$ga.commands.navigation.bind(this, 'Work')"
@@ -99,7 +100,7 @@
           tile
           @click="$vuetify.goTo('#work')"
         >
-          {{ $t("work") }}
+          Work
         </v-btn>
         <v-btn
           v-ga="$ga.commands.navigation.bind(this, 'Job')"
@@ -109,90 +110,29 @@
           tile
           @click="$vuetify.goTo('#job')"
         >
-          {{ $t("job") }}
+          Job
         </v-btn>
         <v-btn
-          v-ga="$ga.commands.navigation.bind(this, 'Contact')"
+          v-ga="$ga.commands.navigation.bind(this, 'Instagram')"
+          target="_blank"
+          href="https://www.instagram.com/devteamclub"
           class="text-none nav-link"
           :class="classHeader"
           text
           tile
-          @click="$vuetify.goTo('#contacts')"
         >
-          {{ $t("contact") }}
+          Instagram
         </v-btn>
       </div>
-      <v-btn
-        v-ga="$ga.commands.switchLang.bind(this, 'En')"
-        class="text-none local-switcher"
-        :to="switchLocalePath('en')"
-        :class="classHeader"
-        tile
-        outlined
-      >
-        {{ $t("en") }}
-      </v-btn>
-      <v-btn
-        v-ga="$ga.commands.switchLang.bind(this, 'Ru')"
-        class="text-none local-switcher"
-        :to="switchLocalePath('ru')"
-        :class="classHeader"
-        tile
-        outlined
-      >
-        {{ $t("ru") }}
-      </v-btn>
     </v-app-bar>
     <v-content>
       <header-background />
       <nuxt />
     </v-content>
     <v-footer dark class="black">
-      <span>&copy; {{ new Date().getFullYear() }} {{ $t("devTeam") }}</span>
-      <v-spacer />
-      <v-btn
-        v-ga="$ga.commands.footerLinks.bind(this, 'Mail')"
-        href="mailto:devteamclub.info@gmail.com"
-        icon
-        small
-      >
-        <v-icon size="20px">
-          mdi-gmail
-        </v-icon>
-      </v-btn>
-      <v-btn
-        v-ga="$ga.commands.footerLinks.bind(this, 'Facebook')"
-        target="_blank"
-        href="https://www.facebook.com/devteamclub"
-        icon
-        small
-      >
-        <v-icon size="20px">
-          mdi-facebook
-        </v-icon>
-      </v-btn>
-      <v-btn
-        v-ga="$ga.commands.footerLinks.bind(this, 'Instagram')"
-        target="_blank"
-        href="https://www.instagram.com/devteamclub"
-        icon
-        small
-      >
-        <v-icon size="20px">
-          mdi-instagram
-        </v-icon>
-      </v-btn>
-      <v-btn
-        v-ga="$ga.commands.footerLinks.bind(this, 'Twitter')"
-        target="_blank"
-        href="https://twitter.com/devteamclub"
-        icon
-        small
-      >
-        <v-icon size="20px">
-          mdi-twitter
-        </v-icon>
-      </v-btn>
+      <span class="mx-auto">
+        &copy; {{ new Date().getFullYear() }} Dev-team
+      </span>
     </v-footer>
   </v-app>
 </template>

@@ -2,10 +2,11 @@
   <section class="img-bg">
     <v-img height="650" src="/header-bg.jpg">
       <div class="img-bg__slogan slogan white--text">
-        <!-- eslint-disable-next-line -->
-        <h1 class="slogan__big">{{ $t("slogan") }}</h1>
+        <h1 class="slogan__big">
+          Coding for the stars
+        </h1>
         <h4 class="slogan__small">
-          {{ $t("subSlogan") }}
+          * EVERYBODY IS A STAR
         </h4>
       </div>
     </v-img>

@@ -4,7 +4,7 @@
       <v-row justify="center">
         <v-col cols="12" sm="6">
           <!-- eslint-disable-next-line -->
-          <h2 class="contacts__title">{{ $t("contactTitle") }}</h2>
+          <h2 class="contacts__title">Contact us</h2>
           <form-feedback label-message="contactus" />
         </v-col>
       </v-row>

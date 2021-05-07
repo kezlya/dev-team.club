@@ -17,7 +17,9 @@ export default {
     }
   },
   head: {
-    //titleTemplate: '%s - ' + process.env.npm_package_name,
+    htmlAttrs: {
+      lang: "en"
+    },
     titleTemplate: "Dev-team",
     title: process.env.npm_package_name || "",
     meta: [

@@ -107,9 +107,9 @@ export default {
   data() {
     return {
       form: {
-        name: null,
-        email: null,
-        message: null
+        name: "",
+        email: "",
+        message: ""
       },
       firstRandomNumber: null,
       secondRandomNumber: null,
@@ -119,10 +119,10 @@ export default {
       error: null,
       message: null,
       rules: {
-        required: value => !!value || "Required field",
+        required: value => value === null || value !== "" || "Required field",
         email: value => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || "Wrong e-mail"
+          return value === null || pattern.test(value) || "Wrong e-mail"
         }
       }
     }
@@ -134,7 +134,7 @@ export default {
     sendMessageSlack() {
       this.error = this.message = null
       if (this.amountNumber !== this.masterAmountNumber) {
-        this.error = "Wrong e-mail"
+        this.error = "Wrong answer"
         return
       }
       let allValid = true
@@ -155,6 +155,7 @@ export default {
         )
         .then(() => {
           this.message = "Message sent"
+          this.form.name = this.form.email = this.form.message = null
           setTimeout(() => {
             this.message = null
           }, 3000)
@@ -168,10 +169,10 @@ export default {
             eventLabel: "Successful sending"
           })
         })
-        .catch(er => {
+        .catch(err => {
           this.setRandomNumber()
           this.amountNumber = null
-          this.error = er
+          this.error = err
           this.isloading = false
         })
     },

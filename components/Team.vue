@@ -81,7 +81,7 @@ export default {
     members: [
       {
         name: "Vitaly",
-        position: "Team leader",
+        position: "Team lead",
         avatarUrl: "/team/vitaly.jpg",
         socials: [
           {

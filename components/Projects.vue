@@ -61,14 +61,14 @@ export default {
         link: "https://breakkonnect.com/",
         previewUrl: "/projects/breakkonnect.jpg",
         description:
-          "A worldwide community of dancers with unique opportunities for organizing breakdance battles. Advance payment and video streaming features."
+          "A worldwide community of dancers with unique opportunities for organizing breakdance battles. Advance payment and video streaming features"
       },
       {
         name: "Aatlas",
         link: "https://www.aatlas.com/",
         previewUrl: "/projects/aatlas.jpg",
         description:
-          "Participated in the development of the Aatlas social media"
+          "Aatlas is the simplest, most rewarding way to create, explore and share the story of a life"
       },
       {
         name: "Android.com",
@@ -82,7 +82,7 @@ export default {
         link: "https://ondemandfitness.app/",
         previewUrl: "/projects/ondemandfitness.jpg",
         description:
-          "Participated in the development of the official website for OnDemand Fitness"
+          "On Demand Fitness is a Mobile app for Apple and Android devices. Helps you to generate and personalize workouts with a few clicks"
       },
       {
         name: "Chrome.com",

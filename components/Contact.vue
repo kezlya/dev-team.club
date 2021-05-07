@@ -3,7 +3,9 @@
     <!-- eslint-disable-next-line -->
     <h2 class="section-title">We’re / Hiring</h2>
     <p class="section-subtitle">
-      At the moment, our team requires the following specialists:
+      Would you like to join a club of talented engineers? Solve interesting
+      challenges and collaborate? Study hard and become a superstar developer?
+      Welcome to the club!
     </p>
     <v-container>
       <v-row class="justify-center px-3">
@@ -232,7 +234,8 @@ export default {
         line-height 28px
         padding: 0 20px
         color #CCCCCC
-        margin-bottom 50px
+        max-width: 620px
+        margin: 0 auto 50px
     label
         color red
 </style>
